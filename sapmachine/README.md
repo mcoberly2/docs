@@ -24,8 +24,18 @@ WARNING:
 
 # Supported tags and respective `Dockerfile` links
 
--	[`16`, `16.0.1`, `latest`](https://github.com/SAP/SapMachine-infrastructure/blob/0449b4147caed3eb6fcf46ef3301d12af13e819a/dockerfiles/official/stable/Dockerfile)
--	[`11`, `11.0.11`, `lts`](https://github.com/SAP/SapMachine-infrastructure/blob/ee2eebb7494ba8ba3a18e43be50aac47913c310a/dockerfiles/official/lts/Dockerfile)
+-	[`jre-headless-ubuntu-11`, `jre-headless-ubuntu-11.0.20`](https://github.com/SAP/SapMachine-infrastructure/blob/03a69c14ccf4cdb173bb67823d779770bcb44d72/dockerfiles/official/11/ubuntu/jre-headless/Dockerfile)
+-	[`jre-ubuntu-11`, `jre-ubuntu-11.0.20`](https://github.com/SAP/SapMachine-infrastructure/blob/03a69c14ccf4cdb173bb67823d779770bcb44d72/dockerfiles/official/11/ubuntu/jre/Dockerfile)
+-	[`jdk-headless-ubuntu-11`, `jdk-headless-ubuntu-11.0.20`](https://github.com/SAP/SapMachine-infrastructure/blob/03a69c14ccf4cdb173bb67823d779770bcb44d72/dockerfiles/official/11/ubuntu/jdk-headless/Dockerfile)
+-	[`jdk-ubuntu-11`, `jdk-ubuntu-11.0.20`, `11`, `11.0.20`](https://github.com/SAP/SapMachine-infrastructure/blob/03a69c14ccf4cdb173bb67823d779770bcb44d72/dockerfiles/official/11/ubuntu/jdk/Dockerfile)
+-	[`jre-headless-ubuntu-17`, `jre-headless-ubuntu-17.0.8`, `jre-headless-ubuntu-lts`](https://github.com/SAP/SapMachine-infrastructure/blob/2d4f3b8850a40a6ab8ea0322f05cc05ed19d0f4e/dockerfiles/official/17/ubuntu/jre-headless/Dockerfile)
+-	[`jre-ubuntu-17`, `jre-ubuntu-17.0.8`, `jre-ubuntu-lts`](https://github.com/SAP/SapMachine-infrastructure/blob/2d4f3b8850a40a6ab8ea0322f05cc05ed19d0f4e/dockerfiles/official/17/ubuntu/jre/Dockerfile)
+-	[`jdk-headless-ubuntu-17`, `jdk-headless-ubuntu-17.0.8`, `jdk-headless-ubuntu-lts`](https://github.com/SAP/SapMachine-infrastructure/blob/2d4f3b8850a40a6ab8ea0322f05cc05ed19d0f4e/dockerfiles/official/17/ubuntu/jdk-headless/Dockerfile)
+-	[`jdk-ubuntu-17`, `jdk-ubuntu-17.0.8`, `jdk-ubuntu-lts`, `17`, `17.0.8`, `lts`](https://github.com/SAP/SapMachine-infrastructure/blob/2d4f3b8850a40a6ab8ea0322f05cc05ed19d0f4e/dockerfiles/official/17/ubuntu/jdk/Dockerfile)
+-	[`jre-headless-ubuntu-20`, `jre-headless-ubuntu-20.0.2`, `jre-headless-ubuntu`](https://github.com/SAP/SapMachine-infrastructure/blob/d8d71766093af433437a77900cba0839781f54c1/dockerfiles/official/20/ubuntu/jre-headless/Dockerfile)
+-	[`jre-ubuntu-20`, `jre-ubuntu-20.0.2`, `jre-ubuntu`](https://github.com/SAP/SapMachine-infrastructure/blob/d8d71766093af433437a77900cba0839781f54c1/dockerfiles/official/20/ubuntu/jre/Dockerfile)
+-	[`jdk-headless-ubuntu-20`, `jdk-headless-ubuntu-20.0.2`, `jdk-headless-ubuntu`](https://github.com/SAP/SapMachine-infrastructure/blob/d8d71766093af433437a77900cba0839781f54c1/dockerfiles/official/20/ubuntu/jdk-headless/Dockerfile)
+-	[`jdk-ubuntu-20`, `jdk-ubuntu-20.0.2`, `jdk-ubuntu`, `20`, `20.0.2`, `latest`](https://github.com/SAP/SapMachine-infrastructure/blob/d8d71766093af433437a77900cba0839781f54c1/dockerfiles/official/20/ubuntu/jdk/Dockerfile)
 
 # Quick reference (cont.)
 
@@ -33,7 +43,7 @@ WARNING:
 	[GitHub](https://github.com/SAP/SapMachine/issues) For more information see the [SapMachine Wiki](https://github.com/SAP/SapMachine/wiki).
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
-	[`amd64`](https://hub.docker.com/r/amd64/sapmachine/)
+	[`amd64`](https://hub.docker.com/r/amd64/sapmachine/), [`arm64v8`](https://hub.docker.com/r/arm64v8/sapmachine/), [`ppc64le`](https://hub.docker.com/r/ppc64le/sapmachine/)
 
 -	**Published image artifact details**:  
 	[repo-info repo's `repos/sapmachine/` directory](https://github.com/docker-library/repo-info/blob/master/repos/sapmachine) ([history](https://github.com/docker-library/repo-info/commits/master/repos/sapmachine))  

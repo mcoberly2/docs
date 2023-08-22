@@ -1,12 +1,9 @@
-# by default, the Ghost image will use SQLite (and thus requires no separate database container)
-# we have used MySQL here merely for demonstration purposes (especially environment-variable-based configuration)
-
 version: '3.1'
 
 services:
 
   ghost:
-    image: ghost:3-alpine
+    image: ghost:4-alpine
     restart: always
     ports:
       - 8080:2368
@@ -23,7 +20,7 @@ services:
       #NODE_ENV: development
 
   db:
-    image: mysql:5.7
+    image: mysql:8.0
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: example

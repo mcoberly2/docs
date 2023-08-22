@@ -20,20 +20,23 @@ WARNING:
 	[the Varnish Docker Community](https://github.com/varnish/docker-varnish)
 
 -	**Where to get help**:  
-	[the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
+	[the Docker Community Slack](https://dockr.ly/comm-slack), [Server Fault](https://serverfault.com/help/on-topic), [Unix & Linux](https://unix.stackexchange.com/help/on-topic), or [Stack Overflow](https://stackoverflow.com/help/on-topic)
 
 # Supported tags and respective `Dockerfile` links
 
--	[`6.0`, `6.0.7-1`, `6.0.7`, `stable`](https://github.com/varnish/docker-varnish/blob/51a66e74c3a56e4def767d3ad3f6c8ad1a4addaa/stable/debian/Dockerfile)
--	[`6.6`, `6.6.0-1`, `6.6.0`, `6`, `latest`, `fresh`](https://github.com/varnish/docker-varnish/blob/51a66e74c3a56e4def767d3ad3f6c8ad1a4addaa/fresh/debian/Dockerfile)
+-	[`fresh`, `7.3.0`, `7.3`, `latest`](https://github.com/varnish/docker-varnish/blob/55b410af3b8c5f596fe896fef8e0e11950a1be3b/fresh/debian/Dockerfile)
+-	[`fresh-alpine`, `7.3.0-alpine`, `7.3-alpine`, `alpine`](https://github.com/varnish/docker-varnish/blob/55b410af3b8c5f596fe896fef8e0e11950a1be3b/fresh/alpine/Dockerfile)
+-	[`old`, `7.2.1`, `7.2`](https://github.com/varnish/docker-varnish/blob/55b410af3b8c5f596fe896fef8e0e11950a1be3b/old/debian/Dockerfile)
+-	[`old-alpine`, `7.2.1-alpine`, `7.2-alpine`](https://github.com/varnish/docker-varnish/blob/55b410af3b8c5f596fe896fef8e0e11950a1be3b/old/alpine/Dockerfile)
+-	[`stable`, `6.0.11`, `6.0`](https://github.com/varnish/docker-varnish/blob/f3be41ac5e4224615e1437334ffc16418e3e89f3/stable/debian/Dockerfile)
 
 # Quick reference (cont.)
 
 -	**Where to file issues**:  
-	[https://github.com/varnish/docker-varnish/issues](https://github.com/varnish/docker-varnish/issues)
+	[https://github.com/varnish/docker-varnish/issues](https://github.com/varnish/docker-varnish/issues?q=)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
-	[`amd64`](https://hub.docker.com/r/amd64/varnish/)
+	[`amd64`](https://hub.docker.com/r/amd64/varnish/), [`arm32v7`](https://hub.docker.com/r/arm32v7/varnish/), [`arm64v8`](https://hub.docker.com/r/arm64v8/varnish/), [`i386`](https://hub.docker.com/r/i386/varnish/), [`ppc64le`](https://hub.docker.com/r/ppc64le/varnish/), [`s390x`](https://hub.docker.com/r/s390x/varnish/)
 
 -	**Published image artifact details**:  
 	[repo-info repo's `repos/varnish/` directory](https://github.com/docker-library/repo-info/blob/master/repos/varnish) ([history](https://github.com/docker-library/repo-info/commits/master/repos/varnish))  
@@ -61,20 +64,44 @@ Varnish is an HTTP accelerator designed for content-heavy dynamic web sites as w
 Create a `default.vcl` file:
 
 ```vcl
-vcl 4.0;
+# specify the VCL syntax version to use
+vcl 4.1;
 
-backend default {
-  .host = "www.nytimes.com:80";
+# import vmod_dynamic for better backend name resolution
+import dynamic;
+
+# we won't use any static backend, but Varnish still need a default one
+backend default none;
+
+# set up a dynamic director
+# for more info, see https://github.com/nigoroll/libvmod-dynamic/blob/master/src/vmod_dynamic.vcc
+sub vcl_init {
+        new d = dynamic.director(port = "80");
+}
+
+sub vcl_recv {
+	# force the host header to match the backend (not all backends need it,
+	# but example.com does)
+	set req.http.host = "example.com";
+	# set the backend
+	set req.backend_hint = d.backend("example.com");
 }
 ```
 
 Then run:
 
 ```console
-# we need both a configuration file at /etc/varnish/default.vcl
-# and our workdir to be mounted as tmpfs to avoid disk I/O
-$ docker run -v /path/to/default.vcl:/etc/varnish/default.vcl:ro --tmpfs /var/lib/varnish:exec varnish
+# we need the configuration file at /etc/varnish/default.vcl,
+# our workdir has to be mounted as tmpfs to avoid disk I/O,
+# and we'll use port 8080 to talk to our container (internally listening on 80)
+$ docker run \
+	-v /path/to/default.vcl:/etc/varnish/default.vcl:ro \
+	--tmpfs /var/lib/varnish/varnishd:exec \
+	-p 8080:80 \
+	varnish
 ```
+
+From there, you can visit `localhost:8080` in your browser and see the example.com homepage.
 
 Alternatively, a simple `Dockerfile` can be used to generate a new image that includes the necessary `default.vcl` (which is a much cleaner solution than the bind mount above):
 
@@ -87,22 +114,52 @@ COPY default.vcl /etc/varnish/
 Place this file in the same directory as your `default.vcl`, run `docker build -t my-varnish .`, then start your container:
 
 ```console
-$ docker --tmpfs /var/lib/varnish:exec my-varnish
+$ docker --tmpfs /var/lib/varnish/varnishd:exec -p 8080:80 my-varnish
 ```
 
-### Additional configuration
+## Reloading the configuration
+
+The images all ship with [varnishreload](https://github.com/varnishcache/pkg-varnish-cache/blob/master/systemd/varnishreload#L42) which allows you to easily update the running configuration without restarting the container (and therefore losing your cache). At its most basic, you just need this:
+
+```console
+# update the default.vcl in your container
+docker cp new_default.vcl running_container:/etc/varnish/default.vcl
+# run varnishreload
+docker exec running_container varnishreload
+```
+
+Note that `varnishreload` also supports reloading other files (it doesn't have to be `default.vcl`), labels (`l`), and garbage collection of old labeles (`-m`) among others. To know more, run
+
+```console
+docker run varnish varnishreload -h
+```
+
+## Additional configuration
+
+### Cache size (VARNISH_SIZE)
 
 By default, the containers will use a cache size of 100MB, which is usually a bit too small, but you can quickly set it through the `VARNISH_SIZE` environment variable:
 
 ```console
-$ docker run --tmpfs /var/lib/varnish:exec -e VARNISH_SIZE=2G varnish
+$ docker run --tmpfs /var/lib/varnish/varnishd:exec -p 8080:80 -e VARNISH_SIZE=2G varnish
 ```
 
-Additionally, you can add arguments to `docker run` affter `varnish`, if the first one starts with a `-`, they will be appendend to the [default command](https://github.com/varnish/docker-varnish/blob/master/docker-varnish-entrypoint#L8):
+### Listening ports (VARNISH_HTTP_PORT/VARNISH_PROXY_PORT)
+
+Varnish will listen to HTTP traffic on port `80`, and this can be overridden by setting the environment variable `VARNISH_HTTP_PORT`. Similarly, the variable `VARNISH_PROXY_PORT` (defaulting to `8443`) dictate the listening port for the [PROXY protocol](https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt) used notably to interact with [hitch](https://hub.docker.com/_/hitch) (which, coincidentally, uses `8443` as a default too!).
+
+```console
+# instruct varnish to listening to port 7777 instead of 80
+$ docker run --tmpfs /var/lib/varnish/varnishd:exec -p 8080:7777 -e VARNISH_HTTP_PORT=7777 varnish
+```
+
+### Extra arguments
+
+Additionally, you can add arguments to `docker run` after `varnish`, if the first argument starts with a `-`, the whole list will be appendend to the [default command](https://github.com/varnish/docker-varnish/blob/master/fresh/debian/scripts/docker-varnish-entrypoint):
 
 ```console
 # extend the default keep period
-$ docker run --tmpfs /var/lib/varnish:exec -e VARNISH_SIZE=2G varnish -p default_keep=300
+$ docker run --tmpfs /var/lib/varnish/varnishd:exec -p 8080:80 -e VARNISH_SIZE=2G varnish -p default_keep=300
 ```
 
 If your first argument after `varnish` doesn't start with `-`, it will be interpreted as a command to override the default one:
@@ -115,16 +172,68 @@ $ docker run varnish varnishd -?
 $ docker run varnish varnishd -x parameter
 
 # run the server with your own parameters (don't forget -F to not daemonize)
-$ docker run varnish varnishd -a :8080 -b 127.0.0.1:8181 -t 600 -p feature=+http2
+$ docker run varnish varnishd -F -a :8080 -b 127.0.0.1:8181 -t 600 -p feature=+http2
 ```
 
-### Exposing the port
+## vmods (since 7.1)
 
-```console
-+$ docker run --name my-running-varnish --tmpfs /var/lib/varnish:exec -d -p 8080:80 my-varnish
+As mentioned above, you can use [vmod_dynamic](https://github.com/nigoroll/libvmod-dynamic) for backend resolution. The [varnish-modules](https://github.com/varnish/varnish-modules) collection is also included in the image. All the documentation regarding usage and syntax can be found in the [src/](https://github.com/varnish/varnish-modules/tree/master/src) directory of the repository.
+
+On top of this, images include [install-vmod](https://github.com/varnish/toolbox/tree/master/install-vmod), a helper script to quickly download, compile and install vmods while creating your own images. Note that images set the `ENV` variable `VMOD_DEPS` to ease the task further.
+
+### Debian
+
+```dockerfile
+FROM varnish:7.1
+
+# set the user to root, and install build dependencies
+USER root
+RUN set -e; \
+    apt-get update; \
+    apt-get -y install $VMOD_DEPS /pkgs/*.deb; \
+    \
+# install one, possibly multiple vmods
+   install-vmod https://github.com/varnish/varnish-modules/releases/download/0.20.0/varnish-modules-0.20.0.tar.gz; \
+    \
+# clean up and set the user back to varnish
+    apt-get -y purge --auto-remove $VMOD_DEPS varnish-dev; \
+    rm -rf /var/lib/apt/lists/*
+USER varnish
 ```
 
-Then you can hit `http://localhost:8080` or `http://host-ip:8080` in your browser.
+### Alpine
+
+```dockerfile
+FROM varnish:7.1-alpine
+
+# install build dependencies
+USER root
+RUN set -e; \
+    apk add --no-cache $VMOD_DEPS; \
+    \
+# install one, possibly multiple vmods
+    install-vmod https://github.com/varnish/varnish-modules/releases/download/0.20.0/varnish-modules-0.20.0.tar.gz; \
+    \
+# clean up
+    apk del --no-network $VMOD_DEPS
+USER varnish
+```
+
+# Image Variants
+
+The `varnish` images come in many flavors, each designed for a specific use case.
+
+## `varnish:<version>`
+
+This is the defacto image. If you are unsure about what your needs are, you probably want to use this one. It is designed to be used both as a throw away container (mount your source code and start the container to start your app), as well as the base to build other images off of.
+
+## `varnish:<version>-alpine`
+
+This image is based on the popular [Alpine Linux project](https://alpinelinux.org), available in [the `alpine` official image](https://hub.docker.com/_/alpine). Alpine Linux is much smaller than most distribution base images (~5MB), and thus leads to much slimmer images in general.
+
+This variant is useful when final image size being as small as possible is your primary concern. The main caveat to note is that it does use [musl libc](https://musl.libc.org) instead of [glibc and friends](https://www.etalabs.net/compare_libcs.html), so software will often run into issues depending on the depth of their libc requirements/assumptions. See [this Hacker News comment thread](https://news.ycombinator.com/item?id=10782897) for more discussion of the issues that might arise and some pro/con comparisons of using Alpine-based images.
+
+To minimize image size, it's uncommon for additional related tools (such as `git` or `bash`) to be included in Alpine-based images. Using this image as a base, add the things you need in your own Dockerfile (see the [`alpine` image description](https://hub.docker.com/_/alpine/) for examples of how to install packages if you are unfamiliar).
 
 # License
 

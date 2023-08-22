@@ -20,27 +20,20 @@ WARNING:
 	[the Docker Community](https://github.com/docker-library/redmine)
 
 -	**Where to get help**:  
-	[the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
+	[the Docker Community Slack](https://dockr.ly/comm-slack), [Server Fault](https://serverfault.com/help/on-topic), [Unix & Linux](https://unix.stackexchange.com/help/on-topic), or [Stack Overflow](https://stackoverflow.com/help/on-topic)
 
 # Supported tags and respective `Dockerfile` links
 
--	[`4.2.1`, `4.2`, `4`, `latest`](https://github.com/docker-library/redmine/blob/7736d321ea194e82731f0fa79b8a91f053e36aa2/4.2/Dockerfile)
--	[`4.2.1-passenger`, `4.2-passenger`, `4-passenger`, `passenger`](https://github.com/docker-library/redmine/blob/fc3182cf934fc112a0d9a4f819892d3f2450d05a/4.2/passenger/Dockerfile)
--	[`4.2.1-alpine`, `4.2-alpine`, `4-alpine`, `alpine`](https://github.com/docker-library/redmine/blob/02809f9dead7b26e490f84107c7a2170f11fd2b9/4.2/alpine/Dockerfile)
--	[`4.1.3`, `4.1`](https://github.com/docker-library/redmine/blob/7736d321ea194e82731f0fa79b8a91f053e36aa2/4.1/Dockerfile)
--	[`4.1.3-passenger`, `4.1-passenger`](https://github.com/docker-library/redmine/blob/9cdb40719526a554a985422a554e481cbdf3e717/4.1/passenger/Dockerfile)
--	[`4.1.3-alpine`, `4.1-alpine`](https://github.com/docker-library/redmine/blob/02809f9dead7b26e490f84107c7a2170f11fd2b9/4.1/alpine/Dockerfile)
--	[`4.0.9`, `4.0`](https://github.com/docker-library/redmine/blob/02809f9dead7b26e490f84107c7a2170f11fd2b9/4.0/Dockerfile)
--	[`4.0.9-passenger`, `4.0-passenger`](https://github.com/docker-library/redmine/blob/9cdb40719526a554a985422a554e481cbdf3e717/4.0/passenger/Dockerfile)
--	[`4.0.9-alpine`, `4.0-alpine`](https://github.com/docker-library/redmine/blob/02809f9dead7b26e490f84107c7a2170f11fd2b9/4.0/alpine/Dockerfile)
+-	[`5.0.5`, `5.0`, `5`, `latest`, `5.0.5-bookworm`, `5.0-bookworm`, `5-bookworm`, `bookworm`](https://github.com/docker-library/redmine/blob/c48924ba4017d3c84c700a83a08cbd56bf8fc7f7/5.0/Dockerfile)
+-	[`5.0.5-alpine`, `5.0-alpine`, `5-alpine`, `alpine`, `5.0.5-alpine3.18`, `5.0-alpine3.18`, `5-alpine3.18`, `alpine3.18`](https://github.com/docker-library/redmine/blob/cc904a5f85eb1bfd99af68c0ea3f1e5aeb5d5554/5.0/alpine/Dockerfile)
 
 # Quick reference (cont.)
 
 -	**Where to file issues**:  
-	[https://github.com/docker-library/redmine/issues](https://github.com/docker-library/redmine/issues)
+	[https://github.com/docker-library/redmine/issues](https://github.com/docker-library/redmine/issues?q=)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
-	[`amd64`](https://hub.docker.com/r/amd64/redmine/), [`arm32v5`](https://hub.docker.com/r/arm32v5/redmine/), [`arm32v7`](https://hub.docker.com/r/arm32v7/redmine/), [`arm64v8`](https://hub.docker.com/r/arm64v8/redmine/), [`i386`](https://hub.docker.com/r/i386/redmine/), [`ppc64le`](https://hub.docker.com/r/ppc64le/redmine/), [`s390x`](https://hub.docker.com/r/s390x/redmine/)
+	[`amd64`](https://hub.docker.com/r/amd64/redmine/), [`arm32v5`](https://hub.docker.com/r/arm32v5/redmine/), [`arm32v6`](https://hub.docker.com/r/arm32v6/redmine/), [`arm32v7`](https://hub.docker.com/r/arm32v7/redmine/), [`arm64v8`](https://hub.docker.com/r/arm64v8/redmine/), [`i386`](https://hub.docker.com/r/i386/redmine/), [`ppc64le`](https://hub.docker.com/r/ppc64le/redmine/), [`s390x`](https://hub.docker.com/r/s390x/redmine/)
 
 -	**Published image artifact details**:  
 	[repo-info repo's `repos/redmine/` directory](https://github.com/docker-library/repo-info/blob/master/repos/redmine) ([history](https://github.com/docker-library/repo-info/commits/master/repos/redmine))  
@@ -97,9 +90,9 @@ Running Redmine with a database server is the recommended way.
 	$ docker run -d --name some-redmine --network some-network -e REDMINE_DB_POSTGRES=some-postgres -e REDMINE_DB_USERNAME=redmine -e REDMINE_DB_PASSWORD=secret redmine
 	```
 
-## ... via [`docker stack deploy`](https://docs.docker.com/engine/reference/commandline/stack_deploy/) or [`docker-compose`](https://github.com/docker/compose)
+## ... via [`docker-compose`](https://github.com/docker/compose) or [`docker stack deploy`](https://docs.docker.com/engine/reference/commandline/stack_deploy/)
 
-Example `stack.yml` for `redmine`:
+Example `docker-compose.yml` for `redmine`:
 
 ```yaml
 version: '3.1'
@@ -130,7 +123,7 @@ Run `docker stack deploy -c stack.yml redmine` (or `docker-compose -f stack.yml 
 
 ## Alternative Web Server
 
-The other tags in this repository, like those with `passenger`, use the same environment and `--links` as the default tags that use WEBrick (`rails s`) but instead give you the option of a different web and application server. `passenger` uses [Phusion Passenger](https://www.phusionpassenger.com/). [`tini`](https://github.com/krallin/tini) is used for reaping [zombies](https://en.wikipedia.org/wiki/Zombie_process).
+The other tags in this repository, like those with `passenger`, use the same environment and `--links` as the default tags that use Puma (`rails server`) but instead give you the option of a different web and application server. `passenger` uses [Phusion Passenger](https://www.phusionpassenger.com/). [`tini`](https://github.com/krallin/tini) is used for reaping [zombies](https://en.wikipedia.org/wiki/Zombie_process).
 
 ## Accessing the Application
 
@@ -235,6 +228,8 @@ The `redmine` images come in many flavors, each designed for a specific use case
 ## `redmine:<version>`
 
 This is the defacto image. If you are unsure about what your needs are, you probably want to use this one. It is designed to be used both as a throw away container (mount your source code and start the container to start your app), as well as the base to build other images off of.
+
+Some of these tags may have names like bookworm in them. These are the suite code names for releases of [Debian](https://wiki.debian.org/DebianReleases) and indicate which release the image is based on. If your image needs to install any additional packages beyond what comes with the image, you'll likely want to specify one of these explicitly to minimize breakage when there are new releases of Debian.
 
 ## `redmine:<version>-alpine`
 

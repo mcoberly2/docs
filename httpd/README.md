@@ -20,17 +20,17 @@ WARNING:
 	[the Docker Community](https://github.com/docker-library/httpd)
 
 -	**Where to get help**:  
-	[the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
+	[the Docker Community Slack](https://dockr.ly/comm-slack), [Server Fault](https://serverfault.com/help/on-topic), [Unix & Linux](https://unix.stackexchange.com/help/on-topic), or [Stack Overflow](https://stackoverflow.com/help/on-topic)
 
 # Supported tags and respective `Dockerfile` links
 
--	[`2.4.48`, `2.4`, `2`, `latest`](https://github.com/docker-library/httpd/blob/8835b23f748f80bcec510c14b68c84bc37767cdb/2.4/Dockerfile)
--	[`2.4.48-alpine`, `2.4-alpine`, `2-alpine`, `alpine`](https://github.com/docker-library/httpd/blob/8835b23f748f80bcec510c14b68c84bc37767cdb/2.4/alpine/Dockerfile)
+-	[`2.4.57`, `2.4`, `2`, `latest`, `2.4.57-bookworm`, `2.4-bookworm`, `2-bookworm`, `bookworm`](https://github.com/docker-library/httpd/blob/242f3c62ba1ceee0a3633045fc4fd9277cb86cd3/2.4/Dockerfile)
+-	[`2.4.57-alpine`, `2.4-alpine`, `2-alpine`, `alpine`, `2.4.57-alpine3.18`, `2.4-alpine3.18`, `2-alpine3.18`, `alpine3.18`](https://github.com/docker-library/httpd/blob/c87146e71508462f0ebd5de9890a0f8bb3b98c8f/2.4/alpine/Dockerfile)
 
 # Quick reference (cont.)
 
 -	**Where to file issues**:  
-	[https://github.com/docker-library/httpd/issues](https://github.com/docker-library/httpd/issues)
+	[https://github.com/docker-library/httpd/issues](https://github.com/docker-library/httpd/issues?q=)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
 	[`amd64`](https://hub.docker.com/r/amd64/httpd/), [`arm32v5`](https://hub.docker.com/r/arm32v5/httpd/), [`arm32v6`](https://hub.docker.com/r/arm32v6/httpd/), [`arm32v7`](https://hub.docker.com/r/arm32v7/httpd/), [`arm64v8`](https://hub.docker.com/r/arm64v8/httpd/), [`i386`](https://hub.docker.com/r/i386/httpd/), [`mips64le`](https://hub.docker.com/r/mips64le/httpd/), [`ppc64le`](https://hub.docker.com/r/ppc64le/httpd/), [`s390x`](https://hub.docker.com/r/s390x/httpd/)
@@ -132,6 +132,8 @@ The `httpd` images come in many flavors, each designed for a specific use case.
 ## `httpd:<version>`
 
 This is the defacto image. If you are unsure about what your needs are, you probably want to use this one. It is designed to be used both as a throw away container (mount your source code and start the container to start your app), as well as the base to build other images off of.
+
+Some of these tags may have names like bookworm in them. These are the suite code names for releases of [Debian](https://wiki.debian.org/DebianReleases) and indicate which release the image is based on. If your image needs to install any additional packages beyond what comes with the image, you'll likely want to specify one of these explicitly to minimize breakage when there are new releases of Debian.
 
 ## `httpd:<version>-alpine`
 

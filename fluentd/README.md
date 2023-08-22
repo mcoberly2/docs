@@ -20,17 +20,17 @@ WARNING:
 	[Fluentd](https://github.com/fluent/fluentd-docker-image)
 
 -	**Where to get help**:  
-	[the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
+	[the Docker Community Slack](https://dockr.ly/comm-slack), [Server Fault](https://serverfault.com/help/on-topic), [Unix & Linux](https://unix.stackexchange.com/help/on-topic), or [Stack Overflow](https://stackoverflow.com/help/on-topic)
 
 # Supported tags and respective `Dockerfile` links
 
--	[`v1.9.1-1.0`, `v1.9-1`, `latest`](https://github.com/fluent/fluentd-docker-image/blob/b9cb2826b85900f960e256b2426a033e7cacfd6c/v1.9/alpine/Dockerfile)
--	[`v1.9.1-debian-1.0`, `v1.9-debian-1`](https://github.com/fluent/fluentd-docker-image/blob/b9cb2826b85900f960e256b2426a033e7cacfd6c/v1.9/debian/Dockerfile)
+-	[`v1.16.0-1.0`, `v1.16-1`, `latest`](https://github.com/fluent/fluentd-docker-image/blob/b1a4d1d1ff36c6904c7f4a5e94a09e7938dab9ef/v1.16/alpine/Dockerfile)
+-	[`v1.16.0-debian-1.0`, `v1.16-debian-1`](https://github.com/fluent/fluentd-docker-image/blob/b1a4d1d1ff36c6904c7f4a5e94a09e7938dab9ef/v1.16/debian/Dockerfile)
 
 # Quick reference (cont.)
 
 -	**Where to file issues**:  
-	[https://github.com/fluent/fluentd-docker-image/issues](https://github.com/fluent/fluentd-docker-image/issues)
+	[https://github.com/fluent/fluentd-docker-image/issues](https://github.com/fluent/fluentd-docker-image/issues?q=)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
 	[`amd64`](https://hub.docker.com/r/amd64/fluentd/), [`arm32v5`](https://hub.docker.com/r/arm32v5/fluentd/), [`arm32v6`](https://hub.docker.com/r/arm32v6/fluentd/), [`arm32v7`](https://hub.docker.com/r/arm32v7/fluentd/), [`arm64v8`](https://hub.docker.com/r/arm64v8/fluentd/), [`i386`](https://hub.docker.com/r/i386/fluentd/), [`ppc64le`](https://hub.docker.com/r/ppc64le/fluentd/), [`s390x`](https://hub.docker.com/r/s390x/fluentd/)

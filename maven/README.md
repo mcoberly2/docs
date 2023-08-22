@@ -20,42 +20,42 @@ WARNING:
 	[Carlos Sanchez](https://github.com/carlossg/docker-maven)
 
 -	**Where to get help**:  
-	[the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
+	[the Docker Community Slack](https://dockr.ly/comm-slack), [Server Fault](https://serverfault.com/help/on-topic), [Unix & Linux](https://unix.stackexchange.com/help/on-topic), or [Stack Overflow](https://stackoverflow.com/help/on-topic)
 
 # Supported tags and respective `Dockerfile` links
 
--	[`3.8.1-jdk-11`, `3.8-jdk-11`, `3-jdk-11`, `3.8.1-openjdk-11`, `3.8-openjdk-11`, `3-openjdk-11`](https://github.com/carlossg/docker-maven/blob/bdffb5117c33476d554325d8efe5866306004b99/openjdk-11/Dockerfile)
--	[`3.8.1-jdk-11-openj9`, `3.8-jdk-11-openj9`, `3-jdk-11-openj9`, `3.8.1-adoptopenjdk-11-openj9`, `3.8-adoptopenjdk-11-openj9`, `3-adoptopenjdk-11-openj9`](https://github.com/carlossg/docker-maven/blob/bdffb5117c33476d554325d8efe5866306004b99/adoptopenjdk-11-openj9/Dockerfile)
--	[`3.8.1-jdk-11-slim`, `3.8-jdk-11-slim`, `3-jdk-11-slim`, `3.8.1-openjdk-11-slim`, `3.8-openjdk-11-slim`, `3-openjdk-11-slim`](https://github.com/carlossg/docker-maven/blob/bdffb5117c33476d554325d8efe5866306004b99/openjdk-11-slim/Dockerfile)
--	[`3.8.1-jdk-8`, `3.8-jdk-8`, `3-jdk-8`, `3.8.1-openjdk-8`, `3.8-openjdk-8`, `3-openjdk-8`](https://github.com/carlossg/docker-maven/blob/bdffb5117c33476d554325d8efe5866306004b99/openjdk-8/Dockerfile)
--	[`3.8.1-jdk-8-openj9`, `3.8-jdk-8-openj9`, `3-jdk-8-openj9`, `3.8.1-adoptopenjdk-8-openj9`, `3.8-adoptopenjdk-8-openj9`, `3-adoptopenjdk-8-openj9`](https://github.com/carlossg/docker-maven/blob/bdffb5117c33476d554325d8efe5866306004b99/adoptopenjdk-8-openj9/Dockerfile)
--	[`3.8.1-jdk-8-slim`, `3.8-jdk-8-slim`, `3-jdk-8-slim`, `3.8.1-openjdk-8-slim`, `3.8-openjdk-8-slim`, `3-openjdk-8-slim`](https://github.com/carlossg/docker-maven/blob/bdffb5117c33476d554325d8efe5866306004b99/openjdk-8-slim/Dockerfile)
--	[`3.8.1-openjdk-15`, `3.8-openjdk-15`, `3-openjdk-15`](https://github.com/carlossg/docker-maven/blob/bdffb5117c33476d554325d8efe5866306004b99/openjdk-15/Dockerfile)
--	[`3.8.1-openjdk-15-slim`, `3.8-openjdk-15-slim`, `3-openjdk-15-slim`](https://github.com/carlossg/docker-maven/blob/bdffb5117c33476d554325d8efe5866306004b99/openjdk-15-slim/Dockerfile)
--	[`3.8.1-openjdk-16`, `3.8.1`, `3.8.1-openjdk`, `3.8-openjdk-16`, `3.8`, `3.8-openjdk`, `3-openjdk-16`, `3`, `latest`, `3-openjdk`, `openjdk`](https://github.com/carlossg/docker-maven/blob/bdffb5117c33476d554325d8efe5866306004b99/openjdk-16/Dockerfile)
--	[`3.8.1-openjdk-16-slim`, `3.8-openjdk-16-slim`, `3-openjdk-16-slim`](https://github.com/carlossg/docker-maven/blob/bdffb5117c33476d554325d8efe5866306004b99/openjdk-16-slim/Dockerfile)
--	[`3.8.1-openjdk-17`, `3.8-openjdk-17`, `3-openjdk-17`](https://github.com/carlossg/docker-maven/blob/bdffb5117c33476d554325d8efe5866306004b99/openjdk-17/Dockerfile)
--	[`3.8.1-openjdk-17-slim`, `3.8-openjdk-17-slim`, `3-openjdk-17-slim`](https://github.com/carlossg/docker-maven/blob/bdffb5117c33476d554325d8efe5866306004b99/openjdk-17-slim/Dockerfile)
--	[`3.8.1-adoptopenjdk-11`, `3.8-adoptopenjdk-11`, `3-adoptopenjdk-11`](https://github.com/carlossg/docker-maven/blob/bdffb5117c33476d554325d8efe5866306004b99/adoptopenjdk-11/Dockerfile)
--	[`3.8.1-adoptopenjdk-15`, `3.8.1-adoptopenjdk`, `3.8-adoptopenjdk-15`, `3.8-adoptopenjdk`, `3-adoptopenjdk-15`, `3-adoptopenjdk`, `adoptopenjdk`](https://github.com/carlossg/docker-maven/blob/bdffb5117c33476d554325d8efe5866306004b99/adoptopenjdk-15/Dockerfile)
--	[`3.8.1-adoptopenjdk-15-openj9`, `3.8-adoptopenjdk-15-openj9`, `3-adoptopenjdk-15-openj9`](https://github.com/carlossg/docker-maven/blob/bdffb5117c33476d554325d8efe5866306004b99/adoptopenjdk-15-openj9/Dockerfile)
--	[`3.8.1-adoptopenjdk-16`, `3.8-adoptopenjdk-16`, `3-adoptopenjdk-16`](https://github.com/carlossg/docker-maven/blob/b1a19f5406f0d01cd8fe689efbb838474c48db4f/adoptopenjdk-16/Dockerfile)
--	[`3.8.1-adoptopenjdk-16-openj9`, `3.8-adoptopenjdk-16-openj9`, `3-adoptopenjdk-16-openj9`](https://github.com/carlossg/docker-maven/blob/b1a19f5406f0d01cd8fe689efbb838474c48db4f/adoptopenjdk-16-openj9/Dockerfile)
--	[`3.8.1-adoptopenjdk-8`, `3.8-adoptopenjdk-8`, `3-adoptopenjdk-8`](https://github.com/carlossg/docker-maven/blob/bdffb5117c33476d554325d8efe5866306004b99/adoptopenjdk-8/Dockerfile)
--	[`3.8.1-ibmjava-8`, `3.8.1-ibmjava`, `3.8-ibmjava-8`, `3.8-ibmjava`, `3-ibmjava-8`, `3-ibmjava`, `ibmjava`](https://github.com/carlossg/docker-maven/blob/bdffb5117c33476d554325d8efe5866306004b99/ibmjava-8/Dockerfile)
--	[`3.8.1-ibmjava-8-alpine`, `3.8.1-ibmjava-alpine`, `3.8-ibmjava-8-alpine`, `3.8-ibmjava-alpine`, `3-ibmjava-8-alpine`, `ibmjava-alpine`](https://github.com/carlossg/docker-maven/blob/bdffb5117c33476d554325d8efe5866306004b99/ibmjava-8-alpine/Dockerfile)
--	[`3.8.1-amazoncorretto-11`, `3.8.1-amazoncorretto`, `3.8-amazoncorretto-11`, `3.8-amazoncorretto`, `3-amazoncorretto-11`, `3-amazoncorretto`, `amazoncorretto`](https://github.com/carlossg/docker-maven/blob/bdffb5117c33476d554325d8efe5866306004b99/amazoncorretto-11/Dockerfile)
--	[`3.8.1-amazoncorretto-15`, `3.8-amazoncorretto-15`, `3-amazoncorretto-15`](https://github.com/carlossg/docker-maven/blob/bdffb5117c33476d554325d8efe5866306004b99/amazoncorretto-15/Dockerfile)
--	[`3.8.1-amazoncorretto-16`, `3.8-amazoncorretto-16`, `3-amazoncorretto-16`](https://github.com/carlossg/docker-maven/blob/b6352962a604bfffb21a535e0999c0292b68c1db/amazoncorretto-16/Dockerfile)
--	[`3.8.1-amazoncorretto-8`, `3.8-amazoncorretto-8`, `3-amazoncorretto-8`](https://github.com/carlossg/docker-maven/blob/bdffb5117c33476d554325d8efe5866306004b99/amazoncorretto-8/Dockerfile)
+-	[`3.9.3-eclipse-temurin-11`, `3.9-eclipse-temurin-11`, `3-eclipse-temurin-11`](https://github.com/carlossg/docker-maven/blob/51eeb2469d11acbafd4a3be13f8339ff556292fc/eclipse-temurin-11/Dockerfile)
+-	[`3.9.3-eclipse-temurin-11-alpine`, `3.9-eclipse-temurin-11-alpine`, `3-eclipse-temurin-11-alpine`](https://github.com/carlossg/docker-maven/blob/51eeb2469d11acbafd4a3be13f8339ff556292fc/eclipse-temurin-11-alpine/Dockerfile)
+-	[`3.9.3-eclipse-temurin-11-focal`, `3.9-eclipse-temurin-11-focal`, `3-eclipse-temurin-11-focal`](https://github.com/carlossg/docker-maven/blob/51eeb2469d11acbafd4a3be13f8339ff556292fc/eclipse-temurin-11-focal/Dockerfile)
+-	[`3.9.3-eclipse-temurin-17`, `3.9-eclipse-temurin-17`, `3-eclipse-temurin-17`](https://github.com/carlossg/docker-maven/blob/51eeb2469d11acbafd4a3be13f8339ff556292fc/eclipse-temurin-17/Dockerfile)
+-	[`3.9.3-eclipse-temurin-17-alpine`, `3.9-eclipse-temurin-17-alpine`, `3-eclipse-temurin-17-alpine`](https://github.com/carlossg/docker-maven/blob/51eeb2469d11acbafd4a3be13f8339ff556292fc/eclipse-temurin-17-alpine/Dockerfile)
+-	[`3.9.3-eclipse-temurin-17-focal`, `3.9-eclipse-temurin-17-focal`, `3-eclipse-temurin-17-focal`](https://github.com/carlossg/docker-maven/blob/51eeb2469d11acbafd4a3be13f8339ff556292fc/eclipse-temurin-17-focal/Dockerfile)
+-	[`3.9.3-eclipse-temurin-20`, `3.9.3`, `3.9.3-eclipse-temurin`, `3.9-eclipse-temurin-20`, `3.9`, `3.9-eclipse-temurin`, `3-eclipse-temurin-20`, `3`, `latest`, `3-eclipse-temurin`, `eclipse-temurin`](https://github.com/carlossg/docker-maven/blob/51eeb2469d11acbafd4a3be13f8339ff556292fc/eclipse-temurin-20/Dockerfile)
+-	[`3.9.3-eclipse-temurin-20-alpine`, `3.9-eclipse-temurin-20-alpine`, `3-eclipse-temurin-20-alpine`](https://github.com/carlossg/docker-maven/blob/51eeb2469d11acbafd4a3be13f8339ff556292fc/eclipse-temurin-20-alpine/Dockerfile)
+-	[`3.9.3-eclipse-temurin-8`, `3.9-eclipse-temurin-8`, `3-eclipse-temurin-8`](https://github.com/carlossg/docker-maven/blob/51eeb2469d11acbafd4a3be13f8339ff556292fc/eclipse-temurin-8/Dockerfile)
+-	[`3.9.3-eclipse-temurin-8-alpine`, `3.9-eclipse-temurin-8-alpine`, `3-eclipse-temurin-8-alpine`](https://github.com/carlossg/docker-maven/blob/51eeb2469d11acbafd4a3be13f8339ff556292fc/eclipse-temurin-8-alpine/Dockerfile)
+-	[`3.9.3-eclipse-temurin-8-focal`, `3.9-eclipse-temurin-8-focal`, `3-eclipse-temurin-8-focal`](https://github.com/carlossg/docker-maven/blob/51eeb2469d11acbafd4a3be13f8339ff556292fc/eclipse-temurin-8-focal/Dockerfile)
+-	[`3.9.3-ibmjava-8`, `3.9.3-ibmjava`, `3.9-ibmjava-8`, `3.9-ibmjava`, `3-ibmjava-8`, `3-ibmjava`, `ibmjava`](https://github.com/carlossg/docker-maven/blob/51eeb2469d11acbafd4a3be13f8339ff556292fc/ibmjava-8/Dockerfile)
+-	[`3.9.3-ibm-semeru-11-focal`, `3.9-ibm-semeru-11-focal`, `3-ibm-semeru-11-focal`](https://github.com/carlossg/docker-maven/blob/51eeb2469d11acbafd4a3be13f8339ff556292fc/ibm-semeru-11-focal/Dockerfile)
+-	[`3.9.3-ibm-semeru-17-focal`, `3.9-ibm-semeru-17-focal`, `3-ibm-semeru-17-focal`](https://github.com/carlossg/docker-maven/blob/51eeb2469d11acbafd4a3be13f8339ff556292fc/ibm-semeru-17-focal/Dockerfile)
+-	[`3.9.3-amazoncorretto-11`, `3.9.3-amazoncorretto`, `3.9-amazoncorretto-11`, `3.9-amazoncorretto`, `3-amazoncorretto-11`, `3-amazoncorretto`, `amazoncorretto`](https://github.com/carlossg/docker-maven/blob/51eeb2469d11acbafd4a3be13f8339ff556292fc/amazoncorretto-11/Dockerfile)
+-	[`3.9.3-amazoncorretto-11-debian`, `3.9.3-amazoncorretto-11-debian-bookworm`, `3.9-amazoncorretto-11-debian`, `3.9-amazoncorretto-11-debian-bookworm`, `3-amazoncorretto-11-debian`, `3-amazoncorretto-11-debian-bookworm`](https://github.com/carlossg/docker-maven/blob/51eeb2469d11acbafd4a3be13f8339ff556292fc/amazoncorretto-11-debian/Dockerfile)
+-	[`3.9.3-amazoncorretto-17`, `3.9-amazoncorretto-17`, `3-amazoncorretto-17`](https://github.com/carlossg/docker-maven/blob/51eeb2469d11acbafd4a3be13f8339ff556292fc/amazoncorretto-17/Dockerfile)
+-	[`3.9.3-amazoncorretto-17-debian`, `3.9.3-amazoncorretto-17-debian-bookworm`, `3.9-amazoncorretto-17-debian`, `3.9-amazoncorretto-17-debian-bookworm`, `3-amazoncorretto-17-debian`, `3-amazoncorretto-17-debian-bookworm`](https://github.com/carlossg/docker-maven/blob/51eeb2469d11acbafd4a3be13f8339ff556292fc/amazoncorretto-17-debian/Dockerfile)
+-	[`3.9.3-amazoncorretto-20`, `3.9-amazoncorretto-20`, `3-amazoncorretto-20`](https://github.com/carlossg/docker-maven/blob/51eeb2469d11acbafd4a3be13f8339ff556292fc/amazoncorretto-20/Dockerfile)
+-	[`3.9.3-amazoncorretto-20-debian`, `3.9.3-amazoncorretto-20-debian-bookworm`, `3.9-amazoncorretto-20-debian`, `3.9-amazoncorretto-20-debian-bookworm`, `3-amazoncorretto-20-debian`, `3-amazoncorretto-20-debian-bookworm`](https://github.com/carlossg/docker-maven/blob/51eeb2469d11acbafd4a3be13f8339ff556292fc/amazoncorretto-20-debian/Dockerfile)
+-	[`3.9.3-amazoncorretto-8`, `3.9-amazoncorretto-8`, `3-amazoncorretto-8`](https://github.com/carlossg/docker-maven/blob/51eeb2469d11acbafd4a3be13f8339ff556292fc/amazoncorretto-8/Dockerfile)
+-	[`3.9.3-amazoncorretto-8-debian`, `3.9.3-amazoncorretto-8-debian-bookworm`, `3.9-amazoncorretto-8-debian`, `3.9-amazoncorretto-8-debian-bookworm`, `3-amazoncorretto-8-debian`, `3-amazoncorretto-8-debian-bookworm`](https://github.com/carlossg/docker-maven/blob/51eeb2469d11acbafd4a3be13f8339ff556292fc/amazoncorretto-8-debian/Dockerfile)
+-	[`3.9.3-sapmachine-11`, `3.9-sapmachine-11`, `3-sapmachine-11`](https://github.com/carlossg/docker-maven/blob/51eeb2469d11acbafd4a3be13f8339ff556292fc/sapmachine-11/Dockerfile)
+-	[`3.9.3-sapmachine-17`, `3.9.3-sapmachine`, `3.9-sapmachine-17`, `3.9-sapmachine`, `3-sapmachine-17`, `3-sapmachine`, `sapmachine`](https://github.com/carlossg/docker-maven/blob/51eeb2469d11acbafd4a3be13f8339ff556292fc/sapmachine-17/Dockerfile)
 
 # Quick reference (cont.)
 
 -	**Where to file issues**:  
-	[https://github.com/carlossg/docker-maven/issues](https://github.com/carlossg/docker-maven/issues)
+	[https://github.com/carlossg/docker-maven/issues](https://github.com/carlossg/docker-maven/issues?q=)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
-	[`amd64`](https://hub.docker.com/r/amd64/maven/), [`arm32v7`](https://hub.docker.com/r/arm32v7/maven/), [`arm64v8`](https://hub.docker.com/r/arm64v8/maven/), [`i386`](https://hub.docker.com/r/i386/maven/), [`ppc64le`](https://hub.docker.com/r/ppc64le/maven/), [`s390x`](https://hub.docker.com/r/s390x/maven/)
+	[`amd64`](https://hub.docker.com/r/amd64/maven/), [`arm32v7`](https://hub.docker.com/r/arm32v7/maven/), [`arm64v8`](https://hub.docker.com/r/arm64v8/maven/), [`ppc64le`](https://hub.docker.com/r/ppc64le/maven/), [`s390x`](https://hub.docker.com/r/s390x/maven/)
 
 -	**Published image artifact details**:  
 	[repo-info repo's `repos/maven/` directory](https://github.com/docker-library/repo-info/blob/master/repos/maven) ([history](https://github.com/docker-library/repo-info/commits/master/repos/maven))  
@@ -143,9 +143,9 @@ The `maven` images come in many flavors, each designed for a specific use case.
 
 This is the defacto image. If you are unsure about what your needs are, you probably want to use this one. It is designed to be used both as a throw away container (mount your source code and start the container to start your app), as well as the base to build other images off of.
 
-## `maven:<version>-slim`
+Some of these tags may have names like bookworm in them. These are the suite code names for releases of [Debian](https://wiki.debian.org/DebianReleases) and indicate which release the image is based on. If your image needs to install any additional packages beyond what comes with the image, you'll likely want to specify one of these explicitly to minimize breakage when there are new releases of Debian.
 
-This image does not contain the common packages contained in the default tag and only contains the minimal packages needed to run `maven`. Unless you are working in an environment where *only* the `maven` image will be deployed and you have space constraints, we highly recommend using the default image of this repository.
+Some of these tags may have names like focal in them. These are the suite code names for releases of [Ubuntu](https://wiki.ubuntu.com/Releases) and indicate which release the image is based on. If your image needs to install any additional packages beyond what comes with the image, you'll likely want to specify one of these explicitly to minimize breakage when there are new releases of Ubuntu.
 
 ## `maven:<version>-alpine`
 

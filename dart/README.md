@@ -20,19 +20,20 @@ WARNING:
 	The Dart Docker Team
 
 -	**Where to get help**:  
-	[the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
+	[the Docker Community Slack](https://dockr.ly/comm-slack), [Server Fault](https://serverfault.com/help/on-topic), [Unix & Linux](https://unix.stackexchange.com/help/on-topic), or [Stack Overflow](https://stackoverflow.com/help/on-topic)
 
 # Supported tags and respective `Dockerfile` links
 
--	[`2.13.1-sdk`, `2.13-sdk`, `2-sdk`, `stable-sdk`, `sdk`, `2.13.1`, `2.13`, `2`, `stable`, `latest`, `beta-sdk`, `beta`](https://github.com/dart-lang/dart-docker/blob/f2f3164323a981adbbcd7393c884509e9504e29e/stable/buster/Dockerfile)
+-	[`3.1.0-sdk`, `3.1-sdk`, `3-sdk`, `stable-sdk`, `sdk`, `3.1.0`, `3.1`, `3`, `stable`, `latest`](https://github.com/dart-lang/dart-docker/blob/374830ccf127dc3ee9c297ea203e512d8b18331c/stable/bullseye/Dockerfile)
+-	[`3.2.0-42.1.beta-sdk`, `beta-sdk`, `3.2.0-42.1.beta`, `beta`](https://github.com/dart-lang/dart-docker/blob/374830ccf127dc3ee9c297ea203e512d8b18331c/beta/bullseye/Dockerfile)
 
 # Quick reference (cont.)
 
 -	**Where to file issues**:  
-	[https://github.com/dart-lang/dart-docker/issues](https://github.com/dart-lang/dart-docker/issues)
+	[https://github.com/dart-lang/dart-docker/issues](https://github.com/dart-lang/dart-docker/issues?q=)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
-	[`amd64`](https://hub.docker.com/r/amd64/dart/)
+	[`amd64`](https://hub.docker.com/r/amd64/dart/), [`arm32v7`](https://hub.docker.com/r/arm32v7/dart/), [`arm64v8`](https://hub.docker.com/r/arm64v8/dart/)
 
 -	**Published image artifact details**:  
 	[repo-info repo's `repos/dart/` directory](https://github.com/docker-library/repo-info/blob/master/repos/dart) ([history](https://github.com/docker-library/repo-info/commits/master/repos/dart))  
@@ -51,13 +52,38 @@ Dart is a client-optimized language for developing fast apps on any platform. It
 
 By utilizing Dart's support for ahead-of-time (AOT) [compilation to executables](https://dart.dev/tools/dart-compile#exe), you can create very small runtime images (~10 MB).
 
-![logo](https://raw.githubusercontent.com/docker-library/docs/cf81e8931a69bf4fcbc86ec39cae8c9f90c1be10/dart/logo.png)
-
 ## Using this image
 
-We recommend creating small runtime images by leveraging Dart's support for ahead-of-time (AOT) [compilation to executables](https://dart.dev/tools/dart-compile#exe). This enables creating small runtime images (~10 MB).
+We recommend using small runtime images that leverage Dart's support for ahead-of-time (AOT) [compilation to executables](https://dart.dev/tools/dart-compile#exe). This enables creating small runtime images (~10 MB).
 
-The following `Dockerfile` performs two steps:
+### Creating a Dart server app
+
+After [installing](https://dart.dev/get-dart) the Dart SDK, version 2.14 or later, use the `dart` command to create a new server app:
+
+```shell
+$ dart create -t server-shelf myserver
+```
+
+### Running the server with Docker Desktop
+
+If you have [Docker Desktop](https://www.docker.com/get-started) installed, you can build and run on your machine with the `docker` command:
+
+```shell
+$ docker build -t dart-server .
+$ docker run -it --rm -p 8080:8080 --name myserver dart-server
+```
+
+When finished, you can stop the container using the name you provided:
+
+```shell
+$ docker kill myserver
+```
+
+## Image documentation
+
+### `Dockerfile`
+
+The `Dockerfile` created by the `dart` tool performs two steps:
 
 1.	Using the Dart SDK in the `dart:stable` image, compiles your server (`bin/server.dart`) to an executable (`server`).
 
@@ -89,7 +115,9 @@ EXPOSE 8080
 CMD ["/app/bin/server"]
 ```
 
-We recommend you also have a `.dockerignore` file like the following:
+### `.dockerignore`
+
+Additionally it creates a recommended `.dockerignore` file, which enumarates files that should be omitted from the built Docker image:
 
 ```text
 .dockerignore
@@ -102,18 +130,7 @@ build/
 .packages
 ```
 
-If you have [Docker Desktop](https://www.docker.com/get-started) installed, you can build and run on your machine with the `docker` command:
-
-```shell
-$ docker build -t dart-server .
-$ docker run -it --rm -p 8080:8080 --name myserver dart-server
-```
-
-When finished, you can stop the container using the name you provided:
-
-```shell
-$ docker kill myserver
-```
+--
 
 Maintained with ❤️ by the [Dart](https://dart.dev) team.
 

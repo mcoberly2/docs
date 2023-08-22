@@ -20,19 +20,18 @@ WARNING:
 	[VMware](https://github.com/vmware/photon-docker-image)
 
 -	**Where to get help**:  
-	[the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
+	[the Docker Community Slack](https://dockr.ly/comm-slack), [Server Fault](https://serverfault.com/help/on-topic), [Unix & Linux](https://unix.stackexchange.com/help/on-topic), or [Stack Overflow](https://stackoverflow.com/help/on-topic)
 
 # Supported tags and respective `Dockerfile` links
 
--	[`4.0`, `4.0-20210521`, `latest`](https://github.com/vmware/photon-docker-image/blob/dbb4541d4aeab980c8507ae418c8b066509a232e/docker/Dockerfile)
--	[`3.0`, `3.0-20210521`](https://github.com/vmware/photon-docker-image/blob/4cc89b1409b4ad883e67c1c2a8e7f46c67537528/docker/Dockerfile)
--	[`1.0`, `1.0-20210521`](https://github.com/vmware/photon-docker-image/blob/1be8d8afbf0c153aed230538c7518acebed54791/docker/Dockerfile)
--	[`2.0`, `2.0-20210521`](https://github.com/vmware/photon-docker-image/blob/5dfbe1f04d7a1be5bf6b0085cbbd0fd0f5fc4ff0/docker/Dockerfile)
+-	[`5.0`, `5.0-20230819`, `latest`](https://github.com/vmware/photon-docker-image/blob/34d858aa519be06e9828349ea18a4c30086e9bd6/docker/Dockerfile)
+-	[`4.0`, `4.0-20230819`](https://github.com/vmware/photon-docker-image/blob/2ecc20924298169857525d5bfeb3ea775aee2bc5/docker/Dockerfile)
+-	[`3.0`, `3.0-20230819`](https://github.com/vmware/photon-docker-image/blob/8ad3ab9bc4648f3aa20a630d6d7997e20a3c299e/docker/Dockerfile)
 
 # Quick reference (cont.)
 
 -	**Where to file issues**:  
-	[https://github.com/vmware/photon-docker-image/issues](https://github.com/vmware/photon-docker-image/issues)
+	[https://github.com/vmware/photon-docker-image/issues](https://github.com/vmware/photon-docker-image/issues?q=)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
 	[`amd64`](https://hub.docker.com/r/amd64/photon/), [`arm64v8`](https://hub.docker.com/r/arm64v8/photon/)

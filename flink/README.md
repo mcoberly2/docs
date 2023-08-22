@@ -24,14 +24,12 @@ WARNING:
 
 # Supported tags and respective `Dockerfile` links
 
--	[`1.13.0-scala_2.12-java8`, `1.13-scala_2.12-java8`, `scala_2.12-java8`, `1.13.0-scala_2.12`, `1.13-scala_2.12`, `scala_2.12`, `1.13.0-java8`, `1.13-java8`, `java8`, `1.13.0`, `1.13`, `latest`](https://github.com/apache/flink-docker/blob/b4075f035bad482e132be6709efd004827162acb/1.13/scala_2.12-java8-debian/Dockerfile)
--	[`1.13.0-scala_2.12-java11`, `1.13-scala_2.12-java11`, `scala_2.12-java11`, `1.13.0-java11`, `1.13-java11`, `java11`](https://github.com/apache/flink-docker/blob/b4075f035bad482e132be6709efd004827162acb/1.13/scala_2.12-java11-debian/Dockerfile)
--	[`1.13.0-scala_2.11-java8`, `1.13-scala_2.11-java8`, `scala_2.11-java8`, `1.13.0-scala_2.11`, `1.13-scala_2.11`, `scala_2.11`](https://github.com/apache/flink-docker/blob/b4075f035bad482e132be6709efd004827162acb/1.13/scala_2.11-java8-debian/Dockerfile)
--	[`1.13.0-scala_2.11-java11`, `1.13-scala_2.11-java11`, `scala_2.11-java11`](https://github.com/apache/flink-docker/blob/b4075f035bad482e132be6709efd004827162acb/1.13/scala_2.11-java11-debian/Dockerfile)
--	[`1.12.4-scala_2.12-java8`, `1.12-scala_2.12-java8`, `1.12.4-scala_2.12`, `1.12-scala_2.12`, `1.12.4-java8`, `1.12-java8`, `1.12.4`, `1.12`](https://github.com/apache/flink-docker/blob/c2002d4fd452d3254a21e8972f46b322ce12f9ef/1.12/scala_2.12-java8-debian/Dockerfile)
--	[`1.12.4-scala_2.12-java11`, `1.12-scala_2.12-java11`, `1.12.4-java11`, `1.12-java11`](https://github.com/apache/flink-docker/blob/c2002d4fd452d3254a21e8972f46b322ce12f9ef/1.12/scala_2.12-java11-debian/Dockerfile)
--	[`1.12.4-scala_2.11-java8`, `1.12-scala_2.11-java8`, `1.12.4-scala_2.11`, `1.12-scala_2.11`](https://github.com/apache/flink-docker/blob/c2002d4fd452d3254a21e8972f46b322ce12f9ef/1.12/scala_2.11-java8-debian/Dockerfile)
--	[`1.12.4-scala_2.11-java11`, `1.12-scala_2.11-java11`](https://github.com/apache/flink-docker/blob/c2002d4fd452d3254a21e8972f46b322ce12f9ef/1.12/scala_2.11-java11-debian/Dockerfile)
+-	[`1.17.1-scala_2.12-java8`, `1.17-scala_2.12-java8`, `scala_2.12-java8`, `1.17.1-java8`, `1.17-java8`, `java8`](https://github.com/apache/flink-docker/blob/abc36dd88483a221c0f5495c742bd95c349e9ac2/1.17/scala_2.12-java8-ubuntu/Dockerfile)
+-	[`1.17.1-scala_2.12-java11`, `1.17-scala_2.12-java11`, `scala_2.12-java11`, `1.17.1-scala_2.12`, `1.17-scala_2.12`, `scala_2.12`, `1.17.1-java11`, `1.17-java11`, `java11`, `1.17.1`, `1.17`, `latest`](https://github.com/apache/flink-docker/blob/abc36dd88483a221c0f5495c742bd95c349e9ac2/1.17/scala_2.12-java11-ubuntu/Dockerfile)
+-	[`1.16.2-scala_2.12-java8`, `1.16-scala_2.12-java8`, `1.16.2-java8`, `1.16-java8`](https://github.com/apache/flink-docker/blob/45c6d230407d89aa83b0d170dd056d6868cf808e/1.16/scala_2.12-java8-ubuntu/Dockerfile)
+-	[`1.16.2-scala_2.12-java11`, `1.16-scala_2.12-java11`, `1.16.2-scala_2.12`, `1.16-scala_2.12`, `1.16.2-java11`, `1.16-java11`, `1.16.2`, `1.16`](https://github.com/apache/flink-docker/blob/45c6d230407d89aa83b0d170dd056d6868cf808e/1.16/scala_2.12-java11-ubuntu/Dockerfile)
+-	[`1.15.4-scala_2.12-java8`, `1.15-scala_2.12-java8`, `1.15.4-java8`, `1.15-java8`](https://github.com/apache/flink-docker/blob/c9754889a57fad2d8fff2a1975f076a0caebb28c/1.15/scala_2.12-java8-ubuntu/Dockerfile)
+-	[`1.15.4-scala_2.12-java11`, `1.15-scala_2.12-java11`, `1.15.4-scala_2.12`, `1.15-scala_2.12`, `1.15.4-java11`, `1.15-java11`, `1.15.4`, `1.15`](https://github.com/apache/flink-docker/blob/c9754889a57fad2d8fff2a1975f076a0caebb28c/1.15/scala_2.12-java11-ubuntu/Dockerfile)
 
 # Quick reference (cont.)
 
@@ -39,7 +37,7 @@ WARNING:
 	https://issues.apache.org/jira/browse/FLINK
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
-	[`amd64`](https://hub.docker.com/r/amd64/flink/)
+	[`amd64`](https://hub.docker.com/r/amd64/flink/), [`arm64v8`](https://hub.docker.com/r/arm64v8/flink/)
 
 -	**Published image artifact details**:  
 	[repo-info repo's `repos/flink/` directory](https://github.com/docker-library/repo-info/blob/master/repos/flink) ([history](https://github.com/docker-library/repo-info/commits/master/repos/flink))  

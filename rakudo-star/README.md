@@ -20,17 +20,17 @@ WARNING:
 	[the Raku Community](https://github.com/Raku/docker)
 
 -	**Where to get help**:  
-	[the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
+	[the Docker Community Slack](https://dockr.ly/comm-slack), [Server Fault](https://serverfault.com/help/on-topic), [Unix & Linux](https://unix.stackexchange.com/help/on-topic), or [Stack Overflow](https://stackoverflow.com/help/on-topic)
 
 # Supported tags and respective `Dockerfile` links
 
--	[`latest`, `2020.10`](https://github.com/Raku/docker/blob/9101edf7704759d30c6fd180f3f9646109e1327d/2020.10/buster/Dockerfile)
--	[`alpine`, `2020.10-alpine`](https://github.com/Raku/docker/blob/9101edf7704759d30c6fd180f3f9646109e1327d/2020.10/alpine3.12/Dockerfile)
+-	[`latest`, `2023.06`](https://github.com/Raku/docker/blob/40594a60036aa9918d742cc942adade6edc223cd/2023.06/bookworm/Dockerfile)
+-	[`alpine`, `2023.06-alpine`](https://github.com/Raku/docker/blob/40594a60036aa9918d742cc942adade6edc223cd/2023.06/alpine3.18/Dockerfile)
 
 # Quick reference (cont.)
 
 -	**Where to file issues**:  
-	[https://github.com/Raku/docker/issues](https://github.com/Raku/docker/issues)
+	[https://github.com/Raku/docker/issues](https://github.com/Raku/docker/issues?q=)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
 	[`amd64`](https://hub.docker.com/r/amd64/rakudo-star/), [`arm64v8`](https://hub.docker.com/r/arm64v8/rakudo-star/)
@@ -76,7 +76,7 @@ $ docker run -it rakudo-star raku -e 'say "Hello!"'
 
 # Contributing/Getting Help
 
-Many Raku developers are present on #raku on Freenode.
+Many Raku developers are present on [#raku on Libera.Chat](https://kiwiirc.com/client/irc.libera.chat/#raku)
 
 Issues for Rakudo are tracked in [on GitHub](https://github.com/rakudo/rakudo/issues).
 

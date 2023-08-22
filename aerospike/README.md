@@ -20,12 +20,12 @@ WARNING:
 	[Aerospike, Inc.](https://github.com/aerospike/aerospike-server-enterprise.docker)
 
 -	**Where to get help**:  
-	[the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
+	[the Docker Community Slack](https://dockr.ly/comm-slack), [Server Fault](https://serverfault.com/help/on-topic), [Unix & Linux](https://unix.stackexchange.com/help/on-topic), or [Stack Overflow](https://stackoverflow.com/help/on-topic)
 
 # Supported tags and respective `Dockerfile` links
 
--	[`ee-5.6.0.3`](https://github.com/aerospike/aerospike-server-enterprise.docker/blob/d2973076b8b48ecbba083bc3812e4b89bbc966ae/Dockerfile)
--	[`ce-5.6.0.3`](https://github.com/aerospike/aerospike-server.docker/blob/1a542e44114e4b5a797fe2db067aa66ef24e539a/Dockerfile)
+-	[`ee-6.4.0.1`, `ee-6.4.0.1_1`](https://github.com/aerospike/aerospike-server.docker/blob/881eb4f89b828af75b4d12380bfd6e5c0742262e/enterprise/debian12/Dockerfile)
+-	[`ce-6.4.0.1`, `ce-6.4.0.1_1`](https://github.com/aerospike/aerospike-server.docker/blob/881eb4f89b828af75b4d12380bfd6e5c0742262e/community/debian12/Dockerfile)
 
 # Quick reference (cont.)
 
@@ -33,7 +33,7 @@ WARNING:
 	[the Aerospike Forums](https://discuss.aerospike.com) or [GitHub](https://github.com/aerospike/aerospike-server-enterprise.docker/issues)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
-	[`amd64`](https://hub.docker.com/r/amd64/aerospike/)
+	[`amd64`](https://hub.docker.com/r/amd64/aerospike/), [`arm64v8`](https://hub.docker.com/r/arm64v8/aerospike/)
 
 -	**Published image artifact details**:  
 	[repo-info repo's `repos/aerospike/` directory](https://github.com/docker-library/repo-info/blob/master/repos/aerospike) ([history](https://github.com/docker-library/repo-info/commits/master/repos/aerospike))  
@@ -70,7 +70,7 @@ docker run -d -v DIR:/opt/aerospike/etc/ -e "FEATURE_KEY_FILE=/opt/aerospike/etc
 
 Above, *DIR* is a directory on your machine where you drop your feature key file. Make sure Docker Desktop has file sharing permission to bind mount it into Docker containers.
 
-### Running an Aerospike EE node with a feature key file in a mapped directory
+### Running a node with a feature key file in an environment variable
 
 ```console
 FEATKEY=$(base64 ~/Desktop/evaluation-features.conf)

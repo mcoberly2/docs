@@ -20,23 +20,22 @@ WARNING:
 	[the Docker Community](https://github.com/docker-library/cassandra)
 
 -	**Where to get help**:  
-	[the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
+	[the Docker Community Slack](https://dockr.ly/comm-slack), [Server Fault](https://serverfault.com/help/on-topic), [Unix & Linux](https://unix.stackexchange.com/help/on-topic), or [Stack Overflow](https://stackoverflow.com/help/on-topic)
 
 # Supported tags and respective `Dockerfile` links
 
--	[`4.0-rc1`, `4.0`](https://github.com/docker-library/cassandra/blob/f00a725cc0189ef166ac1d893227651bd81a6996/4.0/Dockerfile)
--	[`3.11.10`, `3.11`, `3`, `latest`](https://github.com/docker-library/cassandra/blob/03bef93db2ff4b5a3cbc954618f08c44ddcb7568/3.11/Dockerfile)
--	[`3.0.24`, `3.0`](https://github.com/docker-library/cassandra/blob/03bef93db2ff4b5a3cbc954618f08c44ddcb7568/3.0/Dockerfile)
--	[`2.2.19`, `2.2`, `2`](https://github.com/docker-library/cassandra/blob/03bef93db2ff4b5a3cbc954618f08c44ddcb7568/2.2/Dockerfile)
--	[`2.1.22`, `2.1`](https://github.com/docker-library/cassandra/blob/03bef93db2ff4b5a3cbc954618f08c44ddcb7568/2.1/Dockerfile)
+-	[`4.1.3`, `4.1`, `4`, `latest`](https://github.com/docker-library/cassandra/blob/44614387cda4278e477056c24cde3070f679a32a/4.1/Dockerfile)
+-	[`4.0.11`, `4.0`](https://github.com/docker-library/cassandra/blob/955064939ae306088491856ff169b58319d619f9/4.0/Dockerfile)
+-	[`3.11.16`, `3.11`, `3`](https://github.com/docker-library/cassandra/blob/76e413ded2e5eb2c61d97296d01400d2fff2d6d5/3.11/Dockerfile)
+-	[`3.0.29`, `3.0`](https://github.com/docker-library/cassandra/blob/0472adffa9e3b3361f2dbe4b089592d1cb84d36d/3.0/Dockerfile)
 
 # Quick reference (cont.)
 
 -	**Where to file issues**:  
-	[https://github.com/docker-library/cassandra/issues](https://github.com/docker-library/cassandra/issues)
+	[https://github.com/docker-library/cassandra/issues](https://github.com/docker-library/cassandra/issues?q=)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
-	[`amd64`](https://hub.docker.com/r/amd64/cassandra/), [`arm32v7`](https://hub.docker.com/r/arm32v7/cassandra/), [`arm64v8`](https://hub.docker.com/r/arm64v8/cassandra/), [`ppc64le`](https://hub.docker.com/r/ppc64le/cassandra/)
+	[`amd64`](https://hub.docker.com/r/amd64/cassandra/), [`arm32v7`](https://hub.docker.com/r/arm32v7/cassandra/), [`arm64v8`](https://hub.docker.com/r/arm64v8/cassandra/), [`ppc64le`](https://hub.docker.com/r/ppc64le/cassandra/), [`s390x`](https://hub.docker.com/r/s390x/cassandra/)
 
 -	**Published image artifact details**:  
 	[repo-info repo's `repos/cassandra/` directory](https://github.com/docker-library/repo-info/blob/master/repos/cassandra) ([history](https://github.com/docker-library/repo-info/commits/master/repos/cassandra))  

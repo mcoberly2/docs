@@ -20,21 +20,22 @@ WARNING:
 	[Apache CouchDB](https://github.com/apache/couchdb-docker)
 
 -	**Where to get help**:  
-	[the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
+	[the Docker Community Slack](https://dockr.ly/comm-slack), [Server Fault](https://serverfault.com/help/on-topic), [Unix & Linux](https://unix.stackexchange.com/help/on-topic), or [Stack Overflow](https://stackoverflow.com/help/on-topic)
 
 # Supported tags and respective `Dockerfile` links
 
--	[`latest`, `3.1.1`, `3.1`, `3`](https://github.com/apache/couchdb-docker/blob/e3ca492e13f65ffd72593ac3d7c43c737787e2b2/3.1.1/Dockerfile)
--	[`3.0.1`, `3.0`](https://github.com/apache/couchdb-docker/blob/e3ca492e13f65ffd72593ac3d7c43c737787e2b2/3.0.1/Dockerfile)
--	[`2.3.1`, `2.3`, `2`](https://github.com/apache/couchdb-docker/blob/e3ca492e13f65ffd72593ac3d7c43c737787e2b2/2.3.1/Dockerfile)
+-	[`latest`, `3.3.2`, `3.3`, `3`](https://github.com/apache/couchdb-docker/blob/b616800e739db18c19e6a8b4131528157f945bcd/3.3.2/Dockerfile)
+-	[`3.2.3`, `3.2`](https://github.com/apache/couchdb-docker/blob/b616800e739db18c19e6a8b4131528157f945bcd/3.2.3/Dockerfile)
+-	[`3.1.2`, `3.1`](https://github.com/apache/couchdb-docker/blob/b616800e739db18c19e6a8b4131528157f945bcd/3.1.2/Dockerfile)
+-	[`2.3.1`, `2.3`, `2`](https://github.com/apache/couchdb-docker/blob/b616800e739db18c19e6a8b4131528157f945bcd/2.3.1/Dockerfile)
 
 # Quick reference (cont.)
 
 -	**Where to file issues**:  
-	[https://github.com/apache/couchdb-docker/issues](https://github.com/apache/couchdb-docker/issues)
+	[https://github.com/apache/couchdb-docker/issues](https://github.com/apache/couchdb-docker/issues?q=)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
-	[`amd64`](https://hub.docker.com/r/amd64/couchdb/), [`arm64v8`](https://hub.docker.com/r/arm64v8/couchdb/)
+	[`amd64`](https://hub.docker.com/r/amd64/couchdb/), [`arm64v8`](https://hub.docker.com/r/arm64v8/couchdb/), [`ppc64le`](https://hub.docker.com/r/ppc64le/couchdb/), [`s390x`](https://hub.docker.com/r/s390x/couchdb/)
 
 -	**Published image artifact details**:  
 	[repo-info repo's `repos/couchdb/` directory](https://github.com/docker-library/repo-info/blob/master/repos/couchdb) ([history](https://github.com/docker-library/repo-info/commits/master/repos/couchdb))  
@@ -61,7 +62,7 @@ Store your data safely, on your own servers, or with any leading cloud provider.
 
 ## Start a CouchDB instance
 
-Starting a CouchDB instantce is simple:
+Starting a CouchDB instance is simple:
 
 ```console
 $ docker run -d --name my-couchdb couchdb:tag

@@ -28,48 +28,31 @@ WARNING:
 
 ## Simple Tags
 
--	[`2.3.0-alpine`](https://github.com/caddyserver/caddy-docker/blob/2093c4a571bfe356447008d229195eb7063232b2/2.3/alpine/Dockerfile)
--	[`2.3.0-builder-alpine`](https://github.com/caddyserver/caddy-docker/blob/d1a09c6308adb9397a855fb7a591dd8d29240c4f/2.3/builder/Dockerfile)
--	[`2.3.0-windowsservercore-1809`](https://github.com/caddyserver/caddy-docker/blob/2093c4a571bfe356447008d229195eb7063232b2/2.3/windows/1809/Dockerfile)
--	[`2.3.0-windowsservercore-ltsc2016`](https://github.com/caddyserver/caddy-docker/blob/2093c4a571bfe356447008d229195eb7063232b2/2.3/windows/ltsc2016/Dockerfile)
--	[`2.3.0-builder-windowsservercore-1809`](https://github.com/caddyserver/caddy-docker/blob/d1a09c6308adb9397a855fb7a591dd8d29240c4f/2.3/windows-builder/1809/Dockerfile)
--	[`2.3.0-builder-windowsservercore-ltsc2016`](https://github.com/caddyserver/caddy-docker/blob/d1a09c6308adb9397a855fb7a591dd8d29240c4f/2.3/windows-builder/ltsc2016/Dockerfile)
--	[`2.4.1-alpine`, `2-alpine`, `alpine`](https://github.com/caddyserver/caddy-docker/blob/58a04bc3896ca1990624e90616fe9f794a5d2ba1/2.4/alpine/Dockerfile)
--	[`2.4.1-builder-alpine`, `2-builder-alpine`, `builder-alpine`](https://github.com/caddyserver/caddy-docker/blob/58a04bc3896ca1990624e90616fe9f794a5d2ba1/2.4/builder/Dockerfile)
--	[`2.4.1-windowsservercore-1809`, `2-windowsservercore-1809`, `windowsservercore-1809`](https://github.com/caddyserver/caddy-docker/blob/58a04bc3896ca1990624e90616fe9f794a5d2ba1/2.4/windows/1809/Dockerfile)
--	[`2.4.1-windowsservercore-ltsc2016`, `2-windowsservercore-ltsc2016`, `windowsservercore-ltsc2016`](https://github.com/caddyserver/caddy-docker/blob/58a04bc3896ca1990624e90616fe9f794a5d2ba1/2.4/windows/ltsc2016/Dockerfile)
--	[`2.4.1-builder-windowsservercore-1809`, `2-builder-windowsservercore-1809`, `builder-windowsservercore-1809`](https://github.com/caddyserver/caddy-docker/blob/58a04bc3896ca1990624e90616fe9f794a5d2ba1/2.4/windows-builder/1809/Dockerfile)
--	[`2.4.1-builder-windowsservercore-ltsc2016`, `2-builder-windowsservercore-ltsc2016`, `builder-windowsservercore-ltsc2016`](https://github.com/caddyserver/caddy-docker/blob/58a04bc3896ca1990624e90616fe9f794a5d2ba1/2.4/windows-builder/ltsc2016/Dockerfile)
+-	[`2.7.4-alpine`, `2.7-alpine`, `2-alpine`, `alpine`](https://github.com/caddyserver/caddy-docker/blob/a91e8f29f604a9ac547afb3a8190d170c1f2c494/2.7/alpine/Dockerfile)
+-	[`2.7.4-builder-alpine`, `2.7-builder-alpine`, `2-builder-alpine`, `builder-alpine`](https://github.com/caddyserver/caddy-docker/blob/a91e8f29f604a9ac547afb3a8190d170c1f2c494/2.7/builder/Dockerfile)
+-	[`2.7.4-windowsservercore-1809`, `2.7-windowsservercore-1809`, `2-windowsservercore-1809`, `windowsservercore-1809`](https://github.com/caddyserver/caddy-docker/blob/a91e8f29f604a9ac547afb3a8190d170c1f2c494/2.7/windows/1809/Dockerfile)
+-	[`2.7.4-windowsservercore-ltsc2022`, `2.7-windowsservercore-ltsc2022`, `2-windowsservercore-ltsc2022`, `windowsservercore-ltsc2022`](https://github.com/caddyserver/caddy-docker/blob/a91e8f29f604a9ac547afb3a8190d170c1f2c494/2.7/windows/ltsc2022/Dockerfile)
+-	[`2.7.4-builder-windowsservercore-1809`, `2.7-builder-windowsservercore-1809`, `2-builder-windowsservercore-1809`, `builder-windowsservercore-1809`](https://github.com/caddyserver/caddy-docker/blob/a91e8f29f604a9ac547afb3a8190d170c1f2c494/2.7/windows-builder/1809/Dockerfile)
+-	[`2.7.4-builder-windowsservercore-ltsc2022`, `2.7-builder-windowsservercore-ltsc2022`, `2-builder-windowsservercore-ltsc2022`, `builder-windowsservercore-ltsc2022`](https://github.com/caddyserver/caddy-docker/blob/a91e8f29f604a9ac547afb3a8190d170c1f2c494/2.7/windows-builder/ltsc2022/Dockerfile)
 
 ## Shared Tags
 
--	`2.3.0`:
-	-	[`2.3.0-alpine`](https://github.com/caddyserver/caddy-docker/blob/2093c4a571bfe356447008d229195eb7063232b2/2.3/alpine/Dockerfile)
-	-	[`2.3.0-windowsservercore-1809`](https://github.com/caddyserver/caddy-docker/blob/2093c4a571bfe356447008d229195eb7063232b2/2.3/windows/1809/Dockerfile)
-	-	[`2.3.0-windowsservercore-ltsc2016`](https://github.com/caddyserver/caddy-docker/blob/2093c4a571bfe356447008d229195eb7063232b2/2.3/windows/ltsc2016/Dockerfile)
--	`2.3.0-builder`:
-	-	[`2.3.0-builder-alpine`](https://github.com/caddyserver/caddy-docker/blob/d1a09c6308adb9397a855fb7a591dd8d29240c4f/2.3/builder/Dockerfile)
-	-	[`2.3.0-builder-windowsservercore-1809`](https://github.com/caddyserver/caddy-docker/blob/d1a09c6308adb9397a855fb7a591dd8d29240c4f/2.3/windows-builder/1809/Dockerfile)
-	-	[`2.3.0-builder-windowsservercore-ltsc2016`](https://github.com/caddyserver/caddy-docker/blob/d1a09c6308adb9397a855fb7a591dd8d29240c4f/2.3/windows-builder/ltsc2016/Dockerfile)
--	`2.3.0-windowsservercore`:
-	-	[`2.3.0-windowsservercore-1809`](https://github.com/caddyserver/caddy-docker/blob/2093c4a571bfe356447008d229195eb7063232b2/2.3/windows/1809/Dockerfile)
-	-	[`2.3.0-windowsservercore-ltsc2016`](https://github.com/caddyserver/caddy-docker/blob/2093c4a571bfe356447008d229195eb7063232b2/2.3/windows/ltsc2016/Dockerfile)
--	`2.4.1`, `2`, `latest`:
-	-	[`2.4.1-alpine`](https://github.com/caddyserver/caddy-docker/blob/58a04bc3896ca1990624e90616fe9f794a5d2ba1/2.4/alpine/Dockerfile)
-	-	[`2.4.1-windowsservercore-1809`](https://github.com/caddyserver/caddy-docker/blob/58a04bc3896ca1990624e90616fe9f794a5d2ba1/2.4/windows/1809/Dockerfile)
-	-	[`2.4.1-windowsservercore-ltsc2016`](https://github.com/caddyserver/caddy-docker/blob/58a04bc3896ca1990624e90616fe9f794a5d2ba1/2.4/windows/ltsc2016/Dockerfile)
--	`2.4.1-builder`, `2-builder`, `builder`:
-	-	[`2.4.1-builder-alpine`](https://github.com/caddyserver/caddy-docker/blob/58a04bc3896ca1990624e90616fe9f794a5d2ba1/2.4/builder/Dockerfile)
-	-	[`2.4.1-builder-windowsservercore-1809`](https://github.com/caddyserver/caddy-docker/blob/58a04bc3896ca1990624e90616fe9f794a5d2ba1/2.4/windows-builder/1809/Dockerfile)
-	-	[`2.4.1-builder-windowsservercore-ltsc2016`](https://github.com/caddyserver/caddy-docker/blob/58a04bc3896ca1990624e90616fe9f794a5d2ba1/2.4/windows-builder/ltsc2016/Dockerfile)
--	`2.4.1-windowsservercore`, `2-windowsservercore`, `windowsservercore`:
-	-	[`2.4.1-windowsservercore-1809`](https://github.com/caddyserver/caddy-docker/blob/58a04bc3896ca1990624e90616fe9f794a5d2ba1/2.4/windows/1809/Dockerfile)
-	-	[`2.4.1-windowsservercore-ltsc2016`](https://github.com/caddyserver/caddy-docker/blob/58a04bc3896ca1990624e90616fe9f794a5d2ba1/2.4/windows/ltsc2016/Dockerfile)
+-	`2.7.4`, `2.7`, `2`, `latest`:
+	-	[`2.7.4-alpine`](https://github.com/caddyserver/caddy-docker/blob/a91e8f29f604a9ac547afb3a8190d170c1f2c494/2.7/alpine/Dockerfile)
+	-	[`2.7.4-windowsservercore-1809`](https://github.com/caddyserver/caddy-docker/blob/a91e8f29f604a9ac547afb3a8190d170c1f2c494/2.7/windows/1809/Dockerfile)
+	-	[`2.7.4-windowsservercore-ltsc2022`](https://github.com/caddyserver/caddy-docker/blob/a91e8f29f604a9ac547afb3a8190d170c1f2c494/2.7/windows/ltsc2022/Dockerfile)
+-	`2.7.4-builder`, `2.7-builder`, `2-builder`, `builder`:
+	-	[`2.7.4-builder-alpine`](https://github.com/caddyserver/caddy-docker/blob/a91e8f29f604a9ac547afb3a8190d170c1f2c494/2.7/builder/Dockerfile)
+	-	[`2.7.4-builder-windowsservercore-1809`](https://github.com/caddyserver/caddy-docker/blob/a91e8f29f604a9ac547afb3a8190d170c1f2c494/2.7/windows-builder/1809/Dockerfile)
+	-	[`2.7.4-builder-windowsservercore-ltsc2022`](https://github.com/caddyserver/caddy-docker/blob/a91e8f29f604a9ac547afb3a8190d170c1f2c494/2.7/windows-builder/ltsc2022/Dockerfile)
+-	`2.7.4-windowsservercore`, `2.7-windowsservercore`, `2-windowsservercore`, `windowsservercore`:
+	-	[`2.7.4-windowsservercore-1809`](https://github.com/caddyserver/caddy-docker/blob/a91e8f29f604a9ac547afb3a8190d170c1f2c494/2.7/windows/1809/Dockerfile)
+	-	[`2.7.4-windowsservercore-ltsc2022`](https://github.com/caddyserver/caddy-docker/blob/a91e8f29f604a9ac547afb3a8190d170c1f2c494/2.7/windows/ltsc2022/Dockerfile)
 
 # Quick reference (cont.)
 
 -	**Where to file issues**:  
-	[https://github.com/caddyserver/caddy-docker/issues](https://github.com/caddyserver/caddy-docker/issues)
+	[https://github.com/caddyserver/caddy-docker/issues](https://github.com/caddyserver/caddy-docker/issues?q=)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
 	[`amd64`](https://hub.docker.com/r/amd64/caddy/), [`arm32v6`](https://hub.docker.com/r/arm32v6/caddy/), [`arm32v7`](https://hub.docker.com/r/arm32v7/caddy/), [`arm64v8`](https://hub.docker.com/r/arm64v8/caddy/), [`ppc64le`](https://hub.docker.com/r/ppc64le/caddy/), [`s390x`](https://hub.docker.com/r/s390x/caddy/), [`windows-amd64`](https://hub.docker.com/r/winamd64/caddy/)
@@ -85,7 +68,7 @@ WARNING:
 -	**Source of this description**:  
 	[docs repo's `caddy/` directory](https://github.com/docker-library/docs/tree/master/caddy) ([history](https://github.com/docker-library/docs/commits/master/caddy))
 
-![logo](https://raw.githubusercontent.com/docker-library/docs/175a99d9d009afb887a921e35bfa892a01d7be77/caddy/logo.png)
+![logo](https://raw.githubusercontent.com/docker-library/docs/7f3881a28c29ed29bb1a38681b95bd785a8a6da5/caddy/logo.png)
 
 # What is Caddy?
 
@@ -136,7 +119,7 @@ $ docker run -d -p 80:80 \
 The default `Caddyfile` only listens to port `80`, and does not set up automatic TLS. However, if you have a domain name for your site, and its A/AAAA DNS records are properly pointed to this machine's public IP, then you can use this command to simply serve a site over HTTPS:
 
 ```console
-$ docker run -d -p 80:80 -p 443:443 \
+$ docker run -d -p 80:80 -p 443:443 -p 443:443/udp \
     -v /site:/srv \
     -v caddy_data:/data \
     -v caddy_config:/config \
@@ -198,7 +181,7 @@ $ docker exec -w /etc/caddy $caddy_container_id caddy reload
 
 ### Docker Compose example
 
-If you prefer to use `docker-compoose` to run your stack, here's a sample service definition.
+If you prefer to use `docker-compose` to run your stack, here's a sample service definition.
 
 ```yaml
 version: "3.7"
@@ -210,6 +193,7 @@ services:
     ports:
       - "80:80"
       - "443:443"
+      - "443:443/udp"
     volumes:
       - $PWD/Caddyfile:/etc/caddy/Caddyfile
       - $PWD/site:/srv
@@ -218,8 +202,11 @@ services:
 
 volumes:
   caddy_data:
+    external: true
   caddy_config:
 ```
+
+Defining the data volume as [`external`](https://docs.docker.com/compose/compose-file/compose-file-v3/#external) makes sure `docker-compose down` does not delete the volume. You may need to create it manually using `docker volume create [project-name]_caddy_data`.
 
 # Image Variants
 

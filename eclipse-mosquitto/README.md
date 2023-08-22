@@ -20,20 +20,18 @@ WARNING:
 	[the Eclipse Foundation](https://github.com/eclipse/mosquitto)
 
 -	**Where to get help**:  
-	[the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
+	[the Docker Community Slack](https://dockr.ly/comm-slack), [Server Fault](https://serverfault.com/help/on-topic), [Unix & Linux](https://unix.stackexchange.com/help/on-topic), or [Stack Overflow](https://stackoverflow.com/help/on-topic)
 
 # Supported tags and respective `Dockerfile` links
 
--	[`2.0.10`, `2.0`, `2`, `latest`](https://github.com/eclipse/mosquitto/blob/1c79920d78321c69add9d6d6f879dd73387bc25e/docker/2.0/Dockerfile)
--	[`2.0.10-openssl`, `2.0-openssl`, `2-openssl`, `openssl`](https://github.com/eclipse/mosquitto/blob/1c79920d78321c69add9d6d6f879dd73387bc25e/docker/2.0-openssl/Dockerfile)
--	[`1.6.14`, `1.6`](https://github.com/eclipse/mosquitto/blob/1c79920d78321c69add9d6d6f879dd73387bc25e/docker/1.6/Dockerfile)
--	[`1.6.14-openssl`, `1.6-openssl`](https://github.com/eclipse/mosquitto/blob/1c79920d78321c69add9d6d6f879dd73387bc25e/docker/1.6-openssl/Dockerfile)
--	[`1.5.11`, `1.5`](https://github.com/eclipse/mosquitto/blob/1c79920d78321c69add9d6d6f879dd73387bc25e/docker/1.5/Dockerfile)
+-	[`2.0.17`, `2.0`, `2`, `latest`](https://github.com/eclipse/mosquitto/blob/f762a3fd1ced66b6cd32d8dc137f0523708dac1f/docker/2.0/Dockerfile)
+-	[`2.0.17-openssl`, `2.0-openssl`, `2-openssl`, `openssl`](https://github.com/eclipse/mosquitto/blob/f762a3fd1ced66b6cd32d8dc137f0523708dac1f/docker/2.0-openssl/Dockerfile)
+-	[`1.6.15-openssl`, `1.6-openssl`](https://github.com/eclipse/mosquitto/blob/f762a3fd1ced66b6cd32d8dc137f0523708dac1f/docker/1.6-openssl/Dockerfile)
 
 # Quick reference (cont.)
 
 -	**Where to file issues**:  
-	[https://github.com/eclipse/mosquitto/issues](https://github.com/eclipse/mosquitto/issues)
+	[https://github.com/eclipse/mosquitto/issues](https://github.com/eclipse/mosquitto/issues?q=)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
 	[`amd64`](https://hub.docker.com/r/amd64/eclipse-mosquitto/), [`arm32v6`](https://hub.docker.com/r/arm32v6/eclipse-mosquitto/), [`arm64v8`](https://hub.docker.com/r/arm64v8/eclipse-mosquitto/), [`i386`](https://hub.docker.com/r/i386/eclipse-mosquitto/), [`ppc64le`](https://hub.docker.com/r/ppc64le/eclipse-mosquitto/), [`s390x`](https://hub.docker.com/r/s390x/eclipse-mosquitto/)

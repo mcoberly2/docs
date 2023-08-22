@@ -20,18 +20,18 @@ WARNING:
 	[Monica Team](https://github.com/monicahq/docker)
 
 -	**Where to get help**:  
-	[the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
+	[the Docker Community Slack](https://dockr.ly/comm-slack), [Server Fault](https://serverfault.com/help/on-topic), [Unix & Linux](https://unix.stackexchange.com/help/on-topic), or [Stack Overflow](https://stackoverflow.com/help/on-topic)
 
 # Supported tags and respective `Dockerfile` links
 
--	[`3.0.1-apache`, `3.0-apache`, `3-apache`, `apache`, `3.0.1`, `3.0`, `3`, `latest`](https://github.com/monicahq/docker/blob/8e338da17d09d8b9a0b7b8c4aa734ecd400bca07/apache/Dockerfile)
--	[`3.0.1-fpm`, `3.0-fpm`, `3-fpm`, `fpm`](https://github.com/monicahq/docker/blob/8e338da17d09d8b9a0b7b8c4aa734ecd400bca07/fpm/Dockerfile)
--	[`3.0.1-fpm-alpine`, `3.0-fpm-alpine`, `3-fpm-alpine`, `fpm-alpine`](https://github.com/monicahq/docker/blob/8e338da17d09d8b9a0b7b8c4aa734ecd400bca07/fpm-alpine/Dockerfile)
+-	[`4.0.0-apache`, `4.0-apache`, `4-apache`, `apache`, `4.0.0`, `4.0`, `4`, `latest`](https://github.com/monicahq/docker/blob/1969cbd6d7dd410df84a18f539836ed4e0788324/apache/Dockerfile)
+-	[`4.0.0-fpm-alpine`, `4.0-fpm-alpine`, `4-fpm-alpine`, `fpm-alpine`](https://github.com/monicahq/docker/blob/1969cbd6d7dd410df84a18f539836ed4e0788324/fpm-alpine/Dockerfile)
+-	[`4.0.0-fpm`, `4.0-fpm`, `4-fpm`, `fpm`](https://github.com/monicahq/docker/blob/1969cbd6d7dd410df84a18f539836ed4e0788324/fpm/Dockerfile)
 
 # Quick reference (cont.)
 
 -	**Where to file issues**:  
-	[https://github.com/monicahq/docker/issues](https://github.com/monicahq/docker/issues)
+	[https://github.com/monicahq/docker/issues](https://github.com/monicahq/docker/issues?q=)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
 	[`amd64`](https://hub.docker.com/r/amd64/monica/), [`arm32v5`](https://hub.docker.com/r/arm32v5/monica/), [`arm32v6`](https://hub.docker.com/r/arm32v6/monica/), [`arm32v7`](https://hub.docker.com/r/arm32v7/monica/), [`arm64v8`](https://hub.docker.com/r/arm64v8/monica/), [`i386`](https://hub.docker.com/r/i386/monica/), [`mips64le`](https://hub.docker.com/r/mips64le/monica/), [`ppc64le`](https://hub.docker.com/r/ppc64le/monica/), [`s390x`](https://hub.docker.com/r/s390x/monica/)
@@ -111,7 +111,7 @@ where `monica` is the name of the service in your `docker-compose.yml` file.
 
 ## Configuration using environment variables
 
-The Monica image will use environment variables to setup the application. See [Monica documentation](https://github.com/monicahq/monica/blob/master/.env.example) for common used variables you should setup.
+The Monica image will use environment variables to setup the application. See [Monica documentation](https://github.com/monicahq/monica/blob/main/.env.example) for common used variables you should setup.
 
 ## Running the image with docker-compose
 
@@ -287,7 +287,7 @@ To minimize image size, it's uncommon for additional related tools (such as `git
 
 # License
 
-View [license information](https://github.com/monicahq/monica/blob/master/LICENSE) for the software contained in this image.
+View [license information](https://github.com/monicahq/monica/blob/main/LICENSE.md) for the software contained in this image.
 
 As with all Docker images, these likely also contain other software which may be under other licenses (such as Bash, etc from the base distribution, along with any direct or indirect dependencies of the primary software being contained).
 

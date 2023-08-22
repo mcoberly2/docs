@@ -20,21 +20,21 @@ WARNING:
 	[the Docker Community](https://github.com/31z4/storm-docker)
 
 -	**Where to get help**:  
-	[the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
+	[the Docker Community Slack](https://dockr.ly/comm-slack), [Server Fault](https://serverfault.com/help/on-topic), [Unix & Linux](https://unix.stackexchange.com/help/on-topic), or [Stack Overflow](https://stackoverflow.com/help/on-topic)
 
 # Supported tags and respective `Dockerfile` links
 
--	[`1.1.3`, `1.1`](https://github.com/31z4/storm-docker/blob/664a7f4730f58be00fd7fe0526d2c13180107c6f/1.1.3/Dockerfile)
--	[`1.2.3`, `1.2`](https://github.com/31z4/storm-docker/blob/664a7f4730f58be00fd7fe0526d2c13180107c6f/1.2.3/Dockerfile)
--	[`2.2.0`, `2.2`, `latest`](https://github.com/31z4/storm-docker/blob/9eae4ab08d30cfab29c784b4d9e7d1c187fa0348/2.2.0/Dockerfile)
+-	[`1.2.4-temurin`, `1.2-temurin`](https://github.com/31z4/storm-docker/blob/14c749848c8ff7c955f2b29c57e327ae80fbbb7e/1.2.4/Dockerfile)
+-	[`2.4.0-temurin`, `2.4-temurin`](https://github.com/31z4/storm-docker/blob/a81f9686e8a13dbf428864482f2d0bba50e9c414/2.4.0/Dockerfile)
+-	[`2.5.0`, `2.5`, `latest`](https://github.com/31z4/storm-docker/blob/8e162f994d36bfae7f13a32ceb4193d185b9a89e/2.5.0/Dockerfile)
 
 # Quick reference (cont.)
 
 -	**Where to file issues**:  
-	[https://github.com/31z4/storm-docker/issues](https://github.com/31z4/storm-docker/issues)
+	[https://github.com/31z4/storm-docker/issues](https://github.com/31z4/storm-docker/issues?q=)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
-	[`amd64`](https://hub.docker.com/r/amd64/storm/)
+	[`amd64`](https://hub.docker.com/r/amd64/storm/), [`arm64v8`](https://hub.docker.com/r/arm64v8/storm/)
 
 -	**Published image artifact details**:  
 	[repo-info repo's `repos/storm/` directory](https://github.com/docker-library/repo-info/blob/master/repos/storm) ([history](https://github.com/docker-library/repo-info/commits/master/repos/storm))  
@@ -97,9 +97,9 @@ $ docker run -it -v $(pwd)/topology.jar:/topology.jar storm storm jar /topology.
 	$ docker run -d -p 8080:8080 --restart always --name ui --link some-nimbus:nimbus storm storm ui
 	```
 
-## ... via [`docker stack deploy`](https://docs.docker.com/engine/reference/commandline/stack_deploy/) or [`docker-compose`](https://github.com/docker/compose)
+## ... via [`docker-compose`](https://github.com/docker/compose) or [`docker stack deploy`](https://docs.docker.com/engine/reference/commandline/stack_deploy/)
 
-Example `stack.yml` for `storm`:
+Example `docker-compose.yml` for `storm`:
 
 ```yaml
 version: '3.1'

@@ -20,26 +20,43 @@ WARNING:
 	[Tianon (of the Docker Project)](https://github.com/docker-library/docker)
 
 -	**Where to get help**:  
-	[the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
+	[the Docker Community Slack](https://dockr.ly/comm-slack), [Server Fault](https://serverfault.com/help/on-topic), [Unix & Linux](https://unix.stackexchange.com/help/on-topic), or [Stack Overflow](https://stackoverflow.com/help/on-topic)
 
 # Supported tags and respective `Dockerfile` links
 
--	[`20.10.6`, `20.10`, `20`, `latest`](https://github.com/docker-library/docker/blob/f6a0c427f0354dcf5870c430c72c8f1d6b4e6d5e/20.10/Dockerfile)
--	[`20.10.6-dind`, `20.10-dind`, `20-dind`, `dind`](https://github.com/docker-library/docker/blob/30d7b9bf7663c96fcd888bd75e9aaa547a808a23/20.10/dind/Dockerfile)
--	[`20.10.6-dind-rootless`, `20.10-dind-rootless`, `20-dind-rootless`, `dind-rootless`](https://github.com/docker-library/docker/blob/f6a0c427f0354dcf5870c430c72c8f1d6b4e6d5e/20.10/dind-rootless/Dockerfile)
--	[`20.10.6-git`, `20.10-git`, `20-git`, `git`](https://github.com/docker-library/docker/blob/387e351394bfad74bceebf8303c6c8e39c3d4ed4/20.10/git/Dockerfile)
--	[`19.03.15`, `19.03`, `19`](https://github.com/docker-library/docker/blob/835c371c516ebdf67adc0c76bbfb38bf9d3e586c/19.03/Dockerfile)
--	[`19.03.15-dind`, `19.03-dind`, `19-dind`](https://github.com/docker-library/docker/blob/f0abe5a51a683c02501fd7ff8384fb17dbbeb946/19.03/dind/Dockerfile)
--	[`19.03.15-dind-rootless`, `19.03-dind-rootless`, `19-dind-rootless`](https://github.com/docker-library/docker/blob/835c371c516ebdf67adc0c76bbfb38bf9d3e586c/19.03/dind-rootless/Dockerfile)
--	[`19.03.15-git`, `19.03-git`, `19-git`](https://github.com/docker-library/docker/blob/12d1c2763b54d29137ec448a3e4ad1a9aefae1a0/19.03/git/Dockerfile)
+(See ["What's the difference between 'Shared' and 'Simple' tags?" in the FAQ](https://github.com/docker-library/faq#whats-the-difference-between-shared-and-simple-tags).)
+
+## Simple Tags
+
+-	[`24.0.5-cli`, `24.0-cli`, `24-cli`, `cli`, `24.0.5-cli-alpine3.18`](https://github.com/docker-library/docker/blob/f745ee7e7dc85e8ddbcc23fd17cffe5735b93f23/24/cli/Dockerfile)
+-	[`24.0.5-dind`, `24.0-dind`, `24-dind`, `dind`, `24.0.5-dind-alpine3.18`, `24.0.5`, `24.0`, `24`, `latest`, `24.0.5-alpine3.18`](https://github.com/docker-library/docker/blob/f6bb49f0c0e7ed0ab489df14b53e26cc65c294d6/24/dind/Dockerfile)
+-	[`24.0.5-dind-rootless`, `24.0-dind-rootless`, `24-dind-rootless`, `dind-rootless`](https://github.com/docker-library/docker/blob/f6bb49f0c0e7ed0ab489df14b53e26cc65c294d6/24/dind-rootless/Dockerfile)
+-	[`24.0.5-git`, `24.0-git`, `24-git`, `git`](https://github.com/docker-library/docker/blob/6964fd52030c2e6e9e0943eaac07d78c9841fbb3/24/git/Dockerfile)
+-	[`24.0.5-windowsservercore-ltsc2022`, `24.0-windowsservercore-ltsc2022`, `24-windowsservercore-ltsc2022`, `windowsservercore-ltsc2022`](https://github.com/docker-library/docker/blob/f745ee7e7dc85e8ddbcc23fd17cffe5735b93f23/24/windows/windowsservercore-ltsc2022/Dockerfile)
+-	[`24.0.5-windowsservercore-1809`, `24.0-windowsservercore-1809`, `24-windowsservercore-1809`, `windowsservercore-1809`](https://github.com/docker-library/docker/blob/f745ee7e7dc85e8ddbcc23fd17cffe5735b93f23/24/windows/windowsservercore-1809/Dockerfile)
+-	[`23.0.6-cli`, `23.0-cli`, `23-cli`, `23.0.6-cli-alpine3.18`](https://github.com/docker-library/docker/blob/e0434f3ab21e20772dfbcd513fe93e32b405560a/23/cli/Dockerfile)
+-	[`23.0.6-dind`, `23.0-dind`, `23-dind`, `23.0.6-dind-alpine3.18`, `23.0.6`, `23.0`, `23`, `23.0.6-alpine3.18`](https://github.com/docker-library/docker/blob/09a8b6a03e9ab630f0f62cce43df38a285f80826/23/dind/Dockerfile)
+-	[`23.0.6-dind-rootless`, `23.0-dind-rootless`, `23-dind-rootless`](https://github.com/docker-library/docker/blob/6964fd52030c2e6e9e0943eaac07d78c9841fbb3/23/dind-rootless/Dockerfile)
+-	[`23.0.6-git`, `23.0-git`, `23-git`](https://github.com/docker-library/docker/blob/6964fd52030c2e6e9e0943eaac07d78c9841fbb3/23/git/Dockerfile)
+-	[`23.0.6-windowsservercore-ltsc2022`, `23.0-windowsservercore-ltsc2022`, `23-windowsservercore-ltsc2022`](https://github.com/docker-library/docker/blob/e0434f3ab21e20772dfbcd513fe93e32b405560a/23/windows/windowsservercore-ltsc2022/Dockerfile)
+-	[`23.0.6-windowsservercore-1809`, `23.0-windowsservercore-1809`, `23-windowsservercore-1809`](https://github.com/docker-library/docker/blob/e0434f3ab21e20772dfbcd513fe93e32b405560a/23/windows/windowsservercore-1809/Dockerfile)
+
+## Shared Tags
+
+-	`24.0.5-windowsservercore`, `24.0-windowsservercore`, `24-windowsservercore`, `windowsservercore`:
+	-	[`24.0.5-windowsservercore-ltsc2022`](https://github.com/docker-library/docker/blob/f745ee7e7dc85e8ddbcc23fd17cffe5735b93f23/24/windows/windowsservercore-ltsc2022/Dockerfile)
+	-	[`24.0.5-windowsservercore-1809`](https://github.com/docker-library/docker/blob/f745ee7e7dc85e8ddbcc23fd17cffe5735b93f23/24/windows/windowsservercore-1809/Dockerfile)
+-	`23.0.6-windowsservercore`, `23.0-windowsservercore`, `23-windowsservercore`:
+	-	[`23.0.6-windowsservercore-ltsc2022`](https://github.com/docker-library/docker/blob/e0434f3ab21e20772dfbcd513fe93e32b405560a/23/windows/windowsservercore-ltsc2022/Dockerfile)
+	-	[`23.0.6-windowsservercore-1809`](https://github.com/docker-library/docker/blob/e0434f3ab21e20772dfbcd513fe93e32b405560a/23/windows/windowsservercore-1809/Dockerfile)
 
 # Quick reference (cont.)
 
 -	**Where to file issues**:  
-	[https://github.com/docker-library/docker/issues](https://github.com/docker-library/docker/issues)
+	[https://github.com/docker-library/docker/issues](https://github.com/docker-library/docker/issues?q=)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
-	[`amd64`](https://hub.docker.com/r/amd64/docker/), [`arm32v6`](https://hub.docker.com/r/arm32v6/docker/), [`arm32v7`](https://hub.docker.com/r/arm32v7/docker/), [`arm64v8`](https://hub.docker.com/r/arm64v8/docker/)
+	[`amd64`](https://hub.docker.com/r/amd64/docker/), [`arm64v8`](https://hub.docker.com/r/arm64v8/docker/), [`windows-amd64`](https://hub.docker.com/r/winamd64/docker/)
 
 -	**Published image artifact details**:  
 	[repo-info repo's `repos/docker/` directory](https://github.com/docker-library/repo-info/blob/master/repos/docker) ([history](https://github.com/docker-library/repo-info/commits/master/repos/docker))  
@@ -295,6 +312,18 @@ The Docker documentation is a good starting point for understanding the differen
 	```
 
 The `-v /my/own/var-lib-docker:/var/lib/docker` part of the command mounts the `/my/own/var-lib-docker` directory from the underlying host system as `/var/lib/docker` inside the container, where Docker by default will write its data files.
+
+# Image Variants
+
+The `docker` images come in many flavors, each designed for a specific use case.
+
+## `docker:<version>`
+
+This is the defacto image. If you are unsure about what your needs are, you probably want to use this one. It is designed to be used both as a throw away container (mount your source code and start the container to start your app), as well as the base to build other images off of.
+
+## `docker:<version>-windowsservercore`
+
+Unfortunately, Windows does not support nested containers, so this image variant only contains the client (intended for use against an existing Docker engine, ala `-v //./pipe/docker_engine://./pipe/docker_engine`).
 
 # License
 

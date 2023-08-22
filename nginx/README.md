@@ -20,23 +20,25 @@ WARNING:
 	[the NGINX Docker Maintainers](https://github.com/nginxinc/docker-nginx)
 
 -	**Where to get help**:  
-	[the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
+	[the Docker Community Slack](https://dockr.ly/comm-slack), [Server Fault](https://serverfault.com/help/on-topic), [Unix & Linux](https://unix.stackexchange.com/help/on-topic), or [Stack Overflow](https://stackoverflow.com/help/on-topic)
 
 # Supported tags and respective `Dockerfile` links
 
--	[`1.21.0`, `mainline`, `1`, `1.21`, `latest`](https://github.com/nginxinc/docker-nginx/blob/f3fe494531f9b157d9c09ba509e412dace54cd4f/mainline/debian/Dockerfile)
--	[`1.21.0-perl`, `mainline-perl`, `1-perl`, `1.21-perl`, `perl`](https://github.com/nginxinc/docker-nginx/blob/f3fe494531f9b157d9c09ba509e412dace54cd4f/mainline/debian-perl/Dockerfile)
--	[`1.21.0-alpine`, `mainline-alpine`, `1-alpine`, `1.21-alpine`, `alpine`](https://github.com/nginxinc/docker-nginx/blob/f3fe494531f9b157d9c09ba509e412dace54cd4f/mainline/alpine/Dockerfile)
--	[`1.21.0-alpine-perl`, `mainline-alpine-perl`, `1-alpine-perl`, `1.21-alpine-perl`, `alpine-perl`](https://github.com/nginxinc/docker-nginx/blob/f3fe494531f9b157d9c09ba509e412dace54cd4f/mainline/alpine-perl/Dockerfile)
--	[`1.20.1`, `stable`, `1.20`](https://github.com/nginxinc/docker-nginx/blob/f3fe494531f9b157d9c09ba509e412dace54cd4f/stable/debian/Dockerfile)
--	[`1.20.1-perl`, `stable-perl`, `1.20-perl`](https://github.com/nginxinc/docker-nginx/blob/f3fe494531f9b157d9c09ba509e412dace54cd4f/stable/debian-perl/Dockerfile)
--	[`1.20.1-alpine`, `stable-alpine`, `1.20-alpine`](https://github.com/nginxinc/docker-nginx/blob/f3fe494531f9b157d9c09ba509e412dace54cd4f/stable/alpine/Dockerfile)
--	[`1.20.1-alpine-perl`, `stable-alpine-perl`, `1.20-alpine-perl`](https://github.com/nginxinc/docker-nginx/blob/f3fe494531f9b157d9c09ba509e412dace54cd4f/stable/alpine-perl/Dockerfile)
+-	[`1.25.2`, `mainline`, `1`, `1.25`, `latest`, `1.25.2-bookworm`, `mainline-bookworm`, `1-bookworm`, `1.25-bookworm`, `bookworm`](https://github.com/nginxinc/docker-nginx/blob/321a13a966eeff945196ddd31a629dad2aa85eda/mainline/debian/Dockerfile)
+-	[`1.25.2-perl`, `mainline-perl`, `1-perl`, `1.25-perl`, `perl`, `1.25.2-bookworm-perl`, `mainline-bookworm-perl`, `1-bookworm-perl`, `1.25-bookworm-perl`, `bookworm-perl`](https://github.com/nginxinc/docker-nginx/blob/321a13a966eeff945196ddd31a629dad2aa85eda/mainline/debian-perl/Dockerfile)
+-	[`1.25.2-alpine`, `mainline-alpine`, `1-alpine`, `1.25-alpine`, `alpine`, `1.25.2-alpine3.18`, `mainline-alpine3.18`, `1-alpine3.18`, `1.25-alpine3.18`, `alpine3.18`](https://github.com/nginxinc/docker-nginx/blob/321a13a966eeff945196ddd31a629dad2aa85eda/mainline/alpine/Dockerfile)
+-	[`1.25.2-alpine-perl`, `mainline-alpine-perl`, `1-alpine-perl`, `1.25-alpine-perl`, `alpine-perl`, `1.25.2-alpine3.18-perl`, `mainline-alpine3.18-perl`, `1-alpine3.18-perl`, `1.25-alpine3.18-perl`, `alpine3.18-perl`](https://github.com/nginxinc/docker-nginx/blob/321a13a966eeff945196ddd31a629dad2aa85eda/mainline/alpine-perl/Dockerfile)
+-	[`1.25.2-alpine-slim`, `mainline-alpine-slim`, `1-alpine-slim`, `1.25-alpine-slim`, `alpine-slim`, `1.25.2-alpine3.18-slim`, `mainline-alpine3.18-slim`, `1-alpine3.18-slim`, `1.25-alpine3.18-slim`, `alpine3.18-slim`](https://github.com/nginxinc/docker-nginx/blob/321a13a966eeff945196ddd31a629dad2aa85eda/mainline/alpine-slim/Dockerfile)
+-	[`1.24.0`, `stable`, `1.24`, `1.24.0-bullseye`, `stable-bullseye`, `1.24-bullseye`](https://github.com/nginxinc/docker-nginx/blob/1a8d87b69760693a8e33cd8a9e0c2e5f0e8b0e3c/stable/debian/Dockerfile)
+-	[`1.24.0-perl`, `stable-perl`, `1.24-perl`, `1.24.0-bullseye-perl`, `stable-bullseye-perl`, `1.24-bullseye-perl`](https://github.com/nginxinc/docker-nginx/blob/1a8d87b69760693a8e33cd8a9e0c2e5f0e8b0e3c/stable/debian-perl/Dockerfile)
+-	[`1.24.0-alpine`, `stable-alpine`, `1.24-alpine`, `1.24.0-alpine3.17`, `stable-alpine3.17`, `1.24-alpine3.17`](https://github.com/nginxinc/docker-nginx/blob/1a8d87b69760693a8e33cd8a9e0c2e5f0e8b0e3c/stable/alpine/Dockerfile)
+-	[`1.24.0-alpine-perl`, `stable-alpine-perl`, `1.24-alpine-perl`, `1.24.0-alpine3.17-perl`, `stable-alpine3.17-perl`, `1.24-alpine3.17-perl`](https://github.com/nginxinc/docker-nginx/blob/1a8d87b69760693a8e33cd8a9e0c2e5f0e8b0e3c/stable/alpine-perl/Dockerfile)
+-	[`1.24.0-alpine-slim`, `stable-alpine-slim`, `1.24-alpine-slim`, `1.24.0-alpine3.17-slim`, `stable-alpine3.17-slim`, `1.24-alpine3.17-slim`](https://github.com/nginxinc/docker-nginx/blob/1a8d87b69760693a8e33cd8a9e0c2e5f0e8b0e3c/stable/alpine-slim/Dockerfile)
 
 # Quick reference (cont.)
 
 -	**Where to file issues**:  
-	[https://github.com/nginxinc/docker-nginx/issues](https://github.com/nginxinc/docker-nginx/issues)
+	[https://github.com/nginxinc/docker-nginx/issues](https://github.com/nginxinc/docker-nginx/issues?q=)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
 	[`amd64`](https://hub.docker.com/r/amd64/nginx/), [`arm32v5`](https://hub.docker.com/r/arm32v5/nginx/), [`arm32v6`](https://hub.docker.com/r/arm32v6/nginx/), [`arm32v7`](https://hub.docker.com/r/arm32v7/nginx/), [`arm64v8`](https://hub.docker.com/r/arm64v8/nginx/), [`i386`](https://hub.docker.com/r/i386/nginx/), [`mips64le`](https://hub.docker.com/r/mips64le/nginx/), [`ppc64le`](https://hub.docker.com/r/ppc64le/nginx/), [`s390x`](https://hub.docker.com/r/s390x/nginx/)
@@ -164,7 +166,7 @@ This behavior can be changed via the following environment variables:
 
 ## Running nginx in read-only mode
 
-To run nginx in read-only mode, you will need to mount a Docker volume to every location where nginx writes information. The default nginx configuration requires write access to `/var/cache` and `/var/run`. This can be easily accomplished by running nginx as follows:
+To run nginx in read-only mode, you will need to mount a Docker volume to every location where nginx writes information. The default nginx configuration requires write access to `/var/cache/nginx` and `/var/run`. This can be easily accomplished by running nginx as follows:
 
 ```console
 $ docker run -d -p 80:80 --read-only -v $(pwd)/nginx-cache:/var/cache/nginx -v $(pwd)/nginx-pid:/var/run nginx
@@ -236,16 +238,6 @@ http {
 
 Alternatively, check out the official [Docker NGINX unprivileged image](https://hub.docker.com/r/nginxinc/nginx-unprivileged).
 
-## Monitoring nginx with Amplify
-
-[Amplify](https://amplify.nginx.com/signup/) is a free monitoring tool that can be used to monitor microservice architectures based on nginx. Amplify is developed and maintained by the company behind the nginx software.
-
-With Amplify it is possible to collect and aggregate metrics across containers, and present a coherent set of visualizations of the key performance data, such as active connections or requests per second. It is also easy to quickly check for any performance degradations, traffic anomalies, and get a deeper insight into the nginx configuration in general.
-
-In order to use Amplify, a small Python-based agent software (Amplify Agent) should be [installed](https://github.com/nginxinc/docker-nginx-amplify) inside the container.
-
-For more information about Amplify, please check the official documentation [here](https://github.com/nginxinc/nginx-amplify-doc).
-
 # Image Variants
 
 The `nginx` images come in many flavors, each designed for a specific use case.
@@ -254,6 +246,12 @@ The `nginx` images come in many flavors, each designed for a specific use case.
 
 This is the defacto image. If you are unsure about what your needs are, you probably want to use this one. It is designed to be used both as a throw away container (mount your source code and start the container to start your app), as well as the base to build other images off of.
 
+Some of these tags may have names like bookworm or bullseye in them. These are the suite code names for releases of [Debian](https://wiki.debian.org/DebianReleases) and indicate which release the image is based on. If your image needs to install any additional packages beyond what comes with the image, you'll likely want to specify one of these explicitly to minimize breakage when there are new releases of Debian.
+
+## `nginx:<version>-perl` / `nginx:<version>-alpine-perl`
+
+Starting with nginx:1.13.0 / mainline and nginx:1.12.0 / stable, the perl module has been removed from the default images. A separate `-perl` tag variant is available if you wish to use the perl module.
+
 ## `nginx:<version>-alpine`
 
 This image is based on the popular [Alpine Linux project](https://alpinelinux.org), available in [the `alpine` official image](https://hub.docker.com/_/alpine). Alpine Linux is much smaller than most distribution base images (~5MB), and thus leads to much slimmer images in general.
@@ -261,6 +259,10 @@ This image is based on the popular [Alpine Linux project](https://alpinelinux.or
 This variant is useful when final image size being as small as possible is your primary concern. The main caveat to note is that it does use [musl libc](https://musl.libc.org) instead of [glibc and friends](https://www.etalabs.net/compare_libcs.html), so software will often run into issues depending on the depth of their libc requirements/assumptions. See [this Hacker News comment thread](https://news.ycombinator.com/item?id=10782897) for more discussion of the issues that might arise and some pro/con comparisons of using Alpine-based images.
 
 To minimize image size, it's uncommon for additional related tools (such as `git` or `bash`) to be included in Alpine-based images. Using this image as a base, add the things you need in your own Dockerfile (see the [`alpine` image description](https://hub.docker.com/_/alpine/) for examples of how to install packages if you are unfamiliar).
+
+## `nginx:<version>-slim`
+
+This image does not contain the common packages contained in the default tag and only contains the minimal packages needed to run `nginx`. Unless you are working in an environment where *only* the `nginx` image will be deployed and you have space constraints, we highly recommend using the default image of this repository.
 
 # License
 

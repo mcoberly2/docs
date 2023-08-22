@@ -20,12 +20,12 @@ WARNING:
 	Arch Linux trusted users [Santiago Torres-Arias](https://www.archlinux.org/people/trusted-users/#sangy), [Christian Rebischke](https://www.archlinux.org/people/trusted-users/#shibumi) and [Justin Kromlinger](https://www.archlinux.org/people/trusted-users/#hashworks) as well as Arch Linux developer [Pierre Schmitz](https://www.archlinux.org/people/developers/#pierre).
 
 -	**Where to get help**:  
-	[the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
+	[the Docker Community Slack](https://dockr.ly/comm-slack), [Server Fault](https://serverfault.com/help/on-topic), [Unix & Linux](https://unix.stackexchange.com/help/on-topic), or [Stack Overflow](https://stackoverflow.com/help/on-topic)
 
 # Supported tags and respective `Dockerfile` links
 
--	[`latest`, `base`, `base-20210523.0.23638`](https://gitlab.archlinux.org/archlinux/archlinux-docker/-/blob/e9df7b4a04dc65a1b33bcac93da6ec69dedf994a/Dockerfile.base)
--	[`base-devel`, `base-devel-20210523.0.23638`](https://gitlab.archlinux.org/archlinux/archlinux-docker/-/blob/e9df7b4a04dc65a1b33bcac93da6ec69dedf994a/Dockerfile.base-devel)
+-	[`latest`, `base`, `base-20230723.0.166908`](https://gitlab.archlinux.org/archlinux/archlinux-docker/-/blob/56bb99f5ad26f03ab6ea2984f83b4383bb68a2d2/Dockerfile.base)
+-	[`base-devel`, `base-devel-20230723.0.166908`](https://gitlab.archlinux.org/archlinux/archlinux-docker/-/blob/56bb99f5ad26f03ab6ea2984f83b4383bb68a2d2/Dockerfile.base-devel)
 
 # Quick reference (cont.)
 

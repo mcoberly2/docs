@@ -20,18 +20,18 @@ WARNING:
 	[Postfix Admin](https://github.com/postfixadmin/docker)
 
 -	**Where to get help**:  
-	[the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
+	[the Docker Community Slack](https://dockr.ly/comm-slack), [Server Fault](https://serverfault.com/help/on-topic), [Unix & Linux](https://unix.stackexchange.com/help/on-topic), or [Stack Overflow](https://stackoverflow.com/help/on-topic)
 
 # Supported tags and respective `Dockerfile` links
 
--	[`3.3.9-apache`, `3.3-apache`, `3-apache`, `apache`, `3.3.9`, `3.3`, `3`, `latest`](https://github.com/postfixadmin/docker/blob/1b677083c85185c721ada312307150ac242e6103/apache/Dockerfile)
--	[`3.3.9-fpm`, `3.3-fpm`, `3-fpm`, `fpm`](https://github.com/postfixadmin/docker/blob/1b677083c85185c721ada312307150ac242e6103/fpm/Dockerfile)
--	[`3.3.9-fpm-alpine`, `3.3-fpm-alpine`, `3-fpm-alpine`, `fpm-alpine`](https://github.com/postfixadmin/docker/blob/1b677083c85185c721ada312307150ac242e6103/fpm-alpine/Dockerfile)
+-	[`3.3.13-apache`, `3.3-apache`, `3-apache`, `apache`, `3.3.13`, `3.3`, `3`, `latest`](https://github.com/postfixadmin/docker/blob/f0eccac1ed27a05031c515591d3c9f29502efb27/apache/Dockerfile)
+-	[`3.3.13-fpm`, `3.3-fpm`, `3-fpm`, `fpm`](https://github.com/postfixadmin/docker/blob/f0eccac1ed27a05031c515591d3c9f29502efb27/fpm/Dockerfile)
+-	[`3.3.13-fpm-alpine`, `3.3-fpm-alpine`, `3-fpm-alpine`, `fpm-alpine`](https://github.com/postfixadmin/docker/blob/5030ec70f6a0dec12e39f5194fb29575b169f7b7/fpm-alpine/Dockerfile)
 
 # Quick reference (cont.)
 
 -	**Where to file issues**:  
-	[https://github.com/postfixadmin/docker/issues](https://github.com/postfixadmin/docker/issues)
+	[https://github.com/postfixadmin/docker/issues](https://github.com/postfixadmin/docker/issues?q=)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
 	[`amd64`](https://hub.docker.com/r/amd64/postfixadmin/), [`arm32v5`](https://hub.docker.com/r/arm32v5/postfixadmin/), [`arm32v6`](https://hub.docker.com/r/arm32v6/postfixadmin/), [`arm32v7`](https://hub.docker.com/r/arm32v7/postfixadmin/), [`arm64v8`](https://hub.docker.com/r/arm64v8/postfixadmin/), [`i386`](https://hub.docker.com/r/i386/postfixadmin/), [`mips64le`](https://hub.docker.com/r/mips64le/postfixadmin/), [`ppc64le`](https://hub.docker.com/r/ppc64le/postfixadmin/), [`s390x`](https://hub.docker.com/r/s390x/postfixadmin/)
@@ -103,9 +103,9 @@ $ docker run -v /local/path/to/config.local.php:/var/www/html/config.local.php \
         postfixadmin
 ```
 
-... via [`docker stack deploy`](https://docs.docker.com/engine/reference/commandline/stack_deploy/) or [`docker-compose`](https://github.com/docker/compose)
+... via [`docker-compose`](https://github.com/docker/compose) or [`docker stack deploy`](https://docs.docker.com/engine/reference/commandline/stack_deploy/)
 
-Example `stack.yml` for `postfixadmin`:
+Example `docker-compose.yml` for `postfixadmin`:
 
 ```yaml
 version: '3'

@@ -20,18 +20,18 @@ WARNING:
 	[Matomo](https://github.com/matomo-org/docker) (a Matomo community contributor)
 
 -	**Where to get help**:  
-	[the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
+	[the Docker Community Slack](https://dockr.ly/comm-slack), [Server Fault](https://serverfault.com/help/on-topic), [Unix & Linux](https://unix.stackexchange.com/help/on-topic), or [Stack Overflow](https://stackoverflow.com/help/on-topic)
 
 # Supported tags and respective `Dockerfile` links
 
--	[`4.3.1-apache`, `4.3-apache`, `4-apache`, `apache`, `4.3.1`, `4.3`, `4`, `latest`](https://github.com/matomo-org/docker/blob/dee3a5b7585e65fc15d5023f09986ec65ddfce6b/apache/Dockerfile)
--	[`4.3.1-fpm`, `4.3-fpm`, `4-fpm`, `fpm`](https://github.com/matomo-org/docker/blob/dee3a5b7585e65fc15d5023f09986ec65ddfce6b/fpm/Dockerfile)
--	[`4.3.1-fpm-alpine`, `4.3-fpm-alpine`, `4-fpm-alpine`, `fpm-alpine`](https://github.com/matomo-org/docker/blob/dee3a5b7585e65fc15d5023f09986ec65ddfce6b/fpm-alpine/Dockerfile)
+-	[`4.15.1-apache`, `4.15-apache`, `4-apache`, `apache`, `4.15.1`, `4.15`, `4`, `latest`](https://github.com/matomo-org/docker/blob/a504fe92ae03210bd93d35574043c690ea2b6aa5/apache/Dockerfile)
+-	[`4.15.1-fpm`, `4.15-fpm`, `4-fpm`, `fpm`](https://github.com/matomo-org/docker/blob/a504fe92ae03210bd93d35574043c690ea2b6aa5/fpm/Dockerfile)
+-	[`4.15.1-fpm-alpine`, `4.15-fpm-alpine`, `4-fpm-alpine`, `fpm-alpine`](https://github.com/matomo-org/docker/blob/a504fe92ae03210bd93d35574043c690ea2b6aa5/fpm-alpine/Dockerfile)
 
 # Quick reference (cont.)
 
 -	**Where to file issues**:  
-	[https://github.com/matomo-org/docker/issues](https://github.com/matomo-org/docker/issues)
+	[https://github.com/matomo-org/docker/issues](https://github.com/matomo-org/docker/issues?q=)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
 	[`amd64`](https://hub.docker.com/r/amd64/matomo/), [`arm32v5`](https://hub.docker.com/r/arm32v5/matomo/), [`arm32v6`](https://hub.docker.com/r/arm32v6/matomo/), [`arm32v7`](https://hub.docker.com/r/arm32v7/matomo/), [`arm64v8`](https://hub.docker.com/r/arm64v8/matomo/), [`i386`](https://hub.docker.com/r/i386/matomo/), [`mips64le`](https://hub.docker.com/r/mips64le/matomo/), [`ppc64le`](https://hub.docker.com/r/ppc64le/matomo/), [`s390x`](https://hub.docker.com/r/s390x/matomo/)
@@ -49,7 +49,7 @@ WARNING:
 
 # Matomo (formerly Piwik)
 
-[![Build Status](https://travis-ci.org/matomo-org/docker.svg?branch=master)](https://travis-ci.org/matomo-org/docker) [Matomo](https://matomo.org/) (formerly Piwik) is the leading open-source analytics platform that gives you more than just powerful analytics:
+[Matomo](https://matomo.org/) (formerly Piwik) is the leading open-source analytics platform that gives you more than just powerful analytics:
 
 -	Free open-source software
 -	100% data ownership

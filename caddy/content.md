@@ -49,7 +49,7 @@ $ docker run -d -p 80:80 \
 The default `Caddyfile` only listens to port `80`, and does not set up automatic TLS. However, if you have a domain name for your site, and its A/AAAA DNS records are properly pointed to this machine's public IP, then you can use this command to simply serve a site over HTTPS:
 
 ```console
-$ docker run -d -p 80:80 -p 443:443 \
+$ docker run -d -p 80:80 -p 443:443 -p 443:443/udp \
     -v /site:/srv \
     -v caddy_data:/data \
     -v caddy_config:/config \
@@ -111,7 +111,7 @@ $ docker exec -w /etc/caddy $caddy_container_id caddy reload
 
 ### Docker Compose example
 
-If you prefer to use `docker-compoose` to run your stack, here's a sample service definition.
+If you prefer to use `docker-compose` to run your stack, here's a sample service definition.
 
 ```yaml
 version: "3.7"
@@ -123,6 +123,7 @@ services:
     ports:
       - "80:80"
       - "443:443"
+      - "443:443/udp"
     volumes:
       - $PWD/Caddyfile:/etc/caddy/Caddyfile
       - $PWD/site:/srv
@@ -131,5 +132,8 @@ services:
 
 volumes:
   caddy_data:
+    external: true
   caddy_config:
 ```
+
+Defining the data volume as [`external`](https://docs.docker.com/compose/compose-file/compose-file-v3/#external) makes sure `docker-compose down` does not delete the volume. You may need to create it manually using `docker volume create [project-name]_caddy_data`.

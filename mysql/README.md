@@ -20,21 +20,22 @@ WARNING:
 	[the Docker Community and the MySQL Team](https://github.com/docker-library/mysql)
 
 -	**Where to get help**:  
-	[the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
+	[the Docker Community Slack](https://dockr.ly/comm-slack), [Server Fault](https://serverfault.com/help/on-topic), [Unix & Linux](https://unix.stackexchange.com/help/on-topic), or [Stack Overflow](https://stackoverflow.com/help/on-topic)
 
 # Supported tags and respective `Dockerfile` links
 
--	[`8.0.25`, `8.0`, `8`, `latest`](https://github.com/docker-library/mysql/blob/a09a716a88ce34a17e16df3f8b091066d90e6f34/8.0/Dockerfile.debian)
--	[`5.7.34`, `5.7`, `5`](https://github.com/docker-library/mysql/blob/b11f06b0d202e7b0f97b000e158fc4fc869d2194/5.7/Dockerfile.debian)
--	[`5.6.51`, `5.6`](https://github.com/docker-library/mysql/blob/43ee7daebca3af6cb13ae3032b2a4e6f642c7233/5.6/Dockerfile.debian)
+-	[`8.1.0`, `8.1`, `8`, `innovation`, `latest`, `8.1.0-oracle`, `8.1-oracle`, `8-oracle`, `innovation-oracle`, `oracle`](https://github.com/docker-library/mysql/blob/eb1850601849ef7ef77a23f017a20debc95d597c/innovation/Dockerfile.oracle)
+-	[`8.0.34`, `8.0`, `8.0.34-oracle`, `8.0-oracle`](https://github.com/docker-library/mysql/blob/f4030aebf6a63d640f7085fb3e4601b4e70313c8/8.0/Dockerfile.oracle)
+-	[`8.0.34-debian`, `8.0-debian`](https://github.com/docker-library/mysql/blob/f4030aebf6a63d640f7085fb3e4601b4e70313c8/8.0/Dockerfile.debian)
+-	[`5.7.43`, `5.7`, `5`, `5.7.43-oracle`, `5.7-oracle`, `5-oracle`](https://github.com/docker-library/mysql/blob/c13cda9c2c9d836af9b3331e8681f8cc8e0a7803/5.7/Dockerfile.oracle)
 
 # Quick reference (cont.)
 
 -	**Where to file issues**:  
-	[https://github.com/docker-library/mysql/issues](https://github.com/docker-library/mysql/issues)
+	[https://github.com/docker-library/mysql/issues](https://github.com/docker-library/mysql/issues?q=)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
-	[`amd64`](https://hub.docker.com/r/amd64/mysql/)
+	[`amd64`](https://hub.docker.com/r/amd64/mysql/), [`arm64v8`](https://hub.docker.com/r/arm64v8/mysql/)
 
 -	**Published image artifact details**:  
 	[repo-info repo's `repos/mysql/` directory](https://github.com/docker-library/repo-info/blob/master/repos/mysql) ([history](https://github.com/docker-library/repo-info/commits/master/repos/mysql))  
@@ -85,9 +86,9 @@ $ docker run -it --rm mysql mysql -hsome.mysql.host -usome-mysql-user -p
 
 More information about the MySQL command line client can be found in the [MySQL documentation](http://dev.mysql.com/doc/en/mysql.html)
 
-## ... via [`docker stack deploy`](https://docs.docker.com/engine/reference/commandline/stack_deploy/) or [`docker-compose`](https://github.com/docker/compose)
+## ... via [`docker-compose`](https://github.com/docker/compose) or [`docker stack deploy`](https://docs.docker.com/engine/reference/commandline/stack_deploy/)
 
-Example `stack.yml` for `mysql`:
+Example `docker-compose.yml` for `mysql`:
 
 ```yaml
 # Use root/example as user/password credentials
@@ -97,6 +98,8 @@ services:
 
   db:
     image: mysql
+    # NOTE: use of "mysql_native_password" is not recommended: https://dev.mysql.com/doc/refman/8.0/en/upgrading-from-previous-series.html#upgrade-caching-sha2-password
+    # (this is just an example, not intended to be a production configuration)
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
@@ -109,7 +112,7 @@ services:
       - 8080:8080
 ```
 
-[![Try in PWD](https://github.com/play-with-docker/stacks/raw/cff22438cb4195ace27f9b15784bbb497047afa7/assets/images/button.png)](http://play-with-docker.com?stack=https://raw.githubusercontent.com/docker-library/docs/b664a62bb7be3e0cbc2304e306ea42f33244fad1/mysql/stack.yml)
+[![Try in PWD](https://github.com/play-with-docker/stacks/raw/cff22438cb4195ace27f9b15784bbb497047afa7/assets/images/button.png)](http://play-with-docker.com?stack=https://raw.githubusercontent.com/docker-library/docs/06990e05c934d425c74addcc5ea462f53de6c8cd/mysql/stack.yml)
 
 Run `docker stack deploy -c stack.yml mysql` (or `docker-compose -f stack.yml up`), wait for it to initialize completely, and visit `http://swarm-ip:8080`, `http://localhost:8080`, or `http://host-ip:8080` (as appropriate).
 

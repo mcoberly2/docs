@@ -24,18 +24,14 @@ WARNING:
 
 # Supported tags and respective `Dockerfile` links
 
--	[`4.5.1`, `4.5`, `latest`](https://github.com/crate/docker-crate/blob/bc6f93174665458c574518f37bfb2e07694251f4/Dockerfile)
--	[`4.4.3`, `4.4`](https://github.com/crate/docker-crate/blob/2ccc43c2b34cd4182b7757298f97dd21f123b2d9/Dockerfile)
--	[`4.3.4`, `4.3`](https://github.com/crate/docker-crate/blob/eae5f171ef089074d42d033af2988714a87190b6/Dockerfile)
--	[`4.2.7`, `4.2`](https://github.com/crate/docker-crate/blob/441cd8bb0115a268f30633839bc29d813dfaa0db/Dockerfile)
--	[`4.1.8`, `4.1`](https://github.com/crate/docker-crate/blob/fbe46a3c699dfe79242e659626a39b09325d58ab/Dockerfile)
--	[`4.0.12`, `4.0`](https://github.com/crate/docker-crate/blob/7791cda08fbf054ab2ce7a988f8811074b8c3bf4/Dockerfile)
--	[`3.3.5`, `3.3`](https://github.com/crate/docker-crate/blob/896c3f63e8e3d4746019e379a7aefb5225b050e3/Dockerfile)
+-	[`5.4.2`, `5.4`, `latest`](https://github.com/crate/docker-crate/blob/788969ef9e877128f07092edf61ee7ac75ac4550/Dockerfile)
+-	[`5.3.6`, `5.3`](https://github.com/crate/docker-crate/blob/f430bdf6653a10ae5ab6b09f3b3f46408bed73be/Dockerfile)
+-	[`4.8.4`, `4.8`](https://github.com/crate/docker-crate/blob/1389b454dc1478efcbde8f9846bdd8ac6f7f0f8a/Dockerfile)
 
 # Quick reference (cont.)
 
 -	**Where to file issues**:  
-	[https://github.com/crate/docker-crate/issues](https://github.com/crate/docker-crate/issues)
+	[https://github.com/crate/docker-crate/issues](https://github.com/crate/docker-crate/issues?q=)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
 	[`amd64`](https://hub.docker.com/r/amd64/crate/), [`arm64v8`](https://hub.docker.com/r/arm64v8/crate/)
@@ -51,7 +47,7 @@ WARNING:
 -	**Source of this description**:  
 	[docs repo's `crate/` directory](https://github.com/docker-library/docs/tree/master/crate) ([history](https://github.com/docker-library/docs/commits/master/crate))
 
-![logo](https://raw.githubusercontent.com/docker-library/docs/0d4ccc1c0a00a99c3302ffeb17831225cbba7863/crate/logo.png)
+![logo](https://raw.githubusercontent.com/docker-library/docs/774acf9bf99ca29eded5cd50f0ba3f755716673d/crate/logo.svg?sanitize=true)
 
 # What Is CrateDB?
 

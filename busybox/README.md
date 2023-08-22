@@ -20,22 +20,26 @@ WARNING:
 	[the Docker Community](https://github.com/docker-library/busybox)
 
 -	**Where to get help**:  
-	[the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
+	[the Docker Community Slack](https://dockr.ly/comm-slack), [Server Fault](https://serverfault.com/help/on-topic), [Unix & Linux](https://unix.stackexchange.com/help/on-topic), or [Stack Overflow](https://stackoverflow.com/help/on-topic)
 
 # Supported tags and respective `Dockerfile` links
 
--	[`1.33.1-uclibc`, `1.33-uclibc`, `1-uclibc`, `stable-uclibc`, `uclibc`](https://github.com/docker-library/busybox/blob/6a3fa4f3ee1437da18f6f017b75e7799b1ae910b/stable/uclibc/Dockerfile)
--	[`1.33.1-glibc`, `1.33-glibc`, `1-glibc`, `stable-glibc`, `glibc`](https://github.com/docker-library/busybox/blob/6a3fa4f3ee1437da18f6f017b75e7799b1ae910b/stable/glibc/Dockerfile)
--	[`1.33.1-musl`, `1.33-musl`, `1-musl`, `stable-musl`, `musl`](https://github.com/docker-library/busybox/blob/6a3fa4f3ee1437da18f6f017b75e7799b1ae910b/stable/musl/Dockerfile)
--	[`1.33.1`, `1.33`, `1`, `stable`, `latest`](https://github.com/docker-library/busybox/blob/6a3fa4f3ee1437da18f6f017b75e7799b1ae910b/stable/uclibc/Dockerfile)
+-	[`1.36.1-glibc`, `1.36-glibc`, `1-glibc`, `stable-glibc`, `glibc`](https://github.com/docker-library/busybox/blob/089e2f966d5db5cbc2f6ea1b5f7e2a92d15a07b3/latest/glibc/Dockerfile)
+-	[`1.36.1-uclibc`, `1.36-uclibc`, `1-uclibc`, `stable-uclibc`, `uclibc`](https://github.com/docker-library/busybox/blob/089e2f966d5db5cbc2f6ea1b5f7e2a92d15a07b3/latest/uclibc/Dockerfile)
+-	[`1.36.1-musl`, `1.36-musl`, `1-musl`, `stable-musl`, `musl`](https://github.com/docker-library/busybox/blob/089e2f966d5db5cbc2f6ea1b5f7e2a92d15a07b3/latest/musl/Dockerfile)
+-	[`1.36.1`, `1.36`, `1`, `stable`, `latest`](https://github.com/docker-library/busybox/blob/089e2f966d5db5cbc2f6ea1b5f7e2a92d15a07b3/latest/glibc/Dockerfile)
+-	[`1.35.0-glibc`, `1.35-glibc`](https://github.com/docker-library/busybox/blob/089e2f966d5db5cbc2f6ea1b5f7e2a92d15a07b3/latest-1/glibc/Dockerfile)
+-	[`1.35.0-uclibc`, `1.35-uclibc`](https://github.com/docker-library/busybox/blob/089e2f966d5db5cbc2f6ea1b5f7e2a92d15a07b3/latest-1/uclibc/Dockerfile)
+-	[`1.35.0-musl`, `1.35-musl`](https://github.com/docker-library/busybox/blob/089e2f966d5db5cbc2f6ea1b5f7e2a92d15a07b3/latest-1/musl/Dockerfile)
+-	[`1.35.0`, `1.35`](https://github.com/docker-library/busybox/blob/089e2f966d5db5cbc2f6ea1b5f7e2a92d15a07b3/latest-1/glibc/Dockerfile)
 
 # Quick reference (cont.)
 
 -	**Where to file issues**:  
-	[https://github.com/docker-library/busybox/issues](https://github.com/docker-library/busybox/issues)
+	[https://github.com/docker-library/busybox/issues](https://github.com/docker-library/busybox/issues?q=)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
-	[`amd64`](https://hub.docker.com/r/amd64/busybox/), [`arm32v5`](https://hub.docker.com/r/arm32v5/busybox/), [`arm32v6`](https://hub.docker.com/r/arm32v6/busybox/), [`arm32v7`](https://hub.docker.com/r/arm32v7/busybox/), [`arm64v8`](https://hub.docker.com/r/arm64v8/busybox/), [`i386`](https://hub.docker.com/r/i386/busybox/), [`mips64le`](https://hub.docker.com/r/mips64le/busybox/), [`ppc64le`](https://hub.docker.com/r/ppc64le/busybox/), [`s390x`](https://hub.docker.com/r/s390x/busybox/)
+	[`amd64`](https://hub.docker.com/r/amd64/busybox/), [`arm32v5`](https://hub.docker.com/r/arm32v5/busybox/), [`arm32v6`](https://hub.docker.com/r/arm32v6/busybox/), [`arm32v7`](https://hub.docker.com/r/arm32v7/busybox/), [`arm64v8`](https://hub.docker.com/r/arm64v8/busybox/), [`i386`](https://hub.docker.com/r/i386/busybox/), [`mips64le`](https://hub.docker.com/r/mips64le/busybox/), [`ppc64le`](https://hub.docker.com/r/ppc64le/busybox/), [`riscv64`](https://hub.docker.com/r/riscv64/busybox/), [`s390x`](https://hub.docker.com/r/s390x/busybox/)
 
 -	**Published image artifact details**:  
 	[repo-info repo's `repos/busybox/` directory](https://github.com/docker-library/repo-info/blob/master/repos/busybox) ([history](https://github.com/docker-library/repo-info/commits/master/repos/busybox))  
@@ -84,13 +88,13 @@ The `busybox` images contain BusyBox built against various "libc" variants (for 
 
 For more information about the specific particulars of the build process for each variant, see `Dockerfile.builder` in the same directory as each variant's `Dockerfile` (see links above).
 
-## `busybox:uclibc`
-
--	[uClibc](https://uclibc.org) via [Buildroot](https://buildroot.org) (statically compiled)
-
 ## `busybox:glibc`
 
 -	[glibc from Debian](https://packages.debian.org/search?searchon=names&exact=1&suite=all&section=all&keywords=libc6) (which is then included in the image)
+
+## `busybox:uclibc`
+
+-	[uClibc](https://uclibc.org) via [Buildroot](https://buildroot.org) (statically compiled)
 
 ## `busybox:musl`
 

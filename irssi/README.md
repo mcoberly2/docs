@@ -20,17 +20,17 @@ WARNING:
 	[Jessie and Tianon (of the Docker Community)](https://github.com/jessfraz/irssi), [with the appreciation of the Irssi Project](https://twitter.com/GeertHauwaerts/status/559131523145035776)
 
 -	**Where to get help**:  
-	[the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
+	[the Docker Community Slack](https://dockr.ly/comm-slack), [Server Fault](https://serverfault.com/help/on-topic), [Unix & Linux](https://unix.stackexchange.com/help/on-topic), or [Stack Overflow](https://stackoverflow.com/help/on-topic)
 
 # Supported tags and respective `Dockerfile` links
 
--	[`1.2.3`, `1.2`, `1`, `latest`](https://github.com/jessfraz/irssi/blob/1828e23a4b14600e1194c911bbdab6e927748351/debian/Dockerfile)
--	[`1.2.3-alpine`, `1.2-alpine`, `1-alpine`, `alpine`](https://github.com/jessfraz/irssi/blob/1828e23a4b14600e1194c911bbdab6e927748351/alpine/Dockerfile)
+-	[`1.4.4`, `1.4`, `1`, `latest`, `1.4.4-bookworm`, `1.4-bookworm`, `1-bookworm`, `bookworm`](https://github.com/jessfraz/irssi/blob/b4d59338769521e17730ff1741c8502a9e210846/debian/Dockerfile)
+-	[`1.4.4-alpine`, `1.4-alpine`, `1-alpine`, `alpine`, `1.4.4-alpine3.18`, `1.4-alpine3.18`, `1-alpine3.18`, `alpine3.18`](https://github.com/jessfraz/irssi/blob/105374db8e9ecf2782c5302f17464547dd5c8609/alpine/Dockerfile)
 
 # Quick reference (cont.)
 
 -	**Where to file issues**:  
-	[https://github.com/jessfraz/irssi/issues](https://github.com/jessfraz/irssi/issues)
+	[https://github.com/jessfraz/irssi/issues](https://github.com/jessfraz/irssi/issues?q=)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
 	[`amd64`](https://hub.docker.com/r/amd64/irssi/), [`arm32v5`](https://hub.docker.com/r/arm32v5/irssi/), [`arm32v6`](https://hub.docker.com/r/arm32v6/irssi/), [`arm32v7`](https://hub.docker.com/r/arm32v7/irssi/), [`arm64v8`](https://hub.docker.com/r/arm64v8/irssi/), [`i386`](https://hub.docker.com/r/i386/irssi/), [`mips64le`](https://hub.docker.com/r/mips64le/irssi/), [`ppc64le`](https://hub.docker.com/r/ppc64le/irssi/), [`s390x`](https://hub.docker.com/r/s390x/irssi/)
@@ -92,6 +92,8 @@ The `irssi` images come in many flavors, each designed for a specific use case.
 ## `irssi:<version>`
 
 This is the defacto image. If you are unsure about what your needs are, you probably want to use this one. It is designed to be used both as a throw away container (mount your source code and start the container to start your app), as well as the base to build other images off of.
+
+Some of these tags may have names like bookworm in them. These are the suite code names for releases of [Debian](https://wiki.debian.org/DebianReleases) and indicate which release the image is based on. If your image needs to install any additional packages beyond what comes with the image, you'll likely want to specify one of these explicitly to minimize breakage when there are new releases of Debian.
 
 ## `irssi:<version>-alpine`
 

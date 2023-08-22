@@ -20,7 +20,7 @@ WARNING:
 	[the NATS Project](https://github.com/nats-io/nats-docker)
 
 -	**Where to get help**:  
-	[the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
+	[the Docker Community Slack](https://dockr.ly/comm-slack), [Server Fault](https://serverfault.com/help/on-topic), [Unix & Linux](https://unix.stackexchange.com/help/on-topic), or [Stack Overflow](https://stackoverflow.com/help/on-topic)
 
 # Supported tags and respective `Dockerfile` links
 
@@ -28,27 +28,25 @@ WARNING:
 
 ## Simple Tags
 
--	[`2.2.6-alpine3.13`, `2.2-alpine3.13`, `2-alpine3.13`, `alpine3.13`, `2.2.6-alpine`, `2.2-alpine`, `2-alpine`, `alpine`](https://github.com/nats-io/nats-docker/blob/7acef1794d5a3e92344e681cbcae7906ad8194e4/2.2.6/alpine3.13/Dockerfile)
--	[`2.2.6-scratch`, `2.2-scratch`, `2-scratch`, `scratch`, `2.2.6-linux`, `2.2-linux`, `2-linux`, `linux`](https://github.com/nats-io/nats-docker/blob/7acef1794d5a3e92344e681cbcae7906ad8194e4/2.2.6/scratch/Dockerfile)
--	[`2.2.6-windowsservercore-1809`, `2.2-windowsservercore-1809`, `2-windowsservercore-1809`, `windowsservercore-1809`](https://github.com/nats-io/nats-docker/blob/7acef1794d5a3e92344e681cbcae7906ad8194e4/2.2.6/windowsservercore-1809/Dockerfile)
--	[`2.2.6-nanoserver-1809`, `2.2-nanoserver-1809`, `2-nanoserver-1809`, `nanoserver-1809`](https://github.com/nats-io/nats-docker/blob/7acef1794d5a3e92344e681cbcae7906ad8194e4/2.2.6/nanoserver-1809/Dockerfile)
--	[`2.2.6-windowsservercore-ltsc2016`, `2.2-windowsservercore-ltsc2016`, `2-windowsservercore-ltsc2016`, `windowsservercore-ltsc2016`](https://github.com/nats-io/nats-docker/blob/7acef1794d5a3e92344e681cbcae7906ad8194e4/2.2.6/windowsservercore-ltsc2016/Dockerfile)
+-	[`2.9.21-alpine3.18`, `2.9-alpine3.18`, `2-alpine3.18`, `alpine3.18`, `2.9.21-alpine`, `2.9-alpine`, `2-alpine`, `alpine`](https://github.com/nats-io/nats-docker/blob/36c73754f3d7b2b2e69a0c4680a48636929012cc/2.9.21/alpine3.18/Dockerfile)
+-	[`2.9.21-scratch`, `2.9-scratch`, `2-scratch`, `scratch`, `2.9.21-linux`, `2.9-linux`, `2-linux`, `linux`](https://github.com/nats-io/nats-docker/blob/36c73754f3d7b2b2e69a0c4680a48636929012cc/2.9.21/scratch/Dockerfile)
+-	[`2.9.21-windowsservercore-1809`, `2.9-windowsservercore-1809`, `2-windowsservercore-1809`, `windowsservercore-1809`](https://github.com/nats-io/nats-docker/blob/36c73754f3d7b2b2e69a0c4680a48636929012cc/2.9.21/windowsservercore-1809/Dockerfile)
+-	[`2.9.21-nanoserver-1809`, `2.9-nanoserver-1809`, `2-nanoserver-1809`, `nanoserver-1809`](https://github.com/nats-io/nats-docker/blob/36c73754f3d7b2b2e69a0c4680a48636929012cc/2.9.21/nanoserver-1809/Dockerfile)
 
 ## Shared Tags
 
--	`2.2.6`, `2.2`, `2`, `latest`:
-	-	[`2.2.6-scratch`](https://github.com/nats-io/nats-docker/blob/7acef1794d5a3e92344e681cbcae7906ad8194e4/2.2.6/scratch/Dockerfile)
-	-	[`2.2.6-nanoserver-1809`](https://github.com/nats-io/nats-docker/blob/7acef1794d5a3e92344e681cbcae7906ad8194e4/2.2.6/nanoserver-1809/Dockerfile)
--	`2.2.6-windowsservercore`, `2.2-windowsservercore`, `2-windowsservercore`, `windowsservercore`:
-	-	[`2.2.6-windowsservercore-1809`](https://github.com/nats-io/nats-docker/blob/7acef1794d5a3e92344e681cbcae7906ad8194e4/2.2.6/windowsservercore-1809/Dockerfile)
-	-	[`2.2.6-windowsservercore-ltsc2016`](https://github.com/nats-io/nats-docker/blob/7acef1794d5a3e92344e681cbcae7906ad8194e4/2.2.6/windowsservercore-ltsc2016/Dockerfile)
--	`2.2.6-nanoserver`, `2.2-nanoserver`, `2-nanoserver`, `nanoserver`:
-	-	[`2.2.6-nanoserver-1809`](https://github.com/nats-io/nats-docker/blob/7acef1794d5a3e92344e681cbcae7906ad8194e4/2.2.6/nanoserver-1809/Dockerfile)
+-	`2.9.21`, `2.9`, `2`, `latest`:
+	-	[`2.9.21-scratch`](https://github.com/nats-io/nats-docker/blob/36c73754f3d7b2b2e69a0c4680a48636929012cc/2.9.21/scratch/Dockerfile)
+	-	[`2.9.21-nanoserver-1809`](https://github.com/nats-io/nats-docker/blob/36c73754f3d7b2b2e69a0c4680a48636929012cc/2.9.21/nanoserver-1809/Dockerfile)
+-	`2.9.21-windowsservercore`, `2.9-windowsservercore`, `2-windowsservercore`, `windowsservercore`:
+	-	[`2.9.21-windowsservercore-1809`](https://github.com/nats-io/nats-docker/blob/36c73754f3d7b2b2e69a0c4680a48636929012cc/2.9.21/windowsservercore-1809/Dockerfile)
+-	`2.9.21-nanoserver`, `2.9-nanoserver`, `2-nanoserver`, `nanoserver`:
+	-	[`2.9.21-nanoserver-1809`](https://github.com/nats-io/nats-docker/blob/36c73754f3d7b2b2e69a0c4680a48636929012cc/2.9.21/nanoserver-1809/Dockerfile)
 
 # Quick reference (cont.)
 
 -	**Where to file issues**:  
-	[https://github.com/nats-io/nats-docker/issues](https://github.com/nats-io/nats-docker/issues)
+	[https://github.com/nats-io/nats-docker/issues](https://github.com/nats-io/nats-docker/issues?q=)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
 	[`amd64`](https://hub.docker.com/r/amd64/nats/), [`arm32v6`](https://hub.docker.com/r/arm32v6/nats/), [`arm32v7`](https://hub.docker.com/r/arm32v7/nats/), [`arm64v8`](https://hub.docker.com/r/arm64v8/nats/), [`windows-amd64`](https://hub.docker.com/r/winamd64/nats/)
@@ -69,10 +67,6 @@ WARNING:
 ![logo](https://raw.githubusercontent.com/docker-library/docs/ad703934a62fabf54452755c8486698ff6fc5cc2/nats/logo.png)
 
 `nats` is a high performance server for the NATS Messaging System.
-
-# Backward Compatibility
-
-The routing protocol has been dramatically improved and adds support for accounts and multi-tenancy. The new protocol is not backward compatible with servers pre v2.0.0.
 
 # Example usage
 
@@ -101,16 +95,16 @@ The routing protocol has been dramatically improved and adds support for account
 
 $ docker run -d --name nats-main -p 4222:4222 -p 6222:6222 -p 8222:8222 nats
 [INF] Starting nats-server
-[INF]   Version:  2.2.6
-[INF]   Git:      [cf433ae]
-[INF]   Name:     NARTTZ7HU73D2CB2WD7SO43MY3FM3GNVFOQWOU7CR2GI6KO5NZ3OY4ZL
-[INF]   ID:       NARTTZ7HU73D2CB2WD7SO43MY3FM3GNVFOQWOU7CR2GI6KO5NZ3OY4ZL
+[INF]   Version:  2.9.8
+[INF]   Git:      [60e335a]
+[INF]   Cluster:  my_cluster
+[INF]   Name:     NB3YN6SPZF6MWTLPGYLRE2AD5VVWSW443RO43YR5GC62I463QPYGOL5C
+[INF]   ID:       NB3YN6SPZF6MWTLPGYLRE2AD5VVWSW443RO43YR5GC62I463QPYGOL5C
 [INF] Using configuration file: /etc/nats/nats-server.conf
 [INF] Starting http monitor on 0.0.0.0:8222
 [INF] Listening for client connections on 0.0.0.0:4222
 [INF] Server is ready
-[INF] Cluster name is J9ja2w471S7LUuZmbdoUuy
-[WRN] Cluster name was dynamically generated, consider setting one
+[INF] Cluster name is my_cluster
 [INF] Listening for route connections on 0.0.0.0:6222
 ...
 
@@ -118,36 +112,32 @@ $ docker run -d --name nats-main -p 4222:4222 -p 6222:6222 -p 8222:8222 nats
 # Note that since you are passing arguments, this overrides the CMD section
 # of the Dockerfile, so you need to pass all arguments, including the
 # config file.
-$ docker run -d --name=nats-2 --link nats-main -p 4222:4222 -p 6222:6222 -p 8222:8222 nats -c nats-server.conf --routes=nats-route://ruser:T0pS3cr3t@nats-main:6222
+$ docker run -d --name=nats-2 --link nats-main -p 4222:4222 -p 6222:6222 -p 8222:8222 nats -c /etc/nats/nats-server.conf --routes=nats-route://ruser:T0pS3cr3t@nats-main:6222
 
 # If you want to verify the routes are connected, try this instead:
-$ docker run -d --name=nats-2 --link nats-main -p 4222:4222 -p 6222:6222 -p 8222:8222 nats -c nats-server.conf --routes=nats-route://ruser:T0pS3cr3t@nats-main:6222 -DV
+$ docker run -d --name=nats-2 --link nats-main -p 4222:4222 -p 6222:6222 -p 8222:8222 nats -c /etc/nats/nats-server.conf --routes=nats-route://ruser:T0pS3cr3t@nats-main:6222 -DV
 [INF] Starting nats-server
-[INF]   Version:  2.2.6
-[INF]   Git:      [cf433ae]
-[DBG]   Go build: go1.16.4
-[INF]   Name:     NAFCHH3X4CDUZAP6AHIOSO4POYGJWRHKCRCYGHRSJK2DEQQ5DKKMRDV2
-[INF]   ID:       NAFCHH3X4CDUZAP6AHIOSO4POYGJWRHKCRCYGHRSJK2DEQQ5DKKMRDV2
-[INF] Using configuration file: nats-server.conf
+[INF]   Version:  2.9.8
+[INF]   Git:      [60e335a]
+[DBG]   Go build: go1.19.3
+[INF]   Cluster:  my_cluster
+[INF]   Name:     NDFNAUTD4RKS2O7CMKMDMTV3DW5NIKFCQDDMXW2A5YXLUZWWX7RYFCKB
+[INF]   ID:       NDFNAUTD4RKS2O7CMKMDMTV3DW5NIKFCQDDMXW2A5YXLUZWWX7RYFCKB
+[INF] Using configuration file: /etc/nats/nats-server.conf
 [DBG] Created system account: "$SYS"
 [INF] Starting http monitor on 0.0.0.0:8222
 [INF] Listening for client connections on 0.0.0.0:4222
 [DBG] Get non local IPs for "0.0.0.0"
-[DBG]   ip=172.17.0.3
+[DBG]   ip=172.17.0.2
 [INF] Server is ready
-[INF] Cluster name is GOTLNPZydI2hV9MRlsFrJP
-[WRN] Cluster name was dynamically generated, consider setting one
+[DBG] maxprocs: Leaving GOMAXPROCS=4: CPU quota undefined
+[INF] Cluster name is my_cluster
 [INF] Listening for route connections on 0.0.0.0:6222
-[DBG] Trying to connect to route on nats-main:6222 (172.17.0.2:6222)
-[DBG] 172.17.0.2:6222 - rid:3 - Route connect msg sent
-[INF] 172.17.0.2:6222 - rid:3 - Route connection created
-[INF] 172.17.0.2:6222 - rid:3 - Router connection closed: Cluster Name Conflict
-[DBG] Attempting reconnect for solicited route "nats-route://ruser:T0pS3cr3t@nats-main:6222"
-[DBG] Trying to connect to route on nats-main:6222 (172.17.0.2:6222)
-[DBG] 172.17.0.2:6222 - rid:4 - Route connect msg sent
-[INF] 172.17.0.2:6222 - rid:4 - Route connection created
-[DBG] 172.17.0.2:6222 - rid:4 - Registering remote route "NACSPPKBBGXR7BL6SGRYAWV7GNTMUIXQNMNSM4IKSVYLQOGUYKSGFGVL"
-[DBG] 172.17.0.2:6222 - rid:4 - Sent local subscriptions to route
+[DBG] Trying to connect to route on nats-main:6222 (172.17.0.3:6222)
+[DBG] 172.17.0.3:6222 - rid:4 - Route connect msg sent
+[INF] 172.17.0.3:6222 - rid:4 - Route connection created
+[DBG] 172.17.0.3:6222 - rid:4 - Registering remote route "NDQAU6HVD44TI2X5R2QRYJEIQR3MMHCFTW2BTSXBILBOZHJ4Z7AR7GGR"
+[DBG] 172.17.0.3:6222 - rid:4 - Sent local subscriptions to route
 ```
 
 The server will load the configuration file below. Any command line flags can override these values.
@@ -174,7 +164,7 @@ cluster {
   authorization {
     user: ruser
     password: T0pS3cr3t
-    timeout: 0.75
+    timeout: 2
   }
 
   # Routes are actively solicited and connected to from this server.
@@ -188,17 +178,19 @@ cluster {
 
 ```bash
 Server Options:
-    -a, --addr <host>                Bind to host address (default: 0.0.0.0)
+    -a, --addr, --net <host>         Bind to host address (default: 0.0.0.0)
     -p, --port <port>                Use port for clients (default: 4222)
-    -n, --name <server_name>         Server name (default: auto)
+    -n, --name
+        --server_name <server_name>  Server name (default: auto)
     -P, --pid <file>                 File to store PID
     -m, --http_port <port>           Use port for http monitoring
     -ms,--https_port <port>          Use port for https monitoring
     -c, --config <file>              Configuration file
     -t                               Test configuration and exit
     -sl,--signal <signal>[=<pid>]    Send signal to nats-server process (stop, quit, reopen, reload)
-                                     <pid> can be either a PID (e.g. 1) or the path to a PID file (e.g. /var/run/nats-server.pid)
+                                     pid> can be either a PID (e.g. 1) or the path to a PID file (e.g. /var/run/nats-server.pid)
         --client_advertise <string>  Client URL to advertise to other servers
+        --ports_file_dir <dir>       Creates a ports file in the specified directory (<executable_name>_<pid>.ports).
 
 Logging Options:
     -l, --log <file>                 File to redirect log output
@@ -210,10 +202,12 @@ Logging Options:
     -VV                              Verbose trace (traces system account as well)
     -DV                              Debug and trace
     -DVV                             Debug and verbose trace (traces system account as well)
+        --log_size_limit <limit>     Logfile size limit (default: auto)
+        --max_traced_msg_len <len>   Maximum printable length for traced messages (default: unlimited)
 
 JetStream Options:
-    -js, --jetstream                 Enable JetStream functionality.
-    -sd, --store_dir <dir>           Set the storage directory.
+    -js, --jetstream                 Enable JetStream functionality
+    -sd, --store_dir <dir>           Set the storage directory
 
 Authorization Options:
         --user <user>                User required for connections
@@ -234,6 +228,10 @@ Cluster Options:
         --no_advertise <bool>        Do not advertise known cluster information to clients
         --cluster_advertise <string> Cluster URL to advertise to other servers
         --connect_retries <number>   For implicit routes, number of connect retries
+        --cluster_listen <url>       Cluster url from which members can solicit routes
+
+Profiling Options:
+        --profile <port>             Profiling HTTP port
 
 Common Options:
     -h, --help                       Show this message

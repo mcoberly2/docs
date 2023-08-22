@@ -6,11 +6,228 @@ InfluxDB is a time series database built from the ground up to handle high write
 
 %%LOGO%%
 
-## `latest` updated to InfluxDB 2.x
-
-The `latest` tag for this image now points to the latest released implementation of InfluxDB 2.x. If you are using the `latest` tag and would like to stay on the InfluxDB 1.x line, please update your environment to reference the `1.8` tag.
-
 ## Using this Image - InfluxDB 2.x
+
+### Quick start
+
+Using this image is pretty easy, but there are a few things you should know.
+
+-	You should forward TCP port 8086
+-	You should mount a volume in /var/lib/influxdb2
+
+```console
+$ docker run \
+      -p 8086:8086 \
+      -v myInfluxVolume:/var/lib/influxdb2 \
+      %%IMAGE%%:latest
+```
+
+After starting the container you can use the web interface at http://localhost:8086/ to setup and customize your Influx database.
+
+Find more about API Endpoints & Ports [here](https://docs.influxdata.com/influxdb/v2.5/reference/api/).
+
+### Configuration
+
+InfluxDB can be configured using a mix of a config file, environment variables, and CLI options. To mount a configuration file and use it with the server, you can use this command to generate the default configuration file:
+
+```console
+$ docker run --rm %%IMAGE%%:2.0 influxd print-config > config.yml
+```
+
+Modify the default configuration, which will now be available under `$PWD`. Then start the InfluxDB container:
+
+```console
+$ docker run -p 8086:8086 \
+      -v $PWD/config.yml:/etc/influxdb2/config.yml \
+      %%IMAGE%%:2.0
+```
+
+Modify `$PWD` to be the directory where you want to store the configuration file.
+
+Individual config settings can be overridden by environment variables. The variables must be named using the format `INFLUXD_${SNAKE_CASE_NAME}`. The `SNAKE_CASE_NAME` for an option will be the option's name with all dashes (`-`) replaced by underscores (`_`), in all caps.
+
+Examples:
+
+```console
+# Config setting: bolt-path
+INFLUXD_BOLT_PATH=/root/influxdb.bolt
+# Config setting: no-tasks
+INFLUXD_NO_TASKS=true
+# Config setting: storage-wal-fsync-delay
+INFLUXD_STORAGE_WAL_FSYNC_DELAY=15m
+```
+
+Finally, all config options can be passed as CLI options:
+
+```console
+$ docker run -p 8086:8086 \
+      %%IMAGE%%:2.0 --storage-wal-fsync-delay=15m
+```
+
+CLI options take precedence over environment variables.
+
+Find more about configuring InfluxDB [here](https://docs.influxdata.com/influxdb/v2.0/reference/config-options/).
+
+### Database Setup
+
+InfluxDB 2.x requires authentication. A special API exists to bootstrap the first super-user in the database, along with an initial organization and bucket. It's possible to access this API manually, or to run it automatically via environment variables.
+
+#### Manual Setup
+
+If your InfluxDB container is running locally (or on a host exposed to the network), you can perform initial setup from outside the container using either the UI or the `influx` CLI. Find more about setting up InfluxDB using these methods [here](https://docs.influxdata.com/influxdb/v2.0/get-started/#set-up-influxdb).
+
+It's also possible to perform manual setup from within the container using `docker exec`. For example, if you start the container:
+
+```console
+$ docker run -d -p 8086:8086 \
+      --name influxdb2 \
+      -v $PWD:/var/lib/influxdb2 \
+      %%IMAGE%%:2.0
+```
+
+You can then run the `influx` client in the container:
+
+```console
+$ docker exec influxdb2 influx setup \
+      --username $USERNAME \
+      --password $PASSWORD \
+      --org $ORGANIZATION \
+      --bucket $BUCKET \
+      --force
+```
+
+Running setup from within the container will cause CLI configs to be written to `/etc/influxdb2/influx-configs`. You can then use the `influx` CLI from within the container to extract the generated admin token:
+
+```console
+# Using table output + cut
+$ docker exec influxdb2 influx auth list \
+      --user $USERNAME \
+      --hide-headers | cut -f 3
+
+# Using JSON output + jq
+$ docker exec influxdb2 influx auth list \
+      --user $USERNAME \
+      --json | jq -r '.[].token'
+```
+
+Alternatively, you could configure your initial InfluxDB run to mount `/etc/influxdb2` as a volume:
+
+```console
+$ docker run -d -p 8086:8086 \
+      --name influxdb2 \
+      -v $PWD/data:/var/lib/influxdb2 \
+      -v $PWD/config:/etc/influxdb2 \
+      %%IMAGE%%:2.0
+```
+
+This will make the generated CLI configs available to the host.
+
+#### Automated Setup
+
+The InfluxDB image contains some extra functionality to automatically bootstrap the system. This functionality is enabled by setting the `DOCKER_INFLUXDB_INIT_MODE` environment variable to the value `setup` when running the container. Additional environment variables are used to configure the setup logic:
+
+-	`DOCKER_INFLUXDB_INIT_USERNAME`: The username to set for the system's initial super-user (**Required**).
+-	`DOCKER_INFLUXDB_INIT_PASSWORD`: The password to set for the system's inital super-user (**Required**).
+-	`DOCKER_INFLUXDB_INIT_ORG`: The name to set for the system's initial organization (**Required**).
+-	`DOCKER_INFLUXDB_INIT_BUCKET`: The name to set for the system's initial bucket (**Required**).
+-	`DOCKER_INFLUXDB_INIT_RETENTION`: The duration the system's initial bucket should retain data. If not set, the initial bucket will retain data forever.
+-	`DOCKER_INFLUXDB_INIT_ADMIN_TOKEN`: The authentication token to associate with the system's initial super-user. If not set, a token will be auto-generated by the system.
+
+Automated setup will generate metadata files and CLI configurations. It's recommended to mount volumes at both paths to avoid losing data.
+
+For example, a minimal invocation of automated setup is:
+
+```console
+$ docker run -d -p 8086:8086 \
+      -v $PWD/data:/var/lib/influxdb2 \
+      -v $PWD/config:/etc/influxdb2 \
+      -e DOCKER_INFLUXDB_INIT_MODE=setup \
+      -e DOCKER_INFLUXDB_INIT_USERNAME=my-user \
+      -e DOCKER_INFLUXDB_INIT_PASSWORD=my-password \
+      -e DOCKER_INFLUXDB_INIT_ORG=my-org \
+      -e DOCKER_INFLUXDB_INIT_BUCKET=my-bucket \
+      %%IMAGE%%:2.0
+```
+
+And an example using all available options is:
+
+```console
+$ docker run -d -p 8086:8086 \
+      -v $PWD/data:/var/lib/influxdb2 \
+      -v $PWD/config:/etc/influxdb2 \
+      -e DOCKER_INFLUXDB_INIT_MODE=setup \
+      -e DOCKER_INFLUXDB_INIT_USERNAME=my-user \
+      -e DOCKER_INFLUXDB_INIT_PASSWORD=my-password \
+      -e DOCKER_INFLUXDB_INIT_ORG=my-org \
+      -e DOCKER_INFLUXDB_INIT_BUCKET=my-bucket \
+      -e DOCKER_INFLUXDB_INIT_RETENTION=1w \
+      -e DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=my-super-secret-auth-token \
+      %%IMAGE%%:2.0
+```
+
+**NOTE:** Automated setup will not run if an existing boltdb file is found at the configured path. This behavior allows for the InfluxDB container to reboot post-setup without encountering "DB is already set up" errors.
+
+### Interacting with InfluxDB
+
+Once an InfluxDB instance has completed initial setup, its APIs will unlock. See the main documentation site for reference information and examples on:
+
+-	[Writing data](https://docs.influxdata.com/influxdb/v2.0/write-data/)
+-	[Reading data](https://docs.influxdata.com/influxdb/v2.0/query-data/)
+-	[Configuring security](https://docs.influxdata.com/influxdb/v2.0/security/)
+-	[And more!](https://docs.influxdata.com/influxdb/v2.0/)
+
+### Custom Initialization Scripts
+
+The InfluxDB image supports running arbitrary initialization scripts after initial system setup, on both the `setup` and `upgrade` paths. Scripts must have extension `.sh`, must have execute file permissions (`chmod +x <yourscript.sh>`) and be mounted inside of the `/docker-entrypoint-initdb.d` directory. When multiple scripts are present, they will be executed in lexical sort order by name.
+
+As a convenience for script-writers, the image will export a number of variables into the environment before executing any scripts:
+
+-	`INFLUX_CONFIGS_PATH`: Path to the CLI configs file written by `setup`/`upgrade`
+-	`INFLUX_HOST`: URL to the `influxd` instance running setup logic
+-	`DOCKER_INFLUXDB_INIT_USER_ID`: ID of the initial admin user created by `setup`/`upgrade`
+-	`DOCKER_INFLUXDB_INIT_ORG_ID`: ID of the initial organization created by `setup`/`upgrade`
+-	`DOCKER_INFLUXDB_INIT_BUCKET_ID`: ID of the initial bucket created by `setup`/`upgrade`
+
+For example, if you wanted to grant write-access to an InfluxDB 1.x client on your initial bucket, you'd first create the file `$PWD/scripts/setup-v1.sh` with contents:
+
+```bash
+#!/bin/bash
+set -e
+
+influx v1 dbrp create \
+  --bucket-id ${DOCKER_INFLUXDB_INIT_BUCKET_ID} \
+  --db ${V1_DB_NAME} \
+  --rp ${V1_RP_NAME} \
+  --default \
+  --org ${DOCKER_INFLUXDB_INIT_ORG}
+
+influx v1 auth create \
+  --username ${V1_AUTH_USERNAME} \
+  --password ${V1_AUTH_PASSWORD} \
+  --write-bucket ${DOCKER_INFLUXDB_INIT_BUCKET_ID} \
+  --org ${DOCKER_INFLUXDB_INIT_ORG}
+```
+
+Then you'd run:
+
+```console
+$ docker run -p 8086:8086 \
+      -v $PWD/data:/var/lib/influxdb2 \
+      -v $PWD/config:/etc/influxdb2 \
+      -v $PWD/scripts:/docker-entrypoint-initdb.d \
+      -e DOCKER_INFLUXDB_INIT_MODE=setup \
+      -e DOCKER_INFLUXDB_INIT_USERNAME=my-user \
+      -e DOCKER_INFLUXDB_INIT_PASSWORD=my-password \
+      -e DOCKER_INFLUXDB_INIT_ORG=my-org \
+      -e DOCKER_INFLUXDB_INIT_BUCKET=my-bucket \
+      -e V1_DB_NAME=v1-db \
+      -e V1_RP_NAME=v1-rp \
+      -e V1_AUTH_USERNAME=v1-user \
+      -e V1_AUTH_PASSWORD=v1-password \
+      %%IMAGE%%:2.0
+```
+
+**NOTE:** Custom scripts will not run if an existing boltdb file is found at the configured path (causing `setup` or `upgrade` to be skipped). This behavior allows for the InfluxDB container to reboot post-initialization without encountering errors from non-idempotent script commands.
 
 ### Upgrading from InfluxDB 1.x
 
@@ -187,238 +404,6 @@ docker run -p 8086:8086 \
 ```
 
 See the section about configuration below for more ways to override the data paths.
-
-### Running the container
-
-The InfluxDB image exposes a shared volume under `/var/lib/influxdb2`. You can mount a host directory to that point to access persisted container data. A typical invocation of the container might be:
-
-```console
-$ docker run -p 8086:8086 \
-      -v $PWD:/var/lib/influxdb2 \
-      %%IMAGE%%:2.0
-```
-
-Modify `$PWD` to the directory where you want to store data associated with the InfluxDB container.
-
-You can also have Docker control the volume mountpoint by using a named volume.
-
-```console
-$ docker run -p 8086:8086 \
-      -v influxdb2:/var/lib/influxdb2 \
-      %%IMAGE%%:2.0
-```
-
-### Exposed Ports
-
-The following ports are important and are used by InfluxDB.
-
--	8086 HTTP UI and API port
-
-The HTTP port will be automatically exposed when using `docker run -P`.
-
-Find more about API Endpoints & Ports [here](https://docs.influxdata.com/influxdb/v2.0/reference/api/).
-
-### Configuration
-
-InfluxDB can be configured using a mix of a config file, environment variables, and CLI options. To mount a configuration file and use it with the server, you can use this command to generate the default configuration file:
-
-```console
-$ docker run --rm %%IMAGE%%:2.0 influxd print-config > config.yml
-```
-
-Modify the default configuration, which will now be available under `$PWD`. Then start the InfluxDB container:
-
-```console
-$ docker run -p 8086:8086 \
-      -v $PWD/config.yml:/etc/influxdb2/config.yml \
-      %%IMAGE%%:2.0
-```
-
-Modify `$PWD` to be the directory where you want to store the configuration file.
-
-Individual config settings can be overridden by environment variables. The variables must be named using the format `INFLUXD_${SNAKE_CASE_NAME}`. The `SNAKE_CASE_NAME` for an option will be the option's name with all dashes (`-`) replaced by underscores (`_`), in all caps.
-
-Examples:
-
-```console
-# Config setting: bolt-path
-INFLUXD_BOLT_PATH=/root/influxdb.bolt
-# Config setting: no-tasks
-INFLUXD_NO_TASKS=true
-# Config setting: storage-wal-fsync-delay
-INFLUXD_STORAGE_WAL_FSYNC_DELAY=15m
-```
-
-Finally, all config options can be passed as CLI options:
-
-```console
-$ docker run -p 8086:8086 \
-      %%IMAGE%%:2.0 --storage-wal-fsync-delay=15m
-```
-
-CLI options take precedence over environment variables.
-
-Find more about configuring InfluxDB [here](https://docs.influxdata.com/influxdb/v2.0/reference/config-options/).
-
-### Database Setup
-
-InfluxDB 2.x requires authentication. A special API exists to bootstrap the first super-user in the database, along with an initial organization and bucket. It's possible to access this API manually, or to run it automatically via environment variables.
-
-#### Manual Setup
-
-If your InfluxDB container is running locally (or on a host exposed to the network), you can perform initial setup from outside the container using either the UI or the `influx` CLI. Find more about setting up InfluxDB using these methods [here](https://docs.influxdata.com/influxdb/v2.0/get-started/#set-up-influxdb).
-
-It's also possible to perform manual setup from within the container using `docker exec`. For example, if you start the container:
-
-```console
-$ docker run -d -p 8086:8086 \
-      --name influxdb2 \
-      -v $PWD:/var/lib/influxdb2 \
-      %%IMAGE%%:2.0
-```
-
-You can then run the `influx` client in the container:
-
-```console
-$ docker exec influxdb2 influx setup \
-      --username $USERNAME \
-      --password $PASSWORD \
-      --org $ORGANIZATION \
-      --bucket $BUCKET
-```
-
-Running setup from within the container will cause CLI configs to be written to `/etc/influxdb2/influx-configs`. You can then use the `influx` CLI from within the container to extract the generated admin token:
-
-```console
-# Using table output + cut
-$ docker exec influxdb2 influx auth list \
-      --user $USERNAME \
-      --hide-headers | cut -f 3
-
-# Using JSON output + jq
-$ docker exec influxdb2 influx auth list \
-      --user $USERNAME \
-      --json | jq -r '.[].token'
-```
-
-Alternatively, you could configure your initial InfluxDB run to mount `/etc/influxdb2` as a volume:
-
-```console
-$ docker run -d -p 8086:8086 \
-      --name influxdb2 \
-      -v $PWD/data:/var/lib/influxdb2 \
-      -v $PWD/config:/etc/influxdb2 \
-      %%IMAGE%%:2.0
-```
-
-This will make the generated CLI configs available to the host.
-
-#### Automated Setup
-
-The InfluxDB image contains some extra functionality to automatically bootstrap the system. This functionality is enabled by setting the `DOCKER_INFLUXDB_INIT_MODE` environment variable to the value `setup` when running the container. Additional environment variables are used to configure the setup logic:
-
--	`DOCKER_INFLUXDB_INIT_USERNAME`: The username to set for the system's initial super-user (**Required**).
--	`DOCKER_INFLUXDB_INIT_PASSWORD`: The password to set for the system's inital super-user (**Required**).
--	`DOCKER_INFLUXDB_INIT_ORG`: The name to set for the system's initial organization (**Required**).
--	`DOCKER_INFLUXDB_INIT_BUCKET`: The name to set for the system's initial bucket (**Required**).
--	`DOCKER_INFLUXDB_INIT_RETENTION`: The duration the system's initial bucket should retain data. If not set, the initial bucket will retain data forever.
--	`DOCKER_INFLUXDB_INIT_ADMIN_TOKEN`: The authentication token to associate with the system's initial super-user. If not set, a token will be auto-generated by the system.
-
-Automated setup will generate metadata files and CLI configurations. It's recommended to mount volumes at both paths to avoid losing data.
-
-For example, a minimal invocation of automated setup is:
-
-```console
-$ docker run -d -p 8086:8086 \
-      -v $PWD/data:/var/lib/influxdb2 \
-      -v $PWD/config:/etc/influxdb2 \
-      -e DOCKER_INFLUXDB_INIT_MODE=setup \
-      -e DOCKER_INFLUXDB_INIT_USERNAME=my-user \
-      -e DOCKER_INFLUXDB_INIT_PASSWORD=my-password \
-      -e DOCKER_INFLUXDB_INIT_ORG=my-org \
-      -e DOCKER_INFLUXDB_INIT_BUCKET=my-bucket \
-      %%IMAGE%%:2.0
-```
-
-And an example using all available options is:
-
-```console
-$ docker run -d -p 8086:8086 \
-      -v $PWD/data:/var/lib/influxdb2 \
-      -v $PWD/config:/etc/influxdb2 \
-      -e DOCKER_INFLUXDB_INIT_MODE=setup \
-      -e DOCKER_INFLUXDB_INIT_USERNAME=my-user \
-      -e DOCKER_INFLUXDB_INIT_PASSWORD=my-password \
-      -e DOCKER_INFLUXDB_INIT_ORG=my-org \
-      -e DOCKER_INFLUXDB_INIT_BUCKET=my-bucket \
-      -e DOCKER_INFLUXDB_INIT_RETENTION=1w \
-      -e DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=my-super-secret-auth-token \
-      %%IMAGE%%:2.0
-```
-
-**NOTE:** Automated setup will not run if an existing boltdb file is found at the configured path. This behavior allows for the InfluxDB container to reboot post-setup without encountering "DB is already set up" errors.
-
-### Interacting with InfluxDB
-
-Once an InfluxDB instance has completed initial setup, its APIs will unlock. See the main documentation site for reference information and examples on:
-
--	[Writing data](https://docs.influxdata.com/influxdb/v2.0/write-data/)
--	[Reading data](https://docs.influxdata.com/influxdb/v2.0/query-data/)
--	[Configuring security](https://docs.influxdata.com/influxdb/v2.0/security/)
--	[And more!](https://docs.influxdata.com/influxdb/v2.0/)
-
-### Custom Initialization Scripts
-
-The InfluxDB image supports running arbitrary initialization scripts after initial system setup, on both the `setup` and `upgrade` paths. Scripts must have extension `.sh` and be mounted inside of the `/docker-entrypoint-initdb.d` directory. When multiple scripts are present, they will be executed in lexical sort order by name.
-
-As a convenience for script-writers, the image will export a number of variables into the environment before executing any scripts:
-
--	`INFLUX_CONFIGS_PATH`: Path to the CLI configs file written by `setup`/`upgrade`
--	`INFLUX_HOST`: URL to the `influxd` instance running setup logic
--	`DOCKER_INFLUXDB_INIT_USER_ID`: ID of the initial admin user created by `setup`/`upgrade`
--	`DOCKER_INFLUXDB_INIT_ORG_ID`: ID of the initial organization created by `setup`/`upgrade`
--	`DOCKER_INFLUXDB_INIT_BUCKET_ID`: ID of the initial bucket created by `setup`/`upgrade`
-
-For example, if you wanted to grant write-access to an InfluxDB 1.x client on your initial bucket, you'd first create the file `$PWD/scripts/setup-v1.sh` with contents:
-
-```bash
-#!/bin/bash
-set -e
-
-influx v1 dbrp create \
-  --bucket-id ${DOCKER_INFLUXDB_INIT_BUCKET_ID} \
-  --db ${V1_DB_NAME} \
-  --rp ${V1_RP_NAME} \
-  --default \
-  --org ${DOCKER_INFLUXDB_INIT_ORG}
-
-influx v1 auth create \
-  --username ${V1_AUTH_USERNAME} \
-  --password ${V1_AUTH_PASSWORD} \
-  --write-bucket ${DOCKER_INFLUXDB_INIT_BUCKET_ID} \
-  --org ${DOCKER_INFLUXDB_INIT_ORG}
-```
-
-Then you'd run:
-
-```console
-$ docker run -p 8086:8086 \
-      -v $PWD/data:/var/lib/influxdb2 \
-      -v $PWD/config:/etc/influxdb2 \
-      -v $PWD/scripts:/docker-entrypoint-initdb.d \
-      -e DOCKER_INFLUXDB_INIT_MODE=setup \
-      -e DOCKER_INFLUXDB_INIT_USERNAME=my-user \
-      -e DOCKER_INFLUXDB_INIT_PASSWORD=my-password \
-      -e DOCKER_INFLUXDB_INIT_ORG=my-org \
-      -e DOCKER_INFLUXDB_INIT_BUCKET=my-bucket \
-      -e V1_DB_NAME=v1-db \
-      -e V1_RP_NAME=v1-rp \
-      -e V1_AUTH_USERNAME=v1-user \
-      -e V1_AUTH_PASSWORD=v1-password \
-      %%IMAGE%%:2.0
-```
-
-**NOTE:** Custom scripts will not run if an existing boltdb file is found at the configured path (causing `setup` or `upgrade` to be skipped). This behavior allows for the InfluxDB container to reboot post-initialization without encountering errors from non-idempotent script commands.
 
 ## Using this Image - InfluxDB 1.x
 

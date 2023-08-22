@@ -20,11 +20,14 @@ WARNING:
 	[The AlmaLinux OS Foundation](https://github.com/AlmaLinux/docker-images)
 
 -	**Where to get help**:  
-	[the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
+	[the Docker Community Slack](https://dockr.ly/comm-slack), [Server Fault](https://serverfault.com/help/on-topic), [Unix & Linux](https://unix.stackexchange.com/help/on-topic), or [Stack Overflow](https://stackoverflow.com/help/on-topic)
 
 # Supported tags and respective `Dockerfile` links
 
--	[`latest`, `8`](https://github.com/AlmaLinux/docker-images/blob/1dc91dd3b9f69fd2f570c94441104004a9ef9811/Dockerfile)
+-	[`8`, `8.8`, `8.8-20230718`](https://github.com/AlmaLinux/docker-images/blob/a7e0d4c97e8c2ab80dfada8685b44831f7c8d6ad/Dockerfile-x86_64-default)
+-	[`8-minimal`, `8.8-minimal`, `8.8-minimal-20230718`](https://github.com/AlmaLinux/docker-images/blob/a7e0d4c97e8c2ab80dfada8685b44831f7c8d6ad/Dockerfile-x86_64-minimal)
+-	[`latest`, `9`, `9.2`, `9.2-20230718`](https://github.com/AlmaLinux/docker-images/blob/764a53a590bc415278c977ad43f42f4a836b8c3f/Dockerfile-x86_64-default)
+-	[`minimal`, `9-minimal`, `9.2-minimal`, `9.2-minimal-20230718`](https://github.com/AlmaLinux/docker-images/blob/764a53a590bc415278c977ad43f42f4a836b8c3f/Dockerfile-x86_64-minimal)
 
 # Quick reference (cont.)
 
@@ -32,7 +35,7 @@ WARNING:
 	[https://bugs.almalinux.org](https://bugs.almalinux.org) or [GitHub](https://github.com/AlmaLinux/docker-images/issues)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
-	[`amd64`](https://hub.docker.com/r/amd64/almalinux/)
+	[`amd64`](https://hub.docker.com/r/amd64/almalinux/), [`arm64v8`](https://hub.docker.com/r/arm64v8/almalinux/), [`ppc64le`](https://hub.docker.com/r/ppc64le/almalinux/), [`s390x`](https://hub.docker.com/r/s390x/almalinux/)
 
 -	**Published image artifact details**:  
 	[repo-info repo's `repos/almalinux/` directory](https://github.com/docker-library/repo-info/blob/master/repos/almalinux) ([history](https://github.com/docker-library/repo-info/commits/master/repos/almalinux))  
@@ -53,7 +56,21 @@ WARNING:
 
 # About this image
 
-The `almalinux:latest` tag will always point to the latest stable release. Major releases are also tagged with their version (e.g. `almalinux:8`). All images for supported releases will be updated monthly or as needed for security fixes.
+## Platform image
+
+The default (platform) image is a general-purpose image with a full DNF stack and basic tools like find, tar, vi, etc.
+
+The `almalinux:latest` tag will always point to the latest stable release of the default image. Major releases and minor releases are also tagged with their version (e.g. `almalinux:8` or `almalinux:8.4`).
+
+## Minimal image
+
+The minimal image is a stripped-down image that uses the microdnf package manager and contains a very limited package set. It is designed for applications that come with their own dependencies bundled (e.g. NodeJS, Python).
+
+The `almalinux:minimal` tag always points to the most recent version of the minimal image. Tags for major (e.g. `almalinux:8-minimal`) and minor (e.g. `almalinux:8.4-minimal`) releases are also available.
+
+### Upgrade policy
+
+All images for supported releases will be updated monthly or as needed for security fixes.
 
 ## How It's Made
 

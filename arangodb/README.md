@@ -20,20 +20,21 @@ WARNING:
 	[ArangoDB](https://github.com/arangodb/arangodb-docker)
 
 -	**Where to get help**:  
-	[the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
+	[the Docker Community Slack](https://dockr.ly/comm-slack), [Server Fault](https://serverfault.com/help/on-topic), [Unix & Linux](https://unix.stackexchange.com/help/on-topic), or [Stack Overflow](https://stackoverflow.com/help/on-topic)
 
 # Supported tags and respective `Dockerfile` links
 
--	[`3.6`, `3.6.13`](https://github.com/arangodb/arangodb-docker/blob/293903ae4adcf22eaafcf427076a6e62010ab1ea/alpine/3.6.13/Dockerfile)
--	[`3.7`, `3.7.11`, `latest`](https://github.com/arangodb/arangodb-docker/blob/19dbf1a2228a04765452f4160e33fa41317a7615/alpine/3.7.11/Dockerfile)
+-	[`3.9`, `3.9.11`](https://github.com/arangodb/arangodb-docker/blob/2f0e4d0d5f501633e6254812320283bf0c710757/alpine/3.9.11/Dockerfile)
+-	[`3.10`, `3.10.10`](https://github.com/arangodb/arangodb-docker/blob/5e1e58d2e5a985fe21b0747909d39eb3ccc434e2/alpine/3.10.10/Dockerfile)
+-	[`3.11`, `3.11.2`, `latest`](https://github.com/arangodb/arangodb-docker/blob/b2fcf01f639bebe80a8563c2d67b2866331f13c2/alpine/3.11.2/Dockerfile)
 
 # Quick reference (cont.)
 
 -	**Where to file issues**:  
-	[https://github.com/arangodb/arangodb-docker/issues](https://github.com/arangodb/arangodb-docker/issues)
+	[https://github.com/arangodb/arangodb-docker/issues](https://github.com/arangodb/arangodb-docker/issues?q=)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
-	[`amd64`](https://hub.docker.com/r/amd64/arangodb/)
+	[`amd64`](https://hub.docker.com/r/amd64/arangodb/), [`arm64v8`](https://hub.docker.com/r/arm64v8/arangodb/)
 
 -	**Published image artifact details**:  
 	[repo-info repo's `repos/arangodb/` directory](https://github.com/docker-library/repo-info/blob/master/repos/arangodb) ([history](https://github.com/docker-library/repo-info/commits/master/repos/arangodb))  
@@ -48,32 +49,26 @@ WARNING:
 
 # What is ArangoDB?
 
-ArangoDB is a multi-model, open-source database with flexible data models for documents, graphs, and key-values. Build high performance applications using a convenient SQL-like query language or JavaScript extensions. Use ACID transactions if you require them. Scale horizontally and vertically with a few mouse clicks.
+ArangoDB is a scalable graph database system to drive value from connected data, faster. Native graphs, an integrated search engine, and JSON support, via a single query language.
 
-ArangoDB runs everywhere: On-prem, in the cloud and also on [ArangoDB's Cloud Service Oasis](https://cloud.arangodb.com/home).
-
-The supported data models can be mixed in queries and allow ArangoDB to be the aggregation point for your data.
+ArangoDB runs everywhere: On-prem, in the cloud, and as a managed cloud service: [ArangoGraph Insights Platform](https://cloud.arangodb.com/home).
 
 > [arangodb.com](https://arangodb.com)
 
-![logo](https://raw.githubusercontent.com/docker-library/docs/788ad3d196c4f69bd73801812abcab7707f70101/arangodb/logo.png)
+![logo](https://raw.githubusercontent.com/docker-library/docs/f528ddab3310590b87273e2dbb75b96e081cadbe/arangodb/logo.png)
 
 ## Key Features in ArangoDB
 
-**Multi-Model** Documents, graphs and key-value pairs — model your data as you see fit for your application.
+**Native Graph** Store both data and relationships, for faster queries even with multiple levels of joins and deeper insights that simply aren't possible with traditional relational and document database systems.
 
-**Joins** Conveniently join what belongs together for flexible ad-hoc querying, less data redundancy.
+**Document Store** Every node in your graph is a JSON document: flexible, extensible, and easily imported from your existing document database.
 
-**Transactions** Easy application development keeping your data consistent and safe. No hassle in your client.
-
-Joins and Transactions are key features for flexible, secure data designs, widely used in RDBMSs that you won't want to miss in NoSQL products. You decide how and when to use Joins and strong consistency guarantees, keeping all the power for scaling and performance as choice.
-
-Furthermore, ArangoDB offers a microservice framework called [Foxx](https://www.arangodb.com/why-arangodb/foxx) to build your own Rest API with a few lines of code.
+**ArangoSearch** Natively integrated cross-platform indexing, text-search and ranking engine for information retrieval, optimized for speed and memory.
 
 #### ArangoDB Documentation
 
--	[ArangoDB Documentation](https://www.arangodb.com/documentation)
--	[ArangoDB Tutorials](https://www.arangodb.com/tutorials)
+-	[Learn ArangoDB](https://www.arangodb.com/learn/)
+-	[Documentation](https://www.arangodb.com/docs/)
 
 ## How to use this image
 

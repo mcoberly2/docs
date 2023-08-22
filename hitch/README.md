@@ -20,19 +20,19 @@ WARNING:
 	[the Hitch Docker Community](https://github.com/varnish/docker-hitch)
 
 -	**Where to get help**:  
-	[the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
+	[the Docker Community Slack](https://dockr.ly/comm-slack), [Server Fault](https://serverfault.com/help/on-topic), [Unix & Linux](https://unix.stackexchange.com/help/on-topic), or [Stack Overflow](https://stackoverflow.com/help/on-topic)
 
 # Supported tags and respective `Dockerfile` links
 
--	[`1`, `1.7`, `1.7.0`, `1.7.0-1`, `latest`](https://github.com/varnish/docker-hitch/blob/d2feb9f1a1a3426da633383c2bac4a31559248bd/Dockerfile)
+-	[`1`, `1.8`, `1.8.0`, `1.8.0-1`, `latest`](https://github.com/varnish/docker-hitch/blob/3fe55c4296018b04c7e1d2efdfcadce9c4017e0a/Dockerfile)
 
 # Quick reference (cont.)
 
 -	**Where to file issues**:  
-	[https://github.com/varnish/docker-hitch/issues](https://github.com/varnish/docker-hitch/issues)
+	[https://github.com/varnish/docker-hitch/issues](https://github.com/varnish/docker-hitch/issues?q=)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
-	[`amd64`](https://hub.docker.com/r/amd64/hitch/)
+	[`amd64`](https://hub.docker.com/r/amd64/hitch/), [`arm32v7`](https://hub.docker.com/r/arm32v7/hitch/), [`arm64v8`](https://hub.docker.com/r/arm64v8/hitch/), [`i386`](https://hub.docker.com/r/i386/hitch/), [`ppc64le`](https://hub.docker.com/r/ppc64le/hitch/), [`s390x`](https://hub.docker.com/r/s390x/hitch/)
 
 -	**Published image artifact details**:  
 	[repo-info repo's `repos/hitch/` directory](https://github.com/docker-library/repo-info/blob/master/repos/hitch) ([history](https://github.com/docker-library/repo-info/commits/master/repos/hitch))  

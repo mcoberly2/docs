@@ -43,8 +43,10 @@ unless (defined $password) {
 	$password = $term->get_reply(prompt => 'Hub Password'); # TODO hide the input? O:)
 }
 
-my $login = $ua->post('https://hub.docker.com/v2/users/login/' => {} => json => { username => $username, password => $password });
-die 'login failed' unless $login->res->is_success;
+my $dockerHub = 'https://hub.docker.com';
+
+my $login = $ua->post($dockerHub . '/v2/users/login/' => {} => json => { username => $username, password => $password });
+die 'login failed: ' . $login->res->error->{message} unless $login->res->is_success;
 
 my $token = $login->res->json->{token};
 
@@ -57,7 +59,7 @@ for my $cookie (@{ $login->res->cookies }) {
 }
 die 'missing CSRF token' unless defined $csrf;
 
-my $attemptLogin = $ua->post('https://hub.docker.com/attempt-login/' => {} => json => { jwt => $token });
+my $attemptLogin = $ua->post($dockerHub . '/attempt-login/' => {} => json => { jwt => $token });
 die 'attempt-login failed' unless $attemptLogin->res->is_success;
 
 my $authorizationHeader = {
@@ -65,36 +67,57 @@ my $authorizationHeader = {
 	'X-CSRFToken' => $csrf,
 };
 
-my $userData = $ua->get('https://hub.docker.com/v2/user/' => $authorizationHeader);
-die 'user failed' unless $userData->res->is_success;
-$userData = $userData->res->json;
+my $supportedTagsRegex = qr%^(# Supported tags and respective `Dockerfile` links\n\n)(.*?\n)(?=# |\[)%ms;
 
 sub prompt_for_edit {
 	my $currentText = shift;
 	my $proposedFile = shift;
 	my $lengthLimit = shift // 0;
 	
-	my $proposedText = Mojo::File->new($proposedFile)->slurp or warn 'missing ' . $proposedFile;
+	my $proposedText = Mojo::File->new($proposedFile)->slurp // '**  FILE MISSING!  **';
 	$proposedText = trim(decode('UTF-8', $proposedText));
 	
 	# remove our warning about generated files (Hub doesn't support HTML comments in Markdown)
 	$proposedText =~ s% ^ <!-- .*? --> \s* %%sx;
 	
+	# extract/re-inject sponsored links
+	my $sponsoredLinks = '';
+	if ($currentText =~ m{ ( ^ [#] \Q Sponsored Resources\E \n .*? \n --- \n ) }smx) {
+		$sponsoredLinks = $1 . "\n";
+		$proposedText =~ s%$supportedTagsRegex%$sponsoredLinks$1$2%;
+	}
+	
 	if ($lengthLimit > 0 && length($proposedText) > $lengthLimit) {
 		# TODO https://github.com/docker/hub-beta-feedback/issues/238
 		my $fullUrl = "$githubBase/$proposedFile";
-		my $tagsNote = "**Note:** the description for this image is longer than the Hub length limit of $lengthLimit, so the \"Supported tags\" list has been trimmed to compensate.  The full list can be found at [$fullUrl]($fullUrl#supported-tags-and-respective-dockerfile-links).  See [docker/hub-beta-feedback#238](https://github.com/docker/hub-beta-feedback/issues/238) for more information.\n\n";
-		my $genericNote = "**Note:** the description for this image is longer than the Hub length limit of $lengthLimit, so has been trimmed.  The full description can be found at [$fullUrl]($fullUrl).  See [docker/hub-beta-feedback#238](https://github.com/docker/hub-beta-feedback/issues/238) for more information.\n\n";
+		my $shortTags = "-\tSee [\"Supported tags and respective \`Dockerfile\` links\" at $fullUrl]($fullUrl#supported-tags-and-respective-dockerfile-links)\n\n";
+		my $seeAlso = 'See also [docker/hub-feedback#238](https://github.com/docker/hub-feedback/issues/238) and [docker/roadmap#475](https://github.com/docker/roadmap/issues/475).';
+		my $tagsNote = "**Note:** the description for this image is longer than the Hub length limit of $lengthLimit, so the \"Supported tags\" list has been trimmed to compensate.  $seeAlso\n\n$shortTags";
+		my $genericNote = "**Note:** the description for this image is longer than the Hub length limit of $lengthLimit, so has been trimmed.  The full description can be found at [$fullUrl]($fullUrl).  $seeAlso";
+		my $startingNote = $genericNote . "\n\n";
+		my $endingNote = "\n\n...\n\n" . $genericNote;
 		
 		my $trimmedText = $proposedText;
 		
 		# if our text is too long for the Hub length limit, let's first try removing the "Supported tags" list and add $tagsNote and see if that's enough to let us put the full image documentation
-		$trimmedText =~ s%^(# Supported tags and respective `Dockerfile` links\n\n).*?\n(?=# |\[)%$1$tagsNote%ms;
+		$trimmedText =~ s%$supportedTagsRegex%$sponsoredLinks$1$tagsNote%ms;
 		# (we scrape until the next "h1" or a line starting with a link which is likely a build status badge for an architecture-namespace)
 		
 		if (length($trimmedText) > $lengthLimit) {
 			# ... if that doesn't do the trick, then do our older naïve description trimming
-			$trimmedText = $genericNote . substr $proposedText, 0, ($lengthLimit - length($genericNote));
+			$trimmedText = $startingNote . substr $proposedText, 0, ($lengthLimit - length($startingNote . $endingNote));
+
+			# adding the "ending note" (https://github.com/docker/hub-feedback/issues/2220) is a bit more complicated as we have to deal with cutting off markdown ~cleanly so it renders correctly
+			# TODO deal with "```foo" appropriately (so we don't drop our note in the middle of a code block) - the Hub's current markdown rendering (2022-04-07) does not auto-close a dangling block like this, so this isn't urgent
+			if ($trimmedText =~ m/\n$/) {
+				# if we already end with a newline, we should be fine to just trim newlines and add our ending note
+				$trimmedText =~ s/\n+$//;
+			}
+			else {
+				# otherwise, we need to get a little bit more creative and trim back to the last fully blank line (which we can reasonably assume is safe thanks to our markdownfmt)
+				$trimmedText =~ s/\n\n(.\n?)*$//;
+			}
+			$trimmedText .= $endingNote;
 		}
 		
 		$proposedText = $trimmedText;
@@ -150,7 +173,7 @@ while (my $repo = shift) { # 'library/hylang', 'tianon/perl', etc
 	my $repoName = $repo;
 	$repoName =~ s!^.*/!!; # 'hylang', 'perl', etc
 	
-	my $repoUrl = 'https://hub.docker.com/v2/repositories/' . $repo . '/';
+	my $repoUrl = $dockerHub . '/v2/repositories/' . $repo . '/';
 	
 	if ($logos && $repo =~ m{ ^ library/ }x) {
 		# the "library" org images include a logo which is displayed in the Hub UI
@@ -170,7 +193,7 @@ while (my $repo = shift) { # 'library/hylang', 'tianon/perl', etc
 					qw( convert -background none -density 1200 -strip -resize 120x120> -gravity center -extent 120x120 ),
 					$logoToConvert,
 					$repoLogo120,
-				) == 0 or die "failed to convert $repoLogoPng into $repoLogo120";
+				) == 0 or die "failed to convert $logoToConvert into $repoLogo120";
 			}
 		}
 		if (-f $repoLogo120) {
@@ -212,5 +235,5 @@ while (my $repo = shift) { # 'library/hylang', 'tianon/perl', etc
 			description => $hubShort,
 			full_description => $hubLong,
 		});
-	warn 'patch to ' . $repoUrl . ' failed: ' . $repoPatch->res->text and next unless $repoPatch->res->is_success;
+	die 'patch to ' . $repoUrl . ' failed: ' . $repoPatch->res->text unless $repoPatch->res->is_success;
 }

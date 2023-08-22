@@ -20,7 +20,7 @@ WARNING:
 	[Paul Tagliamonte, Hy BDFL](https://github.com/hylang/hy)
 
 -	**Where to get help**:  
-	[the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
+	[the Docker Community Slack](https://dockr.ly/comm-slack), [Server Fault](https://serverfault.com/help/on-topic), [Unix & Linux](https://unix.stackexchange.com/help/on-topic), or [Stack Overflow](https://stackoverflow.com/help/on-topic)
 
 # Supported tags and respective `Dockerfile` links
 
@@ -28,58 +28,56 @@ WARNING:
 
 ## Simple Tags
 
--	[`1.0a1-python3.9-buster`, `python3.9-buster`, `1.0a1-buster`, `buster`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.9-buster)
--	[`1.0a1-python3.9-alpine3.13`, `python3.9-alpine3.13`, `1.0a1-alpine3.13`, `alpine3.13`, `1.0a1-python3.9-alpine`, `python3.9-alpine`, `1.0a1-alpine`, `alpine`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.9-alpine3.13)
--	[`1.0a1-python3.9-alpine3.12`, `python3.9-alpine3.12`, `1.0a1-alpine3.12`, `alpine3.12`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.9-alpine3.12)
--	[`1.0a1-python3.9-windowsservercore-1809`, `python3.9-windowsservercore-1809`, `1.0a1-windowsservercore-1809`, `windowsservercore-1809`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.9-windowsservercore-1809)
--	[`1.0a1-python3.9-windowsservercore-ltsc2016`, `python3.9-windowsservercore-ltsc2016`, `1.0a1-windowsservercore-ltsc2016`, `windowsservercore-ltsc2016`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.9-windowsservercore-ltsc2016)
--	[`1.0a1-python3.8-buster`, `python3.8-buster`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.8-buster)
--	[`1.0a1-python3.8-alpine3.13`, `python3.8-alpine3.13`, `1.0a1-python3.8-alpine`, `python3.8-alpine`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.8-alpine3.13)
--	[`1.0a1-python3.8-alpine3.12`, `python3.8-alpine3.12`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.8-alpine3.12)
--	[`1.0a1-python3.8-windowsservercore-1809`, `python3.8-windowsservercore-1809`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.8-windowsservercore-1809)
--	[`1.0a1-python3.8-windowsservercore-ltsc2016`, `python3.8-windowsservercore-ltsc2016`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.8-windowsservercore-ltsc2016)
--	[`1.0a1-python3.7-buster`, `python3.7-buster`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.7-buster)
--	[`1.0a1-python3.7-stretch`, `python3.7-stretch`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.7-stretch)
--	[`1.0a1-python3.7-alpine3.13`, `python3.7-alpine3.13`, `1.0a1-python3.7-alpine`, `python3.7-alpine`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.7-alpine3.13)
--	[`1.0a1-python3.7-alpine3.12`, `python3.7-alpine3.12`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.7-alpine3.12)
--	[`1.0a1-python3.6-buster`, `python3.6-buster`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.6-buster)
--	[`1.0a1-python3.6-stretch`, `python3.6-stretch`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.6-stretch)
--	[`1.0a1-python3.6-alpine3.13`, `python3.6-alpine3.13`, `1.0a1-python3.6-alpine`, `python3.6-alpine`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.6-alpine3.13)
--	[`1.0a1-python3.6-alpine3.12`, `python3.6-alpine3.12`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.6-alpine3.12)
--	[`1.0a1-python3.10-rc-buster`, `python3.10-rc-buster`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.10-rc-buster)
--	[`1.0a1-python3.10-rc-alpine3.13`, `python3.10-rc-alpine3.13`, `1.0a1-python3.10-rc-alpine`, `python3.10-rc-alpine`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.10-rc-alpine3.13)
--	[`1.0a1-python3.10-rc-alpine3.12`, `python3.10-rc-alpine3.12`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.10-rc-alpine3.12)
--	[`1.0a1-python3.10-rc-windowsservercore-1809`, `python3.10-rc-windowsservercore-1809`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.10-rc-windowsservercore-1809)
--	[`1.0a1-python3.10-rc-windowsservercore-ltsc2016`, `python3.10-rc-windowsservercore-ltsc2016`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.10-rc-windowsservercore-ltsc2016)
--	[`1.0a1-pypy3.7-buster`, `pypy3.7-buster`, `1.0a1-pypy-buster`, `pypy-buster`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.pypy3.7-buster)
--	[`1.0a1-pypy3.7-windowsservercore-1809`, `pypy3.7-windowsservercore-1809`, `1.0a1-pypy-windowsservercore-1809`, `pypy-windowsservercore-1809`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.pypy3.7-windowsservercore-1809)
+-	[`0.27.0-python3.11-bookworm`, `0.27-python3.11-bookworm`, `0-python3.11-bookworm`, `python3.11-bookworm`, `0.27.0-bookworm`, `0.27-bookworm`, `0-bookworm`, `bookworm`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.python3.11-bookworm)
+-	[`0.27.0-python3.11-bullseye`, `0.27-python3.11-bullseye`, `0-python3.11-bullseye`, `python3.11-bullseye`, `0.27.0-bullseye`, `0.27-bullseye`, `0-bullseye`, `bullseye`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.python3.11-bullseye)
+-	[`0.27.0-python3.11-alpine3.18`, `0.27-python3.11-alpine3.18`, `0-python3.11-alpine3.18`, `python3.11-alpine3.18`, `0.27.0-alpine3.18`, `0.27-alpine3.18`, `0-alpine3.18`, `alpine3.18`, `0.27.0-python3.11-alpine`, `0.27-python3.11-alpine`, `0-python3.11-alpine`, `python3.11-alpine`, `0.27.0-alpine`, `0.27-alpine`, `0-alpine`, `alpine`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.python3.11-alpine3.18)
+-	[`0.27.0-python3.11-alpine3.17`, `0.27-python3.11-alpine3.17`, `0-python3.11-alpine3.17`, `python3.11-alpine3.17`, `0.27.0-alpine3.17`, `0.27-alpine3.17`, `0-alpine3.17`, `alpine3.17`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.python3.11-alpine3.17)
+-	[`0.27.0-python3.10-bookworm`, `0.27-python3.10-bookworm`, `0-python3.10-bookworm`, `python3.10-bookworm`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.python3.10-bookworm)
+-	[`0.27.0-python3.10-bullseye`, `0.27-python3.10-bullseye`, `0-python3.10-bullseye`, `python3.10-bullseye`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.python3.10-bullseye)
+-	[`0.27.0-python3.10-alpine3.18`, `0.27-python3.10-alpine3.18`, `0-python3.10-alpine3.18`, `python3.10-alpine3.18`, `0.27.0-python3.10-alpine`, `0.27-python3.10-alpine`, `0-python3.10-alpine`, `python3.10-alpine`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.python3.10-alpine3.18)
+-	[`0.27.0-python3.10-alpine3.17`, `0.27-python3.10-alpine3.17`, `0-python3.10-alpine3.17`, `python3.10-alpine3.17`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.python3.10-alpine3.17)
+-	[`0.27.0-python3.9-bookworm`, `0.27-python3.9-bookworm`, `0-python3.9-bookworm`, `python3.9-bookworm`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.python3.9-bookworm)
+-	[`0.27.0-python3.9-bullseye`, `0.27-python3.9-bullseye`, `0-python3.9-bullseye`, `python3.9-bullseye`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.python3.9-bullseye)
+-	[`0.27.0-python3.9-alpine3.18`, `0.27-python3.9-alpine3.18`, `0-python3.9-alpine3.18`, `python3.9-alpine3.18`, `0.27.0-python3.9-alpine`, `0.27-python3.9-alpine`, `0-python3.9-alpine`, `python3.9-alpine`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.python3.9-alpine3.18)
+-	[`0.27.0-python3.9-alpine3.17`, `0.27-python3.9-alpine3.17`, `0-python3.9-alpine3.17`, `python3.9-alpine3.17`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.python3.9-alpine3.17)
+-	[`0.27.0-python3.8-bookworm`, `0.27-python3.8-bookworm`, `0-python3.8-bookworm`, `python3.8-bookworm`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.python3.8-bookworm)
+-	[`0.27.0-python3.8-bullseye`, `0.27-python3.8-bullseye`, `0-python3.8-bullseye`, `python3.8-bullseye`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.python3.8-bullseye)
+-	[`0.27.0-python3.8-alpine3.18`, `0.27-python3.8-alpine3.18`, `0-python3.8-alpine3.18`, `python3.8-alpine3.18`, `0.27.0-python3.8-alpine`, `0.27-python3.8-alpine`, `0-python3.8-alpine`, `python3.8-alpine`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.python3.8-alpine3.18)
+-	[`0.27.0-python3.8-alpine3.17`, `0.27-python3.8-alpine3.17`, `0-python3.8-alpine3.17`, `python3.8-alpine3.17`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.python3.8-alpine3.17)
+-	[`0.27.0-python3.12-rc-bookworm`, `0.27-python3.12-rc-bookworm`, `0-python3.12-rc-bookworm`, `python3.12-rc-bookworm`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.python3.12-rc-bookworm)
+-	[`0.27.0-python3.12-rc-bullseye`, `0.27-python3.12-rc-bullseye`, `0-python3.12-rc-bullseye`, `python3.12-rc-bullseye`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.python3.12-rc-bullseye)
+-	[`0.27.0-python3.12-rc-alpine3.18`, `0.27-python3.12-rc-alpine3.18`, `0-python3.12-rc-alpine3.18`, `python3.12-rc-alpine3.18`, `0.27.0-python3.12-rc-alpine`, `0.27-python3.12-rc-alpine`, `0-python3.12-rc-alpine`, `python3.12-rc-alpine`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.python3.12-rc-alpine3.18)
+-	[`0.27.0-python3.12-rc-alpine3.17`, `0.27-python3.12-rc-alpine3.17`, `0-python3.12-rc-alpine3.17`, `python3.12-rc-alpine3.17`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.python3.12-rc-alpine3.17)
+-	[`0.27.0-pypy3.10-bookworm`, `0.27-pypy3.10-bookworm`, `0-pypy3.10-bookworm`, `pypy3.10-bookworm`, `0.27.0-pypy-bookworm`, `0.27-pypy-bookworm`, `0-pypy-bookworm`, `pypy-bookworm`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.pypy3.10-bookworm)
+-	[`0.27.0-pypy3.10-bullseye`, `0.27-pypy3.10-bullseye`, `0-pypy3.10-bullseye`, `pypy3.10-bullseye`, `0.27.0-pypy-bullseye`, `0.27-pypy-bullseye`, `0-pypy-bullseye`, `pypy-bullseye`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.pypy3.10-bullseye)
+-	[`0.27.0-pypy3.9-bookworm`, `0.27-pypy3.9-bookworm`, `0-pypy3.9-bookworm`, `pypy3.9-bookworm`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.pypy3.9-bookworm)
+-	[`0.27.0-pypy3.9-bullseye`, `0.27-pypy3.9-bullseye`, `0-pypy3.9-bullseye`, `pypy3.9-bullseye`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.pypy3.9-bullseye)
+-	[`0.27.0-pypy3.9-windowsservercore-ltsc2022`, `0.27-pypy3.9-windowsservercore-ltsc2022`, `0-pypy3.9-windowsservercore-ltsc2022`, `pypy3.9-windowsservercore-ltsc2022`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.pypy3.9-windowsservercore-ltsc2022)
+-	[`0.27.0-pypy3.9-windowsservercore-1809`, `0.27-pypy3.9-windowsservercore-1809`, `0-pypy3.9-windowsservercore-1809`, `pypy3.9-windowsservercore-1809`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.pypy3.9-windowsservercore-1809)
 
 ## Shared Tags
 
--	`1.0a1-python3.9`, `python3.9`, `1.0a1`, `latest`:
-	-	[`1.0a1-python3.9-buster`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.9-buster)
-	-	[`1.0a1-python3.9-windowsservercore-1809`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.9-windowsservercore-1809)
-	-	[`1.0a1-python3.9-windowsservercore-ltsc2016`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.9-windowsservercore-ltsc2016)
--	`1.0a1-python3.8`, `python3.8`:
-	-	[`1.0a1-python3.8-buster`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.8-buster)
-	-	[`1.0a1-python3.8-windowsservercore-1809`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.8-windowsservercore-1809)
-	-	[`1.0a1-python3.8-windowsservercore-ltsc2016`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.8-windowsservercore-ltsc2016)
--	`1.0a1-python3.7`, `python3.7`:
-	-	[`1.0a1-python3.7-buster`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.7-buster)
--	`1.0a1-python3.6`, `python3.6`:
-	-	[`1.0a1-python3.6-buster`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.6-buster)
--	`1.0a1-python3.10-rc`, `python3.10-rc`:
-	-	[`1.0a1-python3.10-rc-buster`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.10-rc-buster)
-	-	[`1.0a1-python3.10-rc-windowsservercore-1809`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.10-rc-windowsservercore-1809)
-	-	[`1.0a1-python3.10-rc-windowsservercore-ltsc2016`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.python3.10-rc-windowsservercore-ltsc2016)
--	`1.0a1-pypy3.7`, `pypy3.7`, `1.0a1-pypy`, `pypy`:
-	-	[`1.0a1-pypy3.7-buster`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.pypy3.7-buster)
-	-	[`1.0a1-pypy3.7-windowsservercore-1809`](https://github.com/hylang/docker-hylang/blob/a9b44f188690a2d07590dde5e46499b58e42b6a3/dockerfiles-generated/Dockerfile.pypy3.7-windowsservercore-1809)
+-	`0.27.0-python3.11`, `0.27-python3.11`, `0-python3.11`, `python3.11`, `0.27.0`, `0.27`, `0`, `latest`:
+	-	[`0.27.0-python3.11-bookworm`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.python3.11-bookworm)
+-	`0.27.0-python3.10`, `0.27-python3.10`, `0-python3.10`, `python3.10`:
+	-	[`0.27.0-python3.10-bookworm`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.python3.10-bookworm)
+-	`0.27.0-python3.9`, `0.27-python3.9`, `0-python3.9`, `python3.9`:
+	-	[`0.27.0-python3.9-bookworm`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.python3.9-bookworm)
+-	`0.27.0-python3.8`, `0.27-python3.8`, `0-python3.8`, `python3.8`:
+	-	[`0.27.0-python3.8-bookworm`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.python3.8-bookworm)
+-	`0.27.0-python3.12-rc`, `0.27-python3.12-rc`, `0-python3.12-rc`, `python3.12-rc`:
+	-	[`0.27.0-python3.12-rc-bookworm`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.python3.12-rc-bookworm)
+-	`0.27.0-pypy3.10`, `0.27-pypy3.10`, `0-pypy3.10`, `pypy3.10`, `0.27.0-pypy`, `0.27-pypy`, `0-pypy`, `pypy`:
+	-	[`0.27.0-pypy3.10-bookworm`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.pypy3.10-bookworm)
+-	`0.27.0-pypy3.9`, `0.27-pypy3.9`, `0-pypy3.9`, `pypy3.9`:
+	-	[`0.27.0-pypy3.9-bookworm`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.pypy3.9-bookworm)
+	-	[`0.27.0-pypy3.9-windowsservercore-ltsc2022`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.pypy3.9-windowsservercore-ltsc2022)
+	-	[`0.27.0-pypy3.9-windowsservercore-1809`](https://github.com/hylang/docker-hylang/blob/5ea067a83e2b58c981e068dd75b8e4788736f923/dockerfiles-generated/Dockerfile.pypy3.9-windowsservercore-1809)
 
 # Quick reference (cont.)
 
 -	**Where to file issues**:  
-	[https://github.com/hylang/hy/issues](https://github.com/hylang/hy/issues)
+	[https://github.com/hylang/hy/issues](https://github.com/hylang/hy/issues?q=)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
 	[`amd64`](https://hub.docker.com/r/amd64/hylang/), [`arm32v5`](https://hub.docker.com/r/arm32v5/hylang/), [`arm32v6`](https://hub.docker.com/r/arm32v6/hylang/), [`arm32v7`](https://hub.docker.com/r/arm32v7/hylang/), [`arm64v8`](https://hub.docker.com/r/arm64v8/hylang/), [`i386`](https://hub.docker.com/r/i386/hylang/), [`mips64le`](https://hub.docker.com/r/mips64le/hylang/), [`ppc64le`](https://hub.docker.com/r/ppc64le/hylang/), [`s390x`](https://hub.docker.com/r/s390x/hylang/), [`windows-amd64`](https://hub.docker.com/r/winamd64/hylang/)
@@ -137,7 +135,7 @@ The `hylang` images come in many flavors, each designed for a specific use case.
 
 This is the defacto image. If you are unsure about what your needs are, you probably want to use this one. It is designed to be used both as a throw away container (mount your source code and start the container to start your app), as well as the base to build other images off of.
 
-Some of these tags may have names like buster or stretch in them. These are the suite code names for releases of [Debian](https://wiki.debian.org/DebianReleases) and indicate which release the image is based on. If your image needs to install any additional packages beyond what comes with the image, you'll likely want to specify one of these explicitly to minimize breakage when there are new releases of Debian.
+Some of these tags may have names like bookworm or bullseye in them. These are the suite code names for releases of [Debian](https://wiki.debian.org/DebianReleases) and indicate which release the image is based on. If your image needs to install any additional packages beyond what comes with the image, you'll likely want to specify one of these explicitly to minimize breakage when there are new releases of Debian.
 
 ## `hylang:<version>-alpine`
 

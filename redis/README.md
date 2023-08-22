@@ -20,22 +20,23 @@ WARNING:
 	[the Docker Community](https://github.com/docker-library/redis)
 
 -	**Where to get help**:  
-	[the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://dockr.ly/slack), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
+	[the Docker Community Slack](https://dockr.ly/comm-slack), [Server Fault](https://serverfault.com/help/on-topic), [Unix & Linux](https://unix.stackexchange.com/help/on-topic), or [Stack Overflow](https://stackoverflow.com/help/on-topic)
 
 # Supported tags and respective `Dockerfile` links
 
--	[`6.2.3`, `6.2`, `6`, `latest`, `6.2.3-buster`, `6.2-buster`, `6-buster`, `buster`](https://github.com/docker-library/redis/blob/a2d5a5dc3f308ff7dc829dbd5bbf1bce36383fd3/6.2/Dockerfile)
--	[`6.2.3-alpine`, `6.2-alpine`, `6-alpine`, `alpine`, `6.2.3-alpine3.13`, `6.2-alpine3.13`, `6-alpine3.13`, `alpine3.13`](https://github.com/docker-library/redis/blob/a2d5a5dc3f308ff7dc829dbd5bbf1bce36383fd3/6.2/alpine/Dockerfile)
--	[`6.0.13`, `6.0`, `6.0.13-buster`, `6.0-buster`](https://github.com/docker-library/redis/blob/9e055b21bfc02cb9302695e0e4fc27db19819598/6.0/Dockerfile)
--	[`6.0.13-alpine`, `6.0-alpine`, `6.0.13-alpine3.13`, `6.0-alpine3.13`](https://github.com/docker-library/redis/blob/9e055b21bfc02cb9302695e0e4fc27db19819598/6.0/alpine/Dockerfile)
--	[`5.0.12`, `5.0`, `5`, `5.0.12-buster`, `5.0-buster`, `5-buster`](https://github.com/docker-library/redis/blob/147762b57f4d4391ba6cf8fbd1e7590a606643ef/5/Dockerfile)
--	[`5.0.12-32bit`, `5.0-32bit`, `5-32bit`, `5.0.12-32bit-buster`, `5.0-32bit-buster`, `5-32bit-buster`](https://github.com/docker-library/redis/blob/147762b57f4d4391ba6cf8fbd1e7590a606643ef/5/32bit/Dockerfile)
--	[`5.0.12-alpine`, `5.0-alpine`, `5-alpine`, `5.0.12-alpine3.13`, `5.0-alpine3.13`, `5-alpine3.13`](https://github.com/docker-library/redis/blob/147762b57f4d4391ba6cf8fbd1e7590a606643ef/5/alpine/Dockerfile)
+-	[`7.2.0`, `7.2`, `7`, `latest`, `7.2.0-bookworm`, `7.2-bookworm`, `7-bookworm`, `bookworm`](https://github.com/docker-library/redis/blob/9b538c33746872dcd1e8c809cbde9f21ac2ec3ac/7.2/Dockerfile)
+-	[`7.2.0-alpine`, `7.2-alpine`, `7-alpine`, `alpine`, `7.2.0-alpine3.18`, `7.2-alpine3.18`, `7-alpine3.18`, `alpine3.18`](https://github.com/docker-library/redis/blob/9b538c33746872dcd1e8c809cbde9f21ac2ec3ac/7.2/alpine/Dockerfile)
+-	[`7.0.12`, `7.0`, `7.0.12-bookworm`, `7.0-bookworm`](https://github.com/docker-library/redis/blob/5c8459f1bd20b7b7f92325f83898636f3c8db95f/7.0/Dockerfile)
+-	[`7.0.12-alpine`, `7.0-alpine`, `7.0.12-alpine3.18`, `7.0-alpine3.18`](https://github.com/docker-library/redis/blob/5c8459f1bd20b7b7f92325f83898636f3c8db95f/7.0/alpine/Dockerfile)
+-	[`6.2.13`, `6.2`, `6`, `6.2.13-bookworm`, `6.2-bookworm`, `6-bookworm`](https://github.com/docker-library/redis/blob/f2da8752a05b783eb805b67ad7a56a997a0fe91f/6.2/Dockerfile)
+-	[`6.2.13-alpine`, `6.2-alpine`, `6-alpine`, `6.2.13-alpine3.18`, `6.2-alpine3.18`, `6-alpine3.18`](https://github.com/docker-library/redis/blob/f2da8752a05b783eb805b67ad7a56a997a0fe91f/6.2/alpine/Dockerfile)
+-	[`6.0.20`, `6.0`, `6.0.20-bookworm`, `6.0-bookworm`](https://github.com/docker-library/redis/blob/873a7cac27da5a275d0c1e0c7d41724ae2701071/6.0/Dockerfile)
+-	[`6.0.20-alpine`, `6.0-alpine`, `6.0.20-alpine3.18`, `6.0-alpine3.18`](https://github.com/docker-library/redis/blob/873a7cac27da5a275d0c1e0c7d41724ae2701071/6.0/alpine/Dockerfile)
 
 # Quick reference (cont.)
 
 -	**Where to file issues**:  
-	[https://github.com/docker-library/redis/issues](https://github.com/docker-library/redis/issues)
+	[https://github.com/docker-library/redis/issues](https://github.com/docker-library/redis/issues?q=)
 
 -	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
 	[`amd64`](https://hub.docker.com/r/amd64/redis/), [`arm32v5`](https://hub.docker.com/r/arm32v5/redis/), [`arm32v6`](https://hub.docker.com/r/arm32v6/redis/), [`arm32v7`](https://hub.docker.com/r/arm32v7/redis/), [`arm64v8`](https://hub.docker.com/r/arm64v8/redis/), [`i386`](https://hub.docker.com/r/i386/redis/), [`mips64le`](https://hub.docker.com/r/mips64le/redis/), [`ppc64le`](https://hub.docker.com/r/ppc64le/redis/), [`s390x`](https://hub.docker.com/r/s390x/redis/)
@@ -78,10 +79,10 @@ $ docker run --name some-redis -d redis
 ## start with persistent storage
 
 ```console
-$ docker run --name some-redis -d redis redis-server --appendonly yes
+$ docker run --name some-redis -d redis redis-server --save 60 1 --loglevel warning
 ```
 
-If persistence is enabled, data is stored in the `VOLUME /data`, which can be used with `--volumes-from some-volume-container` or `-v /docker/host/dir:/data` (see [docs.docker volumes](https://docs.docker.com/engine/tutorials/dockervolumes/)).
+There are several different persistence strategies to choose from. This one will save a snapshot of the DB every 60 seconds if at least 1 write operation was performed (it will also lead to more logs, so the `loglevel` option may be desirable). If persistence is enabled, data is stored in the `VOLUME /data`, which can be used with `--volumes-from some-volume-container` or `-v /docker/host/dir:/data` (see [docs.docker volumes](https://docs.docker.com/engine/tutorials/dockervolumes/)).
 
 For more about Redis Persistence, see [http://redis.io/topics/persistence](http://redis.io/topics/persistence).
 
@@ -131,7 +132,7 @@ The `redis` images come in many flavors, each designed for a specific use case.
 
 This is the defacto image. If you are unsure about what your needs are, you probably want to use this one. It is designed to be used both as a throw away container (mount your source code and start the container to start your app), as well as the base to build other images off of.
 
-Some of these tags may have names like buster in them. These are the suite code names for releases of [Debian](https://wiki.debian.org/DebianReleases) and indicate which release the image is based on. If your image needs to install any additional packages beyond what comes with the image, you'll likely want to specify one of these explicitly to minimize breakage when there are new releases of Debian.
+Some of these tags may have names like bookworm in them. These are the suite code names for releases of [Debian](https://wiki.debian.org/DebianReleases) and indicate which release the image is based on. If your image needs to install any additional packages beyond what comes with the image, you'll likely want to specify one of these explicitly to minimize breakage when there are new releases of Debian.
 
 ## `redis:<version>-alpine`
 
